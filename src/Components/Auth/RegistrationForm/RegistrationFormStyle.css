@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@700&display=swap');
+
+
+.imagelanding{
+    position: relative;
+    height:  100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    max-width: 650px;
+    background: transparent;
+    color: #000;
+    border-radius: 10px;
+    padding: 80px 15.5px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(25px);
+    border-color: whitesmoke;
+    position: absolute;
+    top: 52%;
+    transform: translateX(185%);
+    margin-top: -20%;
+    display: flex;
+}
+    
+.wrapper h1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bolder;
+    /* margin-bottom: 1px; */
+}
+
+.wrapper h5 {
+    font-size: 23px;
+    font-weight: 35;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(209, 209, 209, 0.766);
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color: gray ;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgb(39, 39, 39);
+}
+
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input{
+    accent-color: gray;
+    margin-right: 4px;
+    margin-top: 20px;
+}
+
+.remember-forgot a{
+    color: purple;
+    text-decoration: none;
+    margin-top: auto;
+    font-size: auto;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.wrapper button {
+    width: 100%;
+    height: 47.5px;
+    background: #fff ;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    font-weight: 700;
+    transition: all .3s ease;
+    margin-top: 20px;
+}
+
+.wrapper .register-link {
+    font-size: 18.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: lightcoral;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.wrapper .version{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.wrapper .reserved{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.welcome-message h1{
+    display: inline-block;
+    font-size: 80px;
+    margin-top: 70px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 60px;
+}
+
+.welcome-message p{
+    font-size: 25px;
+    margin-top: auto;
+    font-family: 'Montserrat', sans-serif,;
+    font-weight: normal;
+    margin-left: 60px;
+    text-align: justify;
+    color: rgb(70, 70, 70);
+}
+
+.welcome-message .logo-color {
+    color: rgb(160, 36, 163);
+    margin-left: auto;
+}
