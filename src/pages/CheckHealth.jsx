@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; // Import useHistory hook
 import Nav from '../Components/Navbar/navbarthesec';
-import '../pages/CheckHealth.css';
+import '../pages/CheckHealthStyle.css';
 import dominique from '../Components/Assets/brgy1.png';
 import brgytwoagain from '../Components/Assets/brgy2.png';
 
