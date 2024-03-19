@@ -2,13 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@700&display=swap');
 
 
-.imagelanding{
-    position: relative;
-    height:  100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
+
 .wrapper {
     width: 100%;
     height: auto;
@@ -168,3 +162,20 @@
     color: rgb(160, 36, 163);
     margin-left: auto;
 }
+@media screen and (max-width: 768px){
+    a{
+      margin-bottom: 40px;
+    }
+  }
+
+  @media(max-width: 767px){
+    .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
+  }
+  }
+  @media(max-width: 574px){
+    .footer-col{
+      width: 100%;
+  }
+  }
