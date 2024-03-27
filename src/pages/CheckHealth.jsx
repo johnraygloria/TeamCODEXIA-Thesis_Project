@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory hook
-import Nav from '../Components/Navbar/navbarthesec';
-import '../pages/CheckHealthStyle.css';
-import dominique from '../Components/Assets/brgy1.png';
-import brgytwoagain from '../Components/Assets/brgy2.png';
+import { useHistory } from 'react-router-dom';              // Import useHistory hook
+import Nav from '../Components/Navbar/Navbar_Main';        //Main Navbar
+import '../pages/CheckHealthStyle.css';                     // CSS of CheckHealth      
+import dominique from '../Components/Assets/brgy1.png';     
+import brgytwoagain from '../Components/Assets/brgy2.png';  
 
 function Type() {
   const [searchQuery, setSearchQuery] = useState('');

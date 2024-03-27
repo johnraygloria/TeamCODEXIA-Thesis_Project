@@ -4,8 +4,9 @@ import React, {useState} from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../Config/firebase";
 import { useHistory } from 'react-router-dom';
-import Navbar from '../../Navbars/Navbar_Landing.jsx';
-
+import Navbar from '../../Navbar/Navbar_Landing.jsx';
+import Modal from 'react-modal';
+import '../RegistrationForm/TermsAndConditions.js';
 
 
 
@@ -16,6 +17,18 @@ function RegistrationForm  () {
   const history = useHistory();
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false); //agrees to Data Privacy Act of 2012
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = (e) => {
+    e.preventDefault();
+    setModalIsOpen(true);
+  };
+  
+
+  const closeModal = () => {
+    setAgreedToTerms(true);
+    setModalIsOpen(false);
+  };
 
   const SignUp = async (e) => {
       e.preventDefault();
@@ -27,7 +40,7 @@ function RegistrationForm  () {
       }
 
       if (!agreedToTerms) {
-        alert('Please agree to the terms and conditions.');
+        openModal();
         return;
       }
             
@@ -57,6 +70,57 @@ function RegistrationForm  () {
 
 
     <Navbar/>
+
+
+      <Modal
+      isOpen={modalIsOpen}
+      onRequestClose={closeModal}
+      contentLabel="Terms and Conditions"
+      style={{
+        content: {
+        width: '50%', // Adjust the width of the modal
+        height: '50%', // Adjust the height of the modal
+        margin: 'auto', // Center the modal
+      },
+    }}
+>
+  
+<section class="flex_center">
+  <div class="tc_main">
+    <div class="tc_content">
+      <div class="tc_top">
+        <div class="icon">
+          <i class="fa-solid fa-clipboard"></i>
+        </div>
+        <div class="title">
+          <p>Terms of serivce</p>
+        </div>
+        <div class="info">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi sint veritatis recusandae alias. Numquam voluptates inventore eligendi totam tempore quia et enim accusantium labore at autem unde quibusdam molestiae doloremque corrupti architecto blanditiis corporis ex quisquam quo, deleniti pariatur? Illo, cum. Dignissimos provident quod ducimus aperiam sunt expedita odit laboriosam!
+        </div>
+      </div>
+      <div class="tc_bottom">
+        <div class="title">
+          <p>please go through the terms before Accepting it.</p>
+        </div>
+        <div class="info">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, cupiditate incidunt? Id, sed alias. Praesentium modi facilis ea exercitationem adipisci! Possimus aspernatur doloribus id cumque nulla tempora obcaecati nihil tenetur?</p>
+        </div>
+      </div>
+    </div>
+    <div class="tc_btns">
+    <button className={'accept'} onClick={closeModal}>Agree and Close</button>
+    </div>
+  </div>
+</section>
+
+      </Modal>
+
 
     <div className='welcome-message'>
       <h1>PlanIt
@@ -93,13 +157,14 @@ function RegistrationForm  () {
         </div>
         
         <label>
-        <input
+          <input
           type="checkbox"
           checked={agreedToTerms}
           onChange={() => setAgreedToTerms(!agreedToTerms)}
-        />
-        I agree to the <a href="/terms">Terms and Conditions</a>
+          />
+          I agree to the <a href="#" onClick={openModal}>Terms and Conditions</a>
         </label>
+
 
         <button type="submit">Register</button>
 
