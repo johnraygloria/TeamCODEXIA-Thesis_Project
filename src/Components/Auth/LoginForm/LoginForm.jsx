@@ -4,8 +4,7 @@ import React, {useState} from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../Config/firebase";
 import { useHistory } from 'react-router-dom'; // React Router's useHistory hook
-import { useMediaQuery } from 'react-responsive'; //ewan ko ba
-import Navbar from '../../Navbars/Navbar_Landing.jsx';
+import Navbar from '../../Navbar/Navbar_Landing.jsx';
 
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; // Import useHistory from react-router-dom
-import './Calendar.css'; // Import your CSS file
+import '../pages/CalendarStyle.css';
 
 const CalendarAppointment = () => {
   const [currYear, setCurrYear] = useState(new Date().getFullYear());

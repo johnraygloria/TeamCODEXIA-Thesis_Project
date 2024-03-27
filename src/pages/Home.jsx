@@ -1,8 +1,8 @@
-import './homepage.css';
+import './HomeStyle.css'
 // import iconyou from './assets/icon_you.png'
 // import homepic from '../assets/homepager.png'
 
-import Nav from '../Components/Navbar/navbarthesec';
+import Nav from '../Components/Navbar/Navbar_MainStyle.css';
 import { Link } from 'react-router-dom'
 
 function Home() {
