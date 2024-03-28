@@ -8,6 +8,7 @@ import LoginForm from './Components/Auth/LoginForm/LoginForm.jsx'
 import './Components/Navbar/Navbar_LandingStyle.css'
 import About from './Components/About.jsx';
 import RegistrationForm from './Components/Auth/RegistrationForm/RegistrationForm.jsx';
+import PasswordResetForm from './Components/Auth/LoginForm/PasswordResetForm.jsx';
 
 // Pages
 import Home from './pages/Home.jsx';
@@ -41,7 +42,7 @@ const App = () => {
         <RegistrationForm/>
       </Route>
 
-      <Route path="/home" compontent={ Home } exact>
+      <Route path="/Home" compontent={ Home } exact>
         <Home/>
       </Route>
 
@@ -55,6 +56,10 @@ const App = () => {
 
       <Route path='/SearchBar' compontent={ SearchBar } exact>
         <SearchBar/>
+      </Route>
+
+      <Route path='/Resetyourpassword' compontent={ PasswordResetForm } exact>
+        <PasswordResetForm/>
       </Route>
       
     </Switch>

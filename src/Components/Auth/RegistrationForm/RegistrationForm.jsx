@@ -6,7 +6,7 @@ import { auth } from "../../../Config/firebase";
 import { useHistory } from 'react-router-dom';
 import Navbar from '../../Navbar/Navbar_Landing.jsx';
 import Modal from 'react-modal';
-import '../RegistrationForm/TermsAndConditions.js';
+
 
 
 
@@ -93,7 +93,7 @@ function RegistrationForm  () {
           <i class="fa-solid fa-clipboard"></i>
         </div>
         <div class="title">
-          <p>Terms of serivce</p>
+          <p>Terms of service</p>
         </div>
         <div class="info">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi sint veritatis recusandae alias. Numquam voluptates inventore eligendi totam tempore quia et enim accusantium labore at autem unde quibusdam molestiae doloremque corrupti architecto blanditiis corporis ex quisquam quo, deleniti pariatur? Illo, cum. Dignissimos provident quod ducimus aperiam sunt expedita odit laboriosam!
