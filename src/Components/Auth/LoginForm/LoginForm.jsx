@@ -58,7 +58,7 @@ function LoginForm  ()  {
           localStorage.removeItem("rememberedEmail");
         }
         // Redirect to the desired page after successful login
-        history.push("/Home"); // Change to your desired route
+        history.push("/home"); // Change to your desired route
       })
       .catch((error) => {
         console.log(error);
