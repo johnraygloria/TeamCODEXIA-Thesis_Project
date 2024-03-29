@@ -6,9 +6,6 @@ import { auth } from "../../../Config/firebase";
 import { useHistory } from 'react-router-dom'; // React Router's useHistory hook
 import Navbar from '../../Navbar/Navbar_Landing.jsx';
 import PasswordResetForm from "./PasswordResetForm.jsx";
-import Modal from 'react-modal';
-
-
 
 
 function LoginForm  ()  {
@@ -38,12 +35,6 @@ function LoginForm  ()  {
     }
   }, []);
 
-  const [showPasswordResetModal, setShowPasswordResetModal] = useState(false);
-
-  const handleForgotPasswordClick = () => {
-    setShowPasswordResetModal(true);
-  };
-
 
   const SignIn = (e) => {
     e.preventDefault();
@@ -69,31 +60,15 @@ function LoginForm  ()  {
 
   return (
     <>
-
     <Navbar/>
-
-    <Modal
-      isOpen={modalIsOpen}
-      onRequestClose={closeModal}
-      contentLabel="Terms and Conditions"
-      style={{
-        content: {
-        width: '50%', // Adjust the width of the modal
-        height: '50%', // Adjust the height of the modal
-        margin: 'auto', // Center the modal
-      },
-    }}
->
-  </Modal>
 
     <div className='welcome-message'>
 
       <h1>PlanIt
         <h1 className='logo-color'>FamIt</h1>
       </h1>
-        <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.
-          </p>
-    </div>
+        <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
+      </div>
     
     
     <div className= 'wrapper' > 
@@ -122,10 +97,13 @@ function LoginForm  ()  {
         <label>
           <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />
           Remember me
-          <a href='#' onClick={openModal}> Forgot Password?</a>
         </label>
+        </div>
 
-      </div>
+        <div className="forgot-password">
+          <a href="/Resetyourpassword">Forgot Password?</a>
+        </div>
+
         <button type="submit">Log In</button>
 
         <div className="register-link">

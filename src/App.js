@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 // Landing
 import LoginForm from './Components/Auth/LoginForm/LoginForm.jsx'
-import './Components/Navbar/Navbar_LandingStyle.css'
 import About from './Components/About.jsx';
 import RegistrationForm from './Components/Auth/RegistrationForm/RegistrationForm.jsx';
 import PasswordResetForm from './Components/Auth/LoginForm/PasswordResetForm.jsx';
@@ -58,13 +57,13 @@ const App = () => {
       <Route path='/SearchBar' compontent={ SearchBar } exact>
         <SearchBar/>
       </Route>
-
-      <Route path='/Resetyourpassword' compontent={ PasswordResetForm } exact>
-        <PasswordResetForm/>
-      </Route>
       
       <Route path='/Articles' compontent={ Articles } exact>
         <Articles />
+      </Route>
+
+      <Route path='/Resetyourpassword' compontent={ PasswordResetForm } exact>
+        <PasswordResetForm/>
       </Route>
       
     </Switch>
