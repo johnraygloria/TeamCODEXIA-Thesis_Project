@@ -1,7 +1,8 @@
 import React from 'react';
-import '../Pages/ArticlesStyle.css';
-import Nav from '../Components/Navbars/Navbar_Main';
+import '../pages/ArticlesStyle.css';
+import Nav from '../Components/Navbar/Navbar_Main';
 import Violet_Bkg from '../Components/Assets/violet_pink_bkg_img2.jpg'; 
+
 const Articles = () => {
   return (
     <>

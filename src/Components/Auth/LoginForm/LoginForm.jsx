@@ -1,51 +1,74 @@
 import "../LoginForm/LoginFormStyle.css";
 import { FaUser, FaLock } from "react-icons/fa";
-import React, {useState} from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import React, {useState, useEffect} from "react";
+import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../../../Config/firebase";
 import { useHistory } from 'react-router-dom'; // React Router's useHistory hook
 import Navbar from '../../Navbar/Navbar_Landing.jsx';
-
+import PasswordResetForm from "./PasswordResetForm.jsx";
 
 
 function LoginForm  ()  {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false); // New state for Remember Me
   const history = useHistory();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false); //agrees to Data Privacy Act of 2012
 
-   const SignIn = (e) => {
-      e.preventDefault();
-      signInWithEmailAndPassword(auth, email, password)    
-      
+  const openModal = (e) => {
+    e.preventDefault();
+    setModalIsOpen(true);
+  };
+  
+
+  const closeModal = () => {
+    setAgreedToTerms(true);
+    setModalIsOpen(false);
+  };
+
+  useEffect(() => {         // Check if there are stored credentials and auto-fill the form
+    const storedEmail = localStorage.getItem("rememberedEmail");
+    if (storedEmail) {
+      setEmail(storedEmail);
+      setRememberMe(true);
+    }
+  }, []);
+
+
+  const SignIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        if (rememberMe) {
+          // Store email in LocalStorage if Remember Me is checked
+          localStorage.setItem("rememberedEmail", email);
+        } else {
+          // Clear stored email if Remember Me is not checked
+          localStorage.removeItem("rememberedEmail");
+        }
+        // Redirect to the desired page after successful login
+        history.push("/home"); // Change to your desired route
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
   
 
   return (
     <>
-
     <Navbar/>
-
-    {/* <div className="flex-background">
-          <img className="brgy_neo_loz" src={ background1 } alt="background1" style={{width: 150}} />
-        </div>
-        <div className="flex-landingbkg"> 
-          <img className="brgy_neo_loz" src={ background2 } alt="background2" style={{width: 100}} />
-      </div> */}
 
     <div className='welcome-message'>
 
       <h1>PlanIt
         <h1 className='logo-color'>FamIt</h1>
       </h1>
-        <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.
-          </p>
-    </div>
+        <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
+      </div>
     
     
     <div className= 'wrapper' > 
@@ -71,8 +94,14 @@ function LoginForm  ()  {
         </div>
 
         <div className="remember-forgot">
-          <label><input type='checkbox' /> Remember me</label>
-          <a href="#">Forgot password?</a>
+        <label>
+          <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />
+          Remember me
+        </label>
+        </div>
+
+        <div className="forgot-password">
+          <a href="/Resetyourpassword">Forgot Password?</a>
         </div>
 
         <button type="submit">Log In</button>
