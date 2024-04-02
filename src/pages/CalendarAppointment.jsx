@@ -72,7 +72,7 @@ const CalendarAppointment = () => {
   const handleSubmit = () => {
     const formattedMonth = String(currMonth + 1).padStart(2, '0'); 
     history.push({
-      pathname: '/Searchbar',
+      pathname: '/FillUpAppointment',
       state: { selectedDate: `${currYear}-${formattedMonth}-${clickedDate}` } 
     });
   }
