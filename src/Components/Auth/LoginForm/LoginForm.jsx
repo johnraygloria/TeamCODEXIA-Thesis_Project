@@ -68,7 +68,7 @@ function LoginForm  ()  {
         <h1 className='logo-color'>FamIt</h1>
       </h1>
         <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
-      </div>
+      </div >
     
     
     <div className= 'wrapper' > 

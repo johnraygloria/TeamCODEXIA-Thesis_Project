@@ -15,7 +15,7 @@ import Type from './pages/CheckHealth';
 import Appointment from './pages/CalendarAppointment';
 import SearchBar from './pages/FillUpAppointment';
 import Articles  from './pages/Articles';
-
+import PregnancyWheel from './pages/PregnancyWheel.jsx';
 
 const App = () => {
   return(
@@ -65,6 +65,12 @@ const App = () => {
       <Route path='/Resetyourpassword' compontent={ PasswordResetForm } exact>
         <PasswordResetForm/>
       </Route>
+
+      <Route path='/PregnancyWheel' compontent={  PregnancyWheel } exact>
+        <PregnancyWheel/>
+      </Route>
+
+
       
     </Switch>
     </Router>
