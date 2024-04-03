@@ -1,61 +1,52 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useLocation } from 'react-router-dom';
-import { crud } from '../Config/firebase'; // Import firestore instance from firebase.js
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore'; // Import firestore functions
+// Import the necessary modules and components
+import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import './searchbar.css';
+import DashboardAdmin from '../Components/Admin/DashboardAdmin';
 
-const SearchBar = ({ onSearch }) => {
+const AppointmentFillUp = () => {
+  // State to manage form inputs
   const [searchQuery, setSearchQuery] = useState({
     name: "",
     email: "",
     age: "",
     appointmentType: "",
-    date: ""
+    date: "",
+    time: "" // Added time field
   });
 
-  const [selectedDate, setSelectedDate] = useState("");
   const history = useHistory();
-  const location = useLocation();
-
   const firestore = getFirestore(); // Initialize Firestore
 
+  // Function to handle changes in form inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setSearchQuery({ ...searchQuery, [name]: value });
+    setSearchQuery(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const docRef = await addSearchQuery(searchQuery); // Add search query to Firestore
-      history.push({
-        pathname: '/Calendar',
-        state: { searchQuery, selectedDate } // Pass both search query and selected date
-      });
+      await addSearchQuery(searchQuery); // Add search query to Firestore
     } catch (error) {
       console.error("Error adding document: ", error);
     }
   };
 
-  const handleBack = () => {
-    history.goBack();
-  };
-
-  useEffect(() => {
-    if (location.state && location.state.selectedDate) {
-      setSelectedDate(location.state.selectedDate);
-      setSearchQuery(prevState => ({
-        ...prevState,
-        date: location.state.selectedDate
-      }));
-    }
-  }, [location.state]);
-
+  // Function to add search query to Firestore
   const addSearchQuery = async (searchQuery) => {
     try {
       const docRef = await addDoc(collection(firestore, 'searchQueries'), searchQuery);
       console.log("Document written with ID: ", docRef.id);
-      return docRef;
+      history.push({ // Redirect to DashboardAdmin with search query
+        pathname: '/DashboardAdmin',
+        state: { searchQuery }
+      });
     } catch (error) {
       console.error("Error adding document: ", error);
       throw error;
@@ -65,12 +56,14 @@ const SearchBar = ({ onSearch }) => {
   return (
     <div className="search-bar-main-container">
       <form onSubmit={handleSubmit} className="search-bar">
+        {/* Input fields for search criteria */}
         <input
           type="text"
           placeholder="Name"
           name="name"
           value={searchQuery.name}
           onChange={handleChange}
+          autoComplete="name"
         />
         <input
           type="text"
@@ -78,6 +71,7 @@ const SearchBar = ({ onSearch }) => {
           name="email"
           value={searchQuery.email}
           onChange={handleChange}
+          autoComplete="email"
         />
         <input
           type="number"
@@ -85,6 +79,7 @@ const SearchBar = ({ onSearch }) => {
           name="age"
           value={searchQuery.age}
           onChange={handleChange}
+          autoComplete="age"
         />
         <input
           type="text"
@@ -92,6 +87,15 @@ const SearchBar = ({ onSearch }) => {
           name="appointmentType"
           value={searchQuery.appointmentType}
           onChange={handleChange}
+          autoComplete="off"
+        />
+        <input
+          type="time" // Input field for time
+          placeholder="Time"
+          name="time"
+          value={searchQuery.time}
+          onChange={handleChange}
+          autoComplete="off"
         />
         <input
           type="date"
@@ -99,12 +103,15 @@ const SearchBar = ({ onSearch }) => {
           name="date"
           value={searchQuery.date}
           onChange={handleChange}
+          autoComplete="off"
         />
+
         <button type="submit">Proceed</button>
-        <button type="button" onClick={handleBack}>Go back</button>
       </form>
+      {/* Display DashboardAdmin component with search results */}
+      {/* <DashboardAdmin searchQuery={searchQuery} /> */}
     </div>
   );
 };
 
-export default SearchBar;
+export default AppointmentFillUp;

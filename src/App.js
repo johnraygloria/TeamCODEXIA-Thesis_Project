@@ -13,9 +13,11 @@ import PasswordResetForm from './Components/Auth/LoginForm/PasswordResetForm.jsx
 import Home from './pages/Home.jsx';
 import Type from './pages/CheckHealth';
 import Appointment from './pages/CalendarAppointment';
-import SearchBar from './pages/FillUpAppointment';
+import FillUpAppointment from './pages/FillUpAppointment';
 import Articles  from './pages/Articles';
+import Dashboard from './Components/Admin/DashboardAdmin'
 import PregnancyWheel from './pages/PregnancyWheel.jsx';
+
 
 const App = () => {
   return(
@@ -53,9 +55,11 @@ const App = () => {
       <Route path='/Appointment' compontent={ Appointment } exact> 
         <Appointment/>
       </Route>
-
-      <Route path='/SearchBar' compontent={ SearchBar } exact>
-        <SearchBar/>
+      <Route path='/FillUpAppointment' compontent={ FillUpAppointment } exact>
+        <FillUpAppointment/>
+      </Route>
+      <Route path='/DashboardAdmin' compontent={ Dashboard } exact>
+        <Dashboard/>
       </Route>
       
       <Route path='/Articles' compontent={ Articles } exact>
@@ -69,12 +73,15 @@ const App = () => {
       <Route path='/PregnancyWheel' compontent={  PregnancyWheel } exact>
         <PregnancyWheel/>
       </Route>
-
-
       
     </Switch>
     </Router>
     
+    <Router>
+      <Switch>
+        <Route path="/Dashboard" render={(props) => <Dashboard searchQuery={props.location.state?.searchQuery} />} />
+      </Switch>
+    </Router>
 </>
 )
 }
