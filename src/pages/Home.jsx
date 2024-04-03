@@ -1,32 +1,18 @@
-import './HomeStyle.css'
-// import iconyou from './assets/icon_you.png'
-// import homepic from '../assets/homepager.png'
-
-import Nav from '../Components/Navbar/Navbar_MainStyle.css';
+import './HomeStyle.css';
+// import newhome from '../Components/Assets/newhome.png'
+import Nav from '../Components/Navbar/Navbar_Main'
 import { Link } from 'react-router-dom'
 
 function Home() {
   return (
 <>
+
+<div className='background_home'>
   <Nav/>
-{/* <header className="header">
-    <h1 className="page_name">Plant<span>Familt</span></h1>
 
-    <nav className="navbar">
-      <h1>Plan & Care</h1>
-      <h1>Find your Center</h1>
-      <h1>About Us</h1>
-
-      <div className="fix_more">
-      <h1 className="you_fix">You</h1>
-      <img className="you_icon" src={iconyou} alt="" />
-      </div>
-      <div className="classniline"></div>
-    </nav>
-  </header> */}
-  {/* <div>
-    <img class="home_picture" src={homepic} alt="" />
-  </div> */}
+  <div className='picture_fix'>
+    {/* <img className="home_picture" src={newhome} alt="" /> */}
+  </div>
 
 <div className="home_intro">
     <p className="first_para">Let us plan your future, for a better tomorrow.</p>
@@ -38,9 +24,10 @@ function Home() {
     </div>
 
     <div className="fix_moko">
-      <Link to="/Type" className='button_type'>Check your healthcare center here</Link>
+      <Link to="/Type" className='button_type'>Check your healthcare </Link>
     </div>    
   </div>
+</div>
 </>
  );
 }
