@@ -45,6 +45,10 @@ function PasswordResetForm() {
               <input type="email" name="email" placeholder="Enter your email" />
               </div>
               <button type="submit">Send Reset Email</button>
+
+              <div className="go-back">
+                <p> Go, back  to login page? Click <a href="/Login">here.</a></p> 
+              </div>
             </form>
           </div>
       </div>
