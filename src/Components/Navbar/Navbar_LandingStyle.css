@@ -20,9 +20,9 @@ li {
   margin-bottom: 20px;
   position: fixed;
   top: 0px;
-
-  /*box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
+  z-index: 1;
 }
+
 .navbar-logo {
   display: inline-block;
   font-size: 30px;
@@ -150,7 +150,7 @@ a{
 .flex-landingbkg2{
   display: flex;
   margin-top: 5px;
-  height: 1000px;
+  height: 100%;
   position: absolute;
   padding-left: 65%;
   object-fit: cover;
