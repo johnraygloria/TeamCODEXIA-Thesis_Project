@@ -20,7 +20,7 @@ li {
   margin-bottom: 20px;
   position: fixed;
   top: 0px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .navbar-logo {
@@ -92,6 +92,7 @@ button {
     transition: all 0.5s ease-in-out;
     text-align: center;
     position: relative;
+    color: #4e4e4e;
   }
   .mobile-menu-icon {
     position: absolute;
@@ -122,7 +123,7 @@ a{
   position: relative;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  color: #a0a0a0;
+  color: #4e4e4e;
   font-size: 18px;
   letter-spacing: 0.5px;
   padding: 0 10px;
@@ -134,10 +135,6 @@ a{
   }
 }
 
-.landWRONGingbkg{
-  display: inline-flex;
-  position: relative;
-}
 .flex-landingbkg1{
   display: flex;
   margin: 100px 0;
@@ -152,8 +149,23 @@ a{
   margin-top: 5px;
   height: 100%;
   position: absolute;
-  padding-left: 65%;
+  padding-left: 67%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 768px){
+  .flex-landingbkg1, .flex-landingbkg2{
+    display: block;
+    height: auto;
+    position: static;
+    padding-left: 0;
+  }
+  .flex-landingbkg1{
+    order: 1;
+  }
+  .flex-landingbkg2{
+    order: 2;
+  }
 }
 
  
