@@ -4,6 +4,9 @@ import "react-calendar/dist/Calendar.css";
 import "../pages/PregnancyWheelStyle.css";
 import moment from 'moment';
 
+import Sidebar from '../Components/Navbar/Sidebar';
+import Navbar from '../Components/Navbar/Navbar_Main';
+
 function PregnancyWheel() {
     const [USweeks, setUSweeks] = useState("");
     const [USdays, setUSdays] = useState("");
@@ -67,6 +70,8 @@ function PregnancyWheel() {
 
     return (
         <>
+        <Navbar/>
+        <Sidebar/>
         <div className="wrapper1">
             <form>
                 <h2>Pregnancy Wheel</h2>
