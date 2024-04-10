@@ -5,7 +5,6 @@ import "../Navbar/SidebarStyle.css"
 const Sidebar = () => {
   return (
     <>  
-    <h1>Dashboard</h1>
         <input type="checkbox" id="menu-toggle1" />
         <div className="sidebar-container1">
           <div className="side-menu">
