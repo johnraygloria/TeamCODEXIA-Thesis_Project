@@ -1,7 +1,7 @@
 // Page for resetting password
 
 import React, { useState } from "react";
-import Navbar from "../../Navbar/Navbar_Landing";
+import Navbar from "../../Global/Navbar_Landing";
 import "../LoginForm/PasswordResetFormStyle.css";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../Config/firebase";

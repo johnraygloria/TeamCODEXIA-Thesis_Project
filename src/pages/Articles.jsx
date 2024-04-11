@@ -1,6 +1,11 @@
 import React from 'react';
 import '../pages/ArticlesStyle.css';
-import Nav from '../Components/Navbar/Navbar_Main';
+
+//Global
+import Nav from '../Components/Global/Navbar_Main';
+import Footer from '../Components/Global/Footer';
+
+// Images/PNGs
 import Violet_Bkg from '../Components/Assets/articlespage_bkg2.jpg';
 import WomenRH from '../Components/Assets/Reproductive_Women_img.jpg';
 import MenRH from '../Components/Assets/Reproductive_Man_img.jpg';
@@ -28,8 +33,8 @@ const Articles = () => {
     <section className='article-cards'>
 
     <div class="card-list">
-        <a href="https://www.healthline.com/health/womens-health/female-reproductive-organs#organs" target="_blank" class="card-item">
-            <img src={WomenRH} alt="Card Image"/>
+        <a href="https://www.healthline.com/health/womens-health/female-reproductive-organs#organs" target="_blank" rel="noopener noreferrer" class="card-item">
+            <img src={WomenRH} alt="Card Visualizer"/>
             <span class="Reproductive">Reproductive</span>
             <h3>Learn more about Women's Reproductive Health</h3>
             <div class="arrow">
@@ -37,8 +42,8 @@ const Articles = () => {
             </div>
 
         </a>
-        <a href="https://www.healthline.com/health/mens-health/male-genitalia" target="_blank" class="card-item">
-            <img src={MenRH} alt="Card Image"/>
+        <a href="https://www.healthline.com/health/mens-health/male-genitalia" target="_blank" rel="noopener noreferrer" class="card-item">
+            <img src={MenRH} alt="Card Visualizer"/>
             <span class="Reproductive">Reproductive</span>
             <h3>Learn more about Men's Reproductive Health</h3>
             <div class="arrow">
@@ -46,8 +51,8 @@ const Articles = () => {
             </div>
         </a>
 
-        <a href="https://doh.gov.ph/uhc/health-programs/family-planning-program/" target="_blank" class="card-item">
-            <img src={FP1} alt="Card Image"/>
+        <a href="https://doh.gov.ph/uhc/health-programs/family-planning-program/" target="_blank" rel="noopener noreferrer" class="card-item">
+            <img src={FP1} alt="Card Visualizer"/>
             <span class="FP">Family Planning</span>
             <h3>What is family planning in the Philippines?</h3>
             <div class="arrow">
@@ -55,8 +60,8 @@ const Articles = () => {
             </div>
         </a>
 
-        <a href="https://hellodoctor.com.ph/sexual-wellness/contraception/importance-family-planning/" target="_blank" class="card-item">
-            <img src={FP2} alt="Card Image"/>
+        <a href="https://hellodoctor.com.ph/sexual-wellness/contraception/importance-family-planning/" target="_blank" rel="noopener noreferrer" class="card-item">
+            <img src={FP2} alt="Card Visualizer"/>
             <span class="FP">Family Planning</span>
             <h3>Growing family size? Have family planning!</h3>
             <div class="arrow">
@@ -64,8 +69,8 @@ const Articles = () => {
             </div>
         </a>
 
-        <a href="https://www.netdoctor.co.uk/healthy-living/sex-life/a2314/sexual-intercourse/" target="_blank" class="card-item">
-            <img src={SX1} alt="Card Image"/>
+        <a href="https://www.netdoctor.co.uk/healthy-living/sex-life/a2314/sexual-intercourse/" target="_blank" rel="noopener noreferrer" class="card-item">
+            <img src={SX1} alt="Card Visualizer"/>
             <span class="Sex">Sex</span>
             <h3>What is an intercourse and how does it work?</h3>
             <div class="arrow">
@@ -73,8 +78,8 @@ const Articles = () => {
             </div>
         </a>
 
-        <a href="https://health.clevelandclinic.org/safe-sex" target="_blank" class="card-item">
-            <img src={SX2} alt="Card Image"/>
+        <a href="https://health.clevelandclinic.org/safe-sex" target="_blank" rel="noopener noreferrer" class="card-item">
+            <img src={SX2} alt="Card Visualizer"/>
             <span class="Sex">Sex</span>
             <h3>Let's practice safe sex, for the better!</h3>
             <div class="arrow">
@@ -82,8 +87,10 @@ const Articles = () => {
             </div>
         </a>
       </div>
-      </section>
+     </section>
+      <Footer/> 
     </>
+    
   )
 }
 

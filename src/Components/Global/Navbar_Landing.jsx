@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "../Navbar/Navbar_LandingStyle.css"
+import "../Global/Navbar_LandingStyle.css"
 import { Link } from "react-router-dom"
 import { FaBars } from "react-icons/fa"
 import { ImCross } from "react-icons/im"
