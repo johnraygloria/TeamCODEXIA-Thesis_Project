@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getFirestore, collection, getDocs, updateDoc, doc, deleteDoc } from 'firebase/firestore'; // Import deleteDoc
-import Nav from '../Navbar/Navbar_Main'
-import Sidebar from '../Navbar/Sidebar'
+import Nav from '../Global/Navbar_Main'
+import Sidebar from '../Global/Sidebar'
 import '../Admin/Dashboard.css';
 
 function DashboardAdmin() {

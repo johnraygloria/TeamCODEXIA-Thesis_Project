@@ -1,6 +1,6 @@
 import './HomeStyle.css';
 // import newhome from '../Components/Assets/newhome.png'
-import Nav from '../Components/Navbar/Navbar_Main'
+import Nav from '../Components/Global/Navbar_Main'
 import { Link } from 'react-router-dom'
 
 function Home() {

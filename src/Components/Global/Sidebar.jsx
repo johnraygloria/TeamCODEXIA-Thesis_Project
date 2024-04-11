@@ -1,5 +1,5 @@
 
-import "../Navbar/SidebarStyle.css"
+import "../Global/SidebarStyle.css"
 
 
 const Sidebar = () => {

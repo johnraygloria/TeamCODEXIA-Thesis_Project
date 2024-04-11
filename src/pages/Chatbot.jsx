@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import '../pages/ChatbotStyle.css';
+import { FaRobot } from "react-icons/fa";
 
 const Chatbot = () => {
     const [userMessage, setUserMessage] = useState(null);
@@ -8,11 +9,11 @@ const Chatbot = () => {
     const chatInputRef = useRef(null);
     const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
 
-    const createChatLi = (message, className) => {
+    const createChatLi = useCallback((message, className) => {
         return { message, className };
-    }
+    }, []);
 
-    const generateResponse = async (chatElement) => {
+    const generateResponse = useCallback(async (chatElement) => {
         const API_URL = "https://api.openai.com/v1/chat/completions";
         const requestOptions = {
             method: "POST",
@@ -35,7 +36,7 @@ const Chatbot = () => {
             const newChatElement = { ...chatElement, message: "Oops! Something went wrong. Please try again.", className: "error" };
             setChatList(prevChatList => prevChatList.map(chat => chat === chatElement ? newChatElement : chat));
         }
-    }
+    }, [userMessage, API_KEY]);
 
     const handleChat = () => {
         if(!chatInput.trim()) return;
@@ -58,21 +59,23 @@ const Chatbot = () => {
             setChatList(prevChatList => [...prevChatList, incomingChat]);
             generateResponse(incomingChat);
         }
-    }, [userMessage]);
+    }, [userMessage, createChatLi, generateResponse]);
 
     return (
         <div className="chatbot">
-            <header>
+            <header className="chatbotheader">
                 <h3>PlanItFamIt</h3>
                 <h2>PlanIt Assistant</h2>
             </header>
-            <ul className="chatbox">
-                {chatList.map((chat, index) => (
-                    <li key={index} className={`chat ${chat.className}`}>
-                        {chat.className === "outgoing" ? <p>{chat.message}</p> : <><span className="material-symbols-outlined">smart_toy</span><p>{chat.message}</p></>}
-                    </li>
-                ))}
-            </ul>
+            
+        <ul className="chatbox">
+            {chatList.map((chat, index) => (
+                <li key={index} className={`chat ${chat.className}`}>
+                    {chat.className === "outgoing" ? <p>{chat.message}</p> : <><span><FaRobot /></span><p>{chat.message}</p></>}
+                </li>
+            ))}
+        </ul>
+
             <div className="chat-input">
                 <textarea placeholder="Enter a message..." spellcheck="false" required value={chatInput} onChange={(e) => setChatInput(e.target.value)} onKeyPress={handleKeyPress} ref={chatInputRef} />
                 <span id="send-btn" className="material-symbols-rounded" onClick={handleChat}>send</span>

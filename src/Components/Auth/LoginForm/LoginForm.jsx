@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../../../Config/firebase";
 import { useHistory } from 'react-router-dom'; // React Router's useHistory hook
-import Navbar from '../../Navbar/Navbar_Landing.jsx';
+import Navbar from '../../Global/Navbar_Landing.jsx';
 
 
 function LoginForm  ()  {
@@ -51,12 +51,13 @@ function LoginForm  ()  {
     <Navbar/>
 
     <div className='welcome-message'>
-
-      <h1>PlanIt
+        <div className='welcome-message-bkg'>
+          <h1>PlanIt
         <h1 className='logo-color'>FamIt</h1>
       </h1>
         <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
       </div >
+    </div>
     
     
     <div className= 'wrapper' > 

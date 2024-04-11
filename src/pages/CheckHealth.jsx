@@ -11,7 +11,7 @@ import Add from '../Components/Assets/Add.png';
 
 import './CheckHealthStyle.css'
 
-import Navbar from '../Components/Navbar/Navbar_Main';
+import Navbar from '../Components/Global/Navbar_Main';
 
 const Type = (props) => {
   return (

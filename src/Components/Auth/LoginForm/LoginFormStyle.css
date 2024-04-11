@@ -141,11 +141,11 @@
 .welcome-message{
     /* display: inline-block; */
     position: absolute;
-    font-size: 80px;
+    font-size: 20px;
     top: -2%;
     /* margin-top: 60px; */
     font-family: 'Montserrat', sans-serif;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .welcome-message p{
@@ -178,4 +178,9 @@
     .footer-col{
       width: 100%;
   }
+  }
+
+  .welcome-message-bkg {
+    background-color: rgb(199, 235, 255, 0.5);
+    margin-top: 10%;
   }

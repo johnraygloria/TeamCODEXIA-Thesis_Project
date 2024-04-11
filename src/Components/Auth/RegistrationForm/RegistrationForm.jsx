@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../Config/firebase";
 import { useHistory } from "react-router-dom";
-import Navbar from "../../Navbar/Navbar_Landing.jsx";
+import Navbar from "../../Global/Navbar_Landing.jsx";
 import Modal from "react-modal";
 import { FaUser, FaLock } from "react-icons/fa";
 import "./RegistrationFormStyle.css"; // Import your CSS file
