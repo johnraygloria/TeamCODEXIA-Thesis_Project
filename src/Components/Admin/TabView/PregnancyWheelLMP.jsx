@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Calendar from 'react-calendar';
 import "react-calendar/dist/Calendar.css";
-import "../pages/PregnancyWheelStyle.css";
+import "../TabView/PregnancyWheelLMPStyle.css";
 import moment from 'moment';
 
-import Sidebar from '../Components/Global/Sidebar';
-import Navbar from '../Components/Global/Navbar_Main';
 
-function PregnancyWheel() {
+// Children 1: Last Menstruation Period 
+// Hierachy: three children (components), 1 parent, & 1  grandparent 
+
+function PregnancyWheelLMP() {
     const [USweeks, setUSweeks] = useState("");
     const [USdays, setUSdays] = useState("");
     const [EGAweeks, setEGAweeks] = useState("");
@@ -22,6 +23,23 @@ function PregnancyWheel() {
     const [thirdTrimester, setThirdTrimester] = useState(null);
     const [dueDate, setDueDate] = useState(null);
     const [EGA, setEGA] = useState("");
+
+    const reset = () => {
+        setUSweeks("");
+        setUSdays("");
+        setEGAweeks("");
+        setEGAdays("");
+        setLMP(new Date());
+        setUSDate(new Date());
+        setCycle(28);
+        setShowLmpCalendar(false);
+        setShowUsCalendar(false);
+        setConceptionDate(null);
+        setSecondTrimester(null);
+        setThirdTrimester(null);
+        setDueDate(null);
+        setEGA("");
+    };
 
     useEffect(() => {
         const conception = new Date(LMP.getTime());
@@ -70,51 +88,49 @@ function PregnancyWheel() {
 
     return (
         <>
-        <Navbar/>
-        <Sidebar/>
-        <div className="preg-bkg">
+
         <div className="wrapper1">
-            <form>
+        <form onSubmit={e => e.preventDefault()}>
                 <h2>Pregnancy Wheel</h2>
                 <p>This functions as wheel that represents the progression of pregnancy. </p>
 
                 <div className="input-US"> 
                     <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
-                    {showUsCalendar && <Calendar onChange={setUSDate} value={USDate} className="calendar mt-0" />}
+                    {showUsCalendar && <Calendar onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} value={USDate} className="calendar mt-0" />}
                     
                     <div className="input-USweeks"> 
                         <h3>Week/s:</h3>
-                        <input type="number" value={USweeks} onChange={e => setUSweeks(e.target.value)}></input>
+                        <input className="inp-usweeks" type="number" value={USweeks} onChange={e => setUSweeks(e.target.value)}></input>
                     </div>
 
                     <div className="input-USdays">
                         <h3>Day/s: </h3>
-                        <input type="number" value={USdays} onChange={e => setUSdays(e.target.value)}></input>
+                        <input className="inp-usdays" type="number" value={USdays} onChange={e => setUSdays(e.target.value)}></input>
                     </div>
                 </div>
-
+                
                 <div className='LMP1'>
                     <h2 onClick={() => {setShowLmpCalendar(!showLmpCalendar); setShowUsCalendar(false);}}>LMP: 
-                    {showLmpCalendar && <Calendar onChange={setLMP} value={LMP} className="calendar mt-0" />}
-                    {!showLmpCalendar && <p>{moment(LMP).format('MMMM Do YYYY')}</p>} {/* Display chosen date */}</h2>
-
+                    {showLmpCalendar && <Calendar onChange={(date) => {setLMP(date); setShowLmpCalendar(false);}} value={LMP} className="calendar mt-0" />}
+                    {!showLmpCalendar && <span>{moment(LMP).format('MMMM Do YYYY')}</span>} {/* Display chosen date */}</h2>
                 </div>
 
                 <div className='Conception1'>
-                    <h2>Conception Date: {conceptionDate && conceptionDate.toDateString()}</h2>
+                    <h2>Conception Date: <span>{conceptionDate && conceptionDate.toDateString()}</span></h2>
                 </div>
 
                 <div className='SecondTrimester1'>
-                    <h2>2nd Trimester Starts: {secondTrimester && secondTrimester.toDateString()}</h2>
+                    <h2>2nd Trimester Starts: <span>{secondTrimester && secondTrimester.toDateString()}</span></h2>
                 </div>
 
                 <div className='ThirdTrimester1'>
-                    <h2>3rd Trimester Starts: {thirdTrimester && thirdTrimester.toDateString()}</h2>
+                    <h2>3rd Trimester Starts: <span>{thirdTrimester && thirdTrimester.toDateString()}</span></h2>
                 </div>
 
                 <div className='DueDate1'>
-                    <h2>Estimated Due Date: {dueDate && dueDate.toDateString()}</h2>
+                    <h2>Estimated Due Date: <span>{dueDate && dueDate.toDateString()}</span></h2>
                 </div>
+
 
                 <div className='CycleLength-slider1'>
                     <h2>Cycle Length: {cycle} days</h2>
@@ -133,11 +149,14 @@ function PregnancyWheel() {
                         <input type="number" value={EGAdays} onChange={e => setEGAdays(e.target.value)}></input>
                     </div>
                 </div>
+
+                <button className="resetBtn" onClick={reset}>Reset</button>
+
             </form>
         </div>
-        </div>
+
     </>
     )
 }
 
-export default PregnancyWheel;
+export default PregnancyWheelLMP;

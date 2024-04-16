@@ -16,7 +16,7 @@ import Appointment from './pages/CalendarAppointment';
 import FillUpAppointment from './pages/FillUpAppointment';
 import Articles  from './pages/Articles';
 import Dashboard from './Components/Admin/DashboardAdmin'
-import PregnancyWheel from './pages/PregnancyWheel.jsx';
+import PregnancyWheel from './Components/Admin/TabView/PregnancyWheel.jsx';
 import Chatbot from './pages/Chatbot.jsx';
 
 

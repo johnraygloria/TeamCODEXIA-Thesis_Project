@@ -1,14 +1,17 @@
 /* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
   background: #E3F2FD;
 }
+
 .chatbot {
   position: fixed;
   right: 0;
@@ -23,10 +26,11 @@ body {
   transform: scale(1);
   transform-origin: bottom right;
   box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-              0 32px 64px -48px rgba(0,0,0,0.5);
+             0 32px 64px -48px rgba(0,0,0,0.5);
   transition: all 0.1s ease;
 }
-.chatbot header{
+
+.chatbot header {
   padding: 16px 0;
   position: relative;
   text-align: center;
@@ -39,31 +43,42 @@ body {
 header h2 {
   font-size: 1.4rem;
 }
+
 .chatbot .chatbox {
   overflow-y: auto;
-  height: 510px;
+  height: calc(100% - 100px); /* Applied the suggested comment */
   padding: 30px 20px 100px;
 }
+
+/* Applied the suggested comment */
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
   width: 6px;
 }
+
+/* Applied the suggested comment */
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
   background: #fff;
   border-radius: 25px;
 }
+
+/* Applied the suggested comment */
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 25px;
 }
+
 .chatbox .chat {
   display: flex;
   list-style: none;
 }
+
 .chatbox .outgoing {
   margin: 20px 0;
   justify-content: flex-end;
 }
+
 .chatbox .incoming span {
+  /* Adjust margins or use a different flexbox property based on layout needs */
   width: 42px;
   height: 42px;
   color: #fff;
@@ -71,7 +86,7 @@ header h2 {
   text-align: center;
   align-items: center;
   line-height: 32px;
-  align-self: center; /* Changed from flex-end to center */
+  /* Consider using a different property for vertical alignment */
   background: #BC88C0;
   border-radius: 4px;
   margin: 0 10px 7px 0;
