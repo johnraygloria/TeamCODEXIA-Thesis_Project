@@ -1,0 +1,144 @@
+.wrapper1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add other styles as needed */
+    margin-top: 0%;
+    background-color: rgba(238, 97, 153, 0.36);
+    width: 900px;
+    height: 700px;
+    padding-bottom: 2.1rem;
+    margin-left: 11rem;
+    font-family:"Montserrat",  sans-serif;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.calendar {
+    z-index: 1000;
+}
+
+/* For 1 line of Ultrasound (US)*/
+.input-US {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust as needed */
+}
+
+/* For 1 line of Ultrasound (US)*/
+.input-USweeks, .input-USdays {
+    display: flex;
+    align-items: center;
+    gap: 0px; /* Adjust as needed */
+}
+
+
+.inp-usweeks{
+    margin-left: 8%;
+    padding: 4px;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.inp-usdays{
+    margin-left: 10%;
+    padding: 4px;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.input-EGAdays, .input-EGAweeks{
+    display: flex;
+    align-items: center;
+}
+
+.resetBtn{
+    background-color: aliceblue;
+    padding: 1px 10px;
+    border-radius: 10px;
+}
+
+.LMP1 p{
+    display: flex;
+    align-items: center;
+}
+
+.LMP1{
+    margin-top: 15px;
+}
+
+
+.LMP1, .Conception1, .SecondTrimester1, .ThirdTrimester1, .DueDate1 {
+    margin-bottom: 2%;
+}
+
+
+.CycleLength-slider1 input[type='range'] {
+    /* Change the width to make the slider longer */
+    width: 100%;
+    
+    /* Change the height to make the slider thicker */
+    height: 14.5px;
+    
+    /* Appearance none to override browser default styles */
+    -webkit-appearance: none;
+    appearance: none;
+    
+    /* Add other styles as needed */
+    background: rgba(186, 237, 154, 10);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .4s;
+    border-radius: 20px;
+}
+
+.CycleLength-slider1 input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 32px;
+    background: rgb(224, 255, 205);
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.CycleLength-slider1 input[type='range']::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: rgb(224, 255, 205);
+    cursor: pointer;
+}
+
+.Conception1 span{
+    background-color: rgb(255, 255, 255);
+    padding: 2px 20px;
+    border-radius: 5px;
+    margin-left: 18.7rem;
+}
+
+.DueDate1 span{
+    background-color: rgb(255, 255, 255);
+    padding: 2px 20px;
+    border-radius: 5px;
+    margin-left: 16.5rem;
+}
+
+.LMP1 span{
+    background-color: rgb(255, 255, 255);
+    padding: 2px 20px;
+    border-radius: 5px;
+    margin-left: 29rem;
+}
+
+.SecondTrimester1 span{
+    background-color: rgb(255, 255, 255);
+    padding: 2px 20px;
+    border-radius: 5px;
+    margin-left: 16.2rem;
+}
+
+.ThirdTrimester1 span{
+    background-color: rgb(255, 255, 255);
+    padding: 2px 20px;
+    border-radius: 5px;
+    margin-left: 16.5rem;
+}
