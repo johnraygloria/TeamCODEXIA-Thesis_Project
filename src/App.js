@@ -18,6 +18,7 @@ import Articles  from './pages/Articles';
 import Dashboard from './Components/Admin/DashboardAdmin'
 import PregnancyWheel from './Components/Admin/TabView/PregnancyWheel.jsx';
 import Chatbot from './pages/Chatbot.jsx';
+import PatientsRecord from './Components/Admin/PatientsRecord'
 
 
 const App = () => {
@@ -63,6 +64,7 @@ const App = () => {
         <Dashboard/>
       </Route>
       
+
       <Route path='/Articles' compontent={ Articles } exact>
         <Articles />
       </Route>
@@ -79,12 +81,15 @@ const App = () => {
         <Chatbot/>
       </Route>
       
+     
+
     </Switch>
     </Router>
     
     <Router>
       <Switch>
         <Route path="/Dashboard" render={(props) => <Dashboard searchQuery={props.location.state?.searchQuery} />} />
+        <Route path="/PatientsRecord" component={ PatientsRecord } />
       </Switch>
     </Router>
 

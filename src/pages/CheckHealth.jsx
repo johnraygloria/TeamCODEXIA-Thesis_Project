@@ -67,7 +67,7 @@ const Type = (props) => {
         <div className="admin-st-margaret-intro">
           <div className='information-st-margaret'>
           <span className="intro-style">
-            <span>Intro</span>
+            <span>Intro:</span>
             <span></span>
           </span>
           <div className="admin-info-style">
@@ -122,44 +122,45 @@ const Type = (props) => {
         <div className="admin-about-conntainer">
 
           <span className="admin-about-footer">
-            <span>About</span>
+            <span>About:</span>
           </span>
-          <span className="admin-information-about">
-            <span>
+          <div className="admin-information-about">
+            <p>
               Lorem ipsum dolor sit amet. Et voluptatibus perferendis ex quia
               minus ut deserunt nobis et assumenda facilis qui fugiat dolorum ut
               commodi maiores. Aut iusto saepe et tempora architecto aut autem
               reiciendis. Id unde obcaecati ut sunt quos in debitis repellendus.
               Et repellendus natus aut natus rerum et ipsa aspernatur et
               voluptates dignissimos.
-            </span>
-          </span>
+            </p>
+          </div>
+
+  
           <span className="admin-services">
             <span>Services:</span>
           </span>
-          <span className="admin-clinic-services">
-            <span>MATERNITY PACKAGE (RM)</span>
-            <span>MATERNITY PACKAGE (OB)</span>
-            <span>NSD PACKAGE (RM)</span>
-            <span>NSD PACKAGE (OB)</span>
-            <span>NEWBORN CARE PACKAGE(RM)</span>
-            <span></span>
-          </span>
-          <span className="admin-clinic-services-2">
-            <span>NEWBORN CARE PACKAGE (OB)</span>
-            <span>FAMILY PLANNING CONSULT</span>
-            <span>PRENATAL CONSULTATION</span>
-            <span>POSTNATAL CONSULTATION</span>
-            <span>NEWBORN SCREENING</span>
-            <span></span>
-          </span>
-          <span className="admin-clinic-services-3">
-            <span>NEWBORN HEARING SCREENING</span>
-            <span>PAP-SMEAR</span>
-            <span>NON-STRESS TEST</span>
-            <span>EAR PIERCING</span>
-            <span>INTERNAL EXAMINATION</span>
-          </span>
+
+          <div className="admin-clinic-services">
+            <p>MATERNITY PACKAGE</p>
+            <p>MATERNITY PACKAGE</p>
+            <p>NSD PACKAGE</p>
+            <p>NSD PACKAGE</p>
+            <p>NEWBORN CARE PACKAGE</p>
+          </div>
+          <div className="admin-clinic-services-2">
+            <p>NEWBORN CARE PACKAGE</p>
+            <p>FAMILY PLANNING CONSULT</p>
+            <p>PRENATAL CONSULTATION</p>
+            <p>POSTNATAL CONSULTATION</p>
+            <p>NEWBORN SCREENING</p>
+          </div>
+          <div className="admin-clinic-services-3">
+            <p>NEWBORN HEARING SCREENING</p>
+            <p>PAP-SMEAR</p>
+            <p>NON-STRESS TEST</p>
+            <p>EAR PIERCING</p>
+            <p>INTERNAL EXAMINATION</p>
+          </div>
         </div>
       </div>
     </div>

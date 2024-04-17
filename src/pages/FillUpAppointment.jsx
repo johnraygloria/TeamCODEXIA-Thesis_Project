@@ -44,7 +44,7 @@ const AppointmentFillUp = () => {
       const docRef = await addDoc(collection(firestore, 'searchQueries'), searchQuery);
       console.log("Document written with ID: ", docRef.id);
       history.push({ // Redirect to DashboardAdmin with search query
-        pathname: '/DashboardAdmin',
+        // pathname: '/DashboardAdmin',
         state: { searchQuery }
       });
     } catch (error) {

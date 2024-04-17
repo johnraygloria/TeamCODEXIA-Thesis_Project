@@ -299,16 +299,17 @@
 .admin-about-conntainer {
   top: 543px;
   width: 1375px;
-  height: 451px;
+  height: 350px;
   display: flex;
   position: absolute;
   align-items: center;
   flex-shrink: 1;
   background-color: rgba(252, 252, 252, 1);
+  border-radius: 20px;
 }
 
 .admin-about-footer{
-  top: 30px;
+  top: 20px;
   left: 32px;
   color: rgba(30, 30, 30, 1);
   width: 384px;
@@ -324,13 +325,13 @@
   text-decoration: none;
 }
 .admin-information-about{
-  top: 80px;
+  top: 60px;
   left: 48px;
   color: rgba(75, 75, 75, 1);
   width: 1285px;
   height: auto;
   position: absolute;
-  font-size: 23px;
+  font-size: 18px;
   font-style: Regular;
   text-align: left;
   font-family: Arimo;
@@ -340,7 +341,7 @@
   text-decoration: none;
 }
 .admin-services {
-  top: 202px;
+  top: 42%;
   left: 49px;
   color: rgba(30, 30, 30, 1);
   width: 384px;
@@ -356,13 +357,13 @@
   text-decoration: none;
 }
 .admin-clinic-services {
-  top: 243px;
+  top: 190px;
   left: 50px;
   color: rgba(75, 75, 75, 1);
-  width: 366px;
+  width: 362px;
   height: auto;
   position: absolute;
-  font-size: 23px;
+  font-size: 18px;
   font-style: Regular;
   text-align: left;
   font-family: Arimo;
@@ -372,13 +373,13 @@
   text-decoration: none;
 }
 .admin-clinic-services-2 {
-  top: 243px;
+  top: 190px;
   left: 487px;
   color: rgba(75, 75, 75, 1);
   width: 379px;
   height: auto;
   position: absolute;
-  font-size: 23px;
+  font-size: 18px;
   font-style: Regular;
   text-align: left;
   font-family: Arimo;
@@ -388,13 +389,13 @@
   text-decoration: none;
 }
 .admin-clinic-services-3 {
-  top: 243px;
+  top: 190px;
   left: 937px;
   color: rgba(75, 75, 75, 1);
   width: 397px;
   height: auto;
   position: absolute;
-  font-size: 23px;
+  font-size: 18px;
   font-style: Regular;
   text-align: left;
   font-family: Arimo;
