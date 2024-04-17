@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../TabView/PregnancyWheelCRLStyle.css';
 import moment from 'moment';
 import Calendar from 'react-calendar';
+import Modal from 'react-modal'
 
 const PregnancyWheelCRL = () => {
   const [crl, setCrl] = useState('');
@@ -20,163 +21,188 @@ const PregnancyWheelCRL = () => {
   const [dueDate, setDueDate] = useState(null);
   const [EGA, setEGA] = useState("");
 
-  const reset = () => {
-    setUSweeks("");
-    setUSdays("");
-    setEGAweeks("");
-    setEGAdays("");
-    setLMP(new Date());
-    setUSDate(new Date());
-    setCycle(28);
-    setShowLmpCalendar(false);
-    setShowUsCalendar(false);
-    setConceptionDate(null);
-    setSecondTrimester(null);
-    setThirdTrimester(null);
-    setDueDate(null);
-    setEGA("");
-  };
+    const reset = () => {
+      setUSweeks("");
+      setUSdays("");
+      setEGAweeks("");
+      setEGAdays("");
+      setLMP(new Date());
+      setUSDate(new Date());
+      setCycle(28);
+      setShowLmpCalendar(false);
+      setShowUsCalendar(false);
+      setConceptionDate(null);
+      setSecondTrimester(null);
+      setThirdTrimester(null);
+      setDueDate(null);
+      setEGA("");
+    };
 
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    if (value >= 1 && value <= 84) {
-      setCrl(value);
-    }
-  };
-
-  useEffect(() => {
-    const conception = new Date(LMP.getTime());
-    conception.setDate(conception.getDate() + (cycle - 14)); // Corrected for ovulation
-    setConceptionDate(conception);
-
-    const second = new Date(conception.getTime());
-    second.setDate(second.getDate() + 14 * 7);
-    setSecondTrimester(second);
-
-    const third = new Date(conception.getTime());
-    third.setDate(third.getDate() + 28 * 7);
-    setThirdTrimester(third);
-
-    const due = new Date(conception.getTime());
-    due.setDate(due.getDate() + 40 * 7);
-    setDueDate(due);
-  }, [LMP, cycle]);
-
-  useEffect(() => {  // US is used when 5 days off from LMP dating.. 
-    if (USweeks !== "" && USdays !== "") {
-      const ultrasoundDate = new Date(USDate.getTime());
-      ultrasoundDate.setDate(ultrasoundDate.getDate() + parseInt(USweeks) * 7 + parseInt(USdays));
-      const diffDays = Math.abs((ultrasoundDate.getTime() - LMP.getTime()) / (1000 * 60 * 60 * 24));
-      if (diffDays > 5) {
-        setLMP(ultrasoundDate);
+    // Custom style for the modal
+    const customStyles = {
+      content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          width: 'fit-content',
+          height: 'fit-content',
+          minWidth: '300px', // Minimum width
+          minHeight: '300px', // Minimum height
       }
-    }
-  }, [USweeks, USdays, USDate, LMP]);
+    };
+  
+    // To set up modal styles
+    Modal.setAppElement('#root');
+  
 
-  useEffect(() => {
-    const today = new Date();
-    const diffTime = Math.abs(today - LMP);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-    setEGA(Math.floor(diffDays/7) + " weeks and " + diffDays%7 + " days");
-  }, [LMP]);
+    const handleInputChange = (event) => {
+      const value = event.target.value;
+      if (value >= 1 && value <= 84) {
+        setCrl(value);
+      }
+    };
 
-  useEffect(() => {
-    if (EGAweeks !== "" && EGAdays !== "") {
+    useEffect(() => {
+      const conception = new Date(LMP.getTime());
+      conception.setDate(conception.getDate() + (cycle - 14)); // Corrected for ovulation
+      setConceptionDate(conception);
+
+      const second = new Date(conception.getTime());
+      second.setDate(second.getDate() + 14 * 7);
+      setSecondTrimester(second);
+
+      const third = new Date(conception.getTime());
+      third.setDate(third.getDate() + 28 * 7);
+      setThirdTrimester(third);
+
+      const due = new Date(conception.getTime());
+      due.setDate(due.getDate() + 40 * 7);
+      setDueDate(due);
+    }, [LMP, cycle]);
+
+    useEffect(() => {  // US is used when 5 days off from LMP dating.. 
+      if (USweeks !== "" && USdays !== "") {
+        const ultrasoundDate = new Date(USDate.getTime());
+        ultrasoundDate.setDate(ultrasoundDate.getDate() + parseInt(USweeks) * 7 + parseInt(USdays));
+        const diffDays = Math.abs((ultrasoundDate.getTime() - LMP.getTime()) / (1000 * 60 * 60 * 24));
+        if (diffDays > 5) {
+          setLMP(ultrasoundDate);
+        }
+      }
+    }, [USweeks, USdays, USDate, LMP]);
+
+    useEffect(() => {
       const today = new Date();
-      const EGAdate = new Date(today.getTime());
-      EGAdate.setDate(EGAdate.getDate() + parseInt(EGAweeks) * 7 + parseInt(EGAdays));
-      setLMP(EGAdate);
-    }
-  }, [EGAweeks, EGAdays]);
+      const diffTime = Math.abs(today - LMP);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+      setEGA(Math.floor(diffDays/7) + " weeks and " + diffDays%7 + " days");
+    }, [LMP]);
 
-  const computeFormulas = () => {
-    // Replace these with the actual formulas
-    const intergrowth = 40.9041 + 3.21585 / crl + 0.348956 * crl; // Updated formula
-    const sahota = crl * 3; // Placeholder formula
-    const verburg = crl * 4; // Placeholder formula
-    const robinsons = crl * 5; // Placeholder formula
+    useEffect(() => {
+      if (EGAweeks !== "" && EGAdays !== "") {
+        const today = new Date();
+        const EGAdate = new Date(today.getTime());
+        EGAdate.setDate(EGAdate.getDate() + parseInt(EGAweeks) * 7 + parseInt(EGAdays));
+        setLMP(EGAdate);
+      }
+    }, [EGAweeks, EGAdays]);
 
-    return { intergrowth, sahota, verburg, robinsons };
-  };
+    const computeFormulas = () => {
+      // Replace these with the actual formulas
+      const intergrowth = 40.9041 + 3.21585 / crl + 0.348956 * crl; // Updated formula
+      const sahota = crl * 3; // Placeholder formula
+      const verburg = crl * 4; // Placeholder formula
+      const robinsons = crl * 5; // Placeholder formula
 
-  const { intergrowth, sahota, verburg, robinsons } = computeFormulas();
+      return { intergrowth, sahota, verburg, robinsons };
+    };
 
-  return (
-    <>
-      <div className="wrapper1">
+    const { intergrowth, sahota, verburg, robinsons } = computeFormulas();
 
-        <form onSubmit={e => e.preventDefault()}>
-          <h2>Pregnancy Wheel</h2>
-          <p>This functions as wheel that represents the progression of pregnancy. </p>
+    return (
+      <>
+        <div className="wrapper3">
 
-          <div className="CRLinput">
-          <input type="number" value={crl} onChange={handleInputChange} />
-          <p>Intergrowth: {intergrowth}</p>
-          <p>Sahota: {sahota}</p>
-          <p>Verburg: {verburg}</p>
-          <p>Robinsons: {robinsons}</p>
+          <form onSubmit={e => e.preventDefault()}>
+            <h2>Pregnancy Wheel</h2>
+            <p>This functions as wheel that represents the progression of pregnancy. </p>
+
+            <div className="CRLinput">
+            <input type="number" value={crl} onChange={handleInputChange} />
+            <p>Intergrowth: {intergrowth}</p>
+            <p>Sahota: {sahota}</p>
+            <p>Verburg: {verburg}</p>
+            <p>Robinsons: {robinsons}</p>
+          </div>
+
+
+              <div className="input-US"> 
+                <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
+                  <Modal isOpen={showUsCalendar} onRequestClose={() => setShowUsCalendar(false)} style={customStyles}>
+                      <Calendar selected={USDate} onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} className="calendar mt-0" />
+                    </Modal>
+              
+              <div className="input-USweeks"> 
+                <h3>Week/s:</h3>
+                <input type="number" value={USweeks} onChange={e => setUSweeks(e.target.value)}></input>
+              </div>
+
+              <div className="input-USdays">
+                <h3>Day/s: </h3>
+                <input type="number" value={USdays} onChange={e => setUSdays(e.target.value)}></input>
+              </div>
+            </div>
+
+            <div className='LMP1'>
+                <h2 onClick={() => {setShowLmpCalendar(!showLmpCalendar); setShowUsCalendar(false);}}>Last Menstrual Period: 
+                <Modal isOpen={showLmpCalendar} onRequestClose={() => setShowLmpCalendar(false)} style={customStyles}>
+                    <Calendar selected={LMP} onChange={(date) => {setLMP(date); setShowLmpCalendar(false);}} className="calendar mt-0" />
+                </Modal>
+                {!showLmpCalendar && <span>{moment(LMP).format('MMMM Do YYYY')}</span>} {/* Display chosen date */}</h2>
+            </div>
+
+            <div className='Conception1'>
+              <h2>Conception Date: {conceptionDate && conceptionDate.toDateString()}</h2>
+            </div>
+
+            <div className='SecondTrimester1'>
+              <h2>2nd Trimester Starts: {secondTrimester && secondTrimester.toDateString()}</h2>
+            </div>
+
+            <div className='ThirdTrimester1'>
+              <h2>3rd Trimester Starts: {thirdTrimester && thirdTrimester.toDateString()}</h2>
+            </div>
+
+            <div className='DueDate1'>
+              <h2>Estimated Due Date: {dueDate && dueDate.toDateString()}</h2>
+            </div>
+
+            <div className='CycleLength-slider1'>
+              <h2>Cycle Length: {cycle} days</h2>
+              <input type="range" min="20" max="45" value={cycle} onChange={e => setCycle(e.target.value)} />
+            </div>
+
+            <div className='EGA1'>
+              <h2>Estimated Gestational Age: {EGA}</h2>
+              <div className="input-EGAweeks"> 
+                <h3>Week/s:</h3>
+                <input type="number" value={EGAweeks} onChange={e => setEGAweeks(e.target.value)}></input>
+              </div>
+
+              <div className="input-EGAdays">
+                <h3>Day/s: </h3>
+                <input type="number" value={EGAdays} onChange={e => setEGAdays(e.target.value)}></input>
+              </div>
+            </div>
+
+            <button className="resetBtn" onClick={reset}>Reset</button>
+          </form>
         </div>
-
-          <div className="input-US"> 
-            <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
-            {showUsCalendar && <Calendar onChange={setUSDate} value={USDate} className="calendar mt-0" />}
-            
-            <div className="input-USweeks"> 
-              <h3>Week/s:</h3>
-              <input type="number" value={USweeks} onChange={e => setUSweeks(e.target.value)}></input>
-            </div>
-
-            <div className="input-USdays">
-              <h3>Day/s: </h3>
-              <input type="number" value={USdays} onChange={e => setUSdays(e.target.value)}></input>
-            </div>
-          </div>
-
-          <div className='LMP1'>
-            <h2 onClick={() => {setShowLmpCalendar(!showLmpCalendar); setShowUsCalendar(false);}}>LMP: 
-            {showLmpCalendar && <Calendar onChange={setLMP} value={LMP} className="calendar mt-0" />}
-            {!showLmpCalendar && <p>{moment(LMP).format('MMMM Do YYYY')}</p>} {/* Display chosen date */}</h2>
-          </div>
-
-          <div className='Conception1'>
-            <h2>Conception Date: {conceptionDate && conceptionDate.toDateString()}</h2>
-          </div>
-
-          <div className='SecondTrimester1'>
-            <h2>2nd Trimester Starts: {secondTrimester && secondTrimester.toDateString()}</h2>
-          </div>
-
-          <div className='ThirdTrimester1'>
-            <h2>3rd Trimester Starts: {thirdTrimester && thirdTrimester.toDateString()}</h2>
-          </div>
-
-          <div className='DueDate1'>
-            <h2>Estimated Due Date: {dueDate && dueDate.toDateString()}</h2>
-          </div>
-
-          <div className='CycleLength-slider1'>
-            <h2>Cycle Length: {cycle} days</h2>
-            <input type="range" min="20" max="45" value={cycle} onChange={e => setCycle(e.target.value)} />
-          </div>
-
-          <div className='EGA1'>
-            <h2>Estimated Gestational Age: {EGA}</h2>
-            <div className="input-EGAweeks"> 
-              <h3>Week/s:</h3>
-              <input type="number" value={EGAweeks} onChange={e => setEGAweeks(e.target.value)}></input>
-            </div>
-
-            <div className="input-EGAdays">
-              <h3>Day/s: </h3>
-              <input type="number" value={EGAdays} onChange={e => setEGAdays(e.target.value)}></input>
-            </div>
-          </div>
-
-          <button className="resetBtn" onClick={reset}>Reset</button>
-        </form>
-      </div>
-    </>
-  );
-};
+      </>
+    );
+  };
 
 export default PregnancyWheelCRL;

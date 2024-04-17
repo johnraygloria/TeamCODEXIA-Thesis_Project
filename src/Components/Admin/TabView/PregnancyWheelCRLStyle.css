@@ -1,0 +1,14 @@
+.wrapper3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add other styles as needed */
+    margin-top: 0%;
+    background-color: rgba(238, 97, 153, 0.36);
+    width: 900px;
+    height: 800px;
+    padding-bottom: 2.1rem;
+    margin-left: 11rem;
+    font-family:"Montserrat",  sans-serif;
+    border-radius: 0px 0px 20px 20px;
+}
