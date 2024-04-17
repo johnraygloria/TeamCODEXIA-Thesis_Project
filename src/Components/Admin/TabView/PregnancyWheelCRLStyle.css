@@ -1,0 +1,40 @@
+.wrapper3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add other styles as needed */
+    margin-top: 0%;
+    background-color: rgba(238, 97, 153, 0.36);
+    width: 900px;
+    height: 900px;
+    padding-bottom: 2.1rem;
+    margin-left: 11rem;
+    font-family:"Montserrat",  sans-serif;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.CRLinput {
+    display: flex;
+    align-items: center;
+}
+
+.inp-CRL {
+    margin-left: 3%;
+    padding: 4px;
+    width: 5rem;
+    border-radius: 5px;
+    text-align: justify;
+    font-weight: 700;
+    font-size: large;
+    height: 2rem;
+}
+
+.wrapper3 p{
+    margin-bottom: 30px;
+}
+
+.wrapper3 h1{
+    color: #363636;
+    letter-spacing: .5px;
+    font-size: 40px;
+}
