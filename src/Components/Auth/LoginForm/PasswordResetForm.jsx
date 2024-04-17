@@ -1,7 +1,7 @@
 // Page for resetting password
 
 import React, { useState } from "react";
-import Navbar from "../../Navbar/Navbar_Landing";
+import Navbar from "../../Global/Navbar_Landing";
 import "../LoginForm/PasswordResetFormStyle.css";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../Config/firebase";
@@ -45,6 +45,10 @@ function PasswordResetForm() {
               <input type="email" name="email" placeholder="Enter your email" />
               </div>
               <button type="submit">Send Reset Email</button>
+
+              <div className="go-back">
+                <p> Go, back  to login page? Click <a href="/Login">here.</a></p> 
+              </div>
             </form>
           </div>
       </div>

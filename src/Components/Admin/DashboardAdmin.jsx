@@ -1,14 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { getFirestore, collection, getDocs, updateDoc, doc, deleteDoc } from 'firebase/firestore'; // Import deleteDoc
-import Nav from '../Navbar/Navbar_Main'
-import Sidebar from '../Navbar/Sidebar'
+import { useLocation, useHistory } from 'react-router-dom';
+import { getFirestore, collection, getDocs, updateDoc, doc, deleteDoc } from 'firebase/firestore';
+import Nav from '../Global/Navbar_Main';
+import Sidebar from '../Global/Sidebar';
 import '../Admin/Dashboard.css';
 
 function DashboardAdmin() {
   const location = useLocation();
-  const searchQuery = location.state?.searchQuery || {};
+  const history = useHistory();
+
   const [pendingAppointments, setPendingAppointments] = useState([]);
   const [approvedAppointments, setApprovedAppointments] = useState([]);
 
@@ -24,38 +24,28 @@ function DashboardAdmin() {
       }
     };
 
-    fetchAppointments();  
+    fetchAppointments();
   }, []);
 
   useEffect(() => {
-    // Load approved appointments from local storage
     const approvedAppointmentsFromStorage = JSON.parse(localStorage.getItem('approvedAppointments') || '[]');
     setApprovedAppointments(approvedAppointmentsFromStorage);
   }, []);
 
   const handleApprove = async (id) => {
-    // Find the appointment with the given id
     const appointmentToApprove = pendingAppointments.find(appointment => appointment.id === id);
     if (appointmentToApprove) {
       try {
-        // Update appointment status in the database
         const firestore = getFirestore();
         await updateDoc(doc(firestore, 'searchQueries', id), { approved: true });
-        
-        // Remove the approved appointment from the pending appointments list
         setPendingAppointments(prevAppointments => prevAppointments.filter(appointment => appointment.id !== id));
 
-        // Update local storage for pending appointments
+        // Store in localStorage
         const updatedPendingAppointments = pendingAppointments.filter(appointment => appointment.id !== id);
         localStorage.setItem('pendingAppointments', JSON.stringify(updatedPendingAppointments));
 
-        // Delete the approved appointment from the real-time database
-        await deleteDoc(doc(firestore, 'searchQueries', id)); // Delete from Firestore
-
-        // Update local state for approved appointments
+        await deleteDoc(doc(firestore, 'searchQueries', id));
         setApprovedAppointments(prevAppointments => [...prevAppointments, appointmentToApprove]);
-
-        // Store approved appointments in local storage
         const approvedAppointmentsFromStorage = JSON.parse(localStorage.getItem('approvedAppointments') || '[]');
         localStorage.setItem('approvedAppointments', JSON.stringify([...approvedAppointmentsFromStorage, appointmentToApprove]));
       } catch (error) {
@@ -64,58 +54,43 @@ function DashboardAdmin() {
     }
   };
 
-  return (
-    <>
-      <div className='bgd-page'>
-        <Sidebar/>
-        <Nav />
-        {/* <h1>Dashboard</h1>
-        <input type="checkbox" id="menu-toggle1" />
-        <div className="sidebar-container1">
-          <div className="side-menu">
-            <ul>
-              <li>
-                <a>
-                  <span className="las la-user-alt" />
-                  <small>Dashboard</small>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="las la-user-alt" />
-                  <small>Doctor & Staffs</small>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="las la-envelope" />
-                  <small>Patients</small>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="las la-clipboard-list" />
-                  <small>Appointment</small>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span className="las la-shopping-cart" />
-                  <small>Pregnancy Wheel</small>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="side-conten-container">
-            <div className="profile">
-              <div className="profile-img bg-img">CLINIC PROFILE/LOGO</div>
-              <h4>CLINIC NAME</h4>
-              <small>Log out</small>
-            </div>
-          </div>
-        </div> */}
+  const handleReject = async (id) => {
+    try {
+      const firestore = getFirestore();
+      await deleteDoc(doc(firestore, 'searchQueries', id));
+      const updatedPendingAppointments = pendingAppointments.filter(appointment => appointment.id !== id);
+      setPendingAppointments(updatedPendingAppointments);
+      localStorage.setItem('pendingAppointments', JSON.stringify(updatedPendingAppointments));
+    } catch (error) {
+      console.error("Error rejecting appointment: ", error);
+    }
+  };
 
-        <div className="page-content">
+  const handleDone = (appointment) => {
+    try {
+      // Update approved appointments locally
+      const updatedApprovedAppointments = approvedAppointments.filter(app => app.id !== appointment.id);
+      setApprovedAppointments(updatedApprovedAppointments);
+      localStorage.setItem('approvedAppointments', JSON.stringify(updatedApprovedAppointments));
+  
+      // Store the appointment data in localStorage under 'patientsRecords'
+      const patientsRecords = JSON.parse(localStorage.getItem('patientsRecords') || '[]');
+      localStorage.setItem('patientsRecords', JSON.stringify([...patientsRecords, appointment]));
+  
+      // Navigate to PatientsRecord with appointment details
+      // history.push('/PatientsRecord');
+    } catch (error) {
+      console.error("Error handling done action: ", error);
+    }
+  };
+  
+
+  return (
+    <div className='bgd-page'>
+      <Sidebar />
+      <Nav />
+      
+      <div className="page-content">
           <div className="analytics">
             <h1 className='dash-name'>Dashboard</h1>
             <div className="card">
@@ -169,83 +144,78 @@ function DashboardAdmin() {
           </div>
         </div>
 
-        <div className="main-content">
-          <main>
-            <div className="records table-responsive">
-              {/* Approved Appointments section */}
-              <h2>Approved Appointments</h2>
-              <table  className='appointment-content' width="100%">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Age</th>
-                    <th>Type of Appointment</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Action</th>
+      <div className="main-content">
+        <main>
+          <div className="records table-responsive">
+            {/* Approved Appointments section */}
+            <h2>Approved Appointments</h2>
+            <table className='appointment-content' width="100%">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                  <th>Type of Appointment</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {approvedAppointments.map((appointment, index) => (
+                  <tr key={appointment.id}>
+                    <td>{index + 1}</td>
+                    <td>{appointment.name || 'N/A'}</td>
+                    <td>{appointment.email || 'N/A'}</td>
+                    <td>{appointment.age || 'N/A'}</td>
+                    <td>{appointment.appointmentType || 'N/A'}</td>
+                    <td>{appointment.date || 'N/A'}</td>
+                    <td>{appointment.time || 'N/A'}</td>
+                    <td>
+                      <button className='done-btn' onClick={() => handleDone(appointment)}>Done</button>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {approvedAppointments.map((appointment, index) => (
-                    <tr key={appointment.id}>
-                      <td>{index + 1}</td>
-                      <td>{appointment.name || 'N/A'}</td>
-                      <td >{appointment.email || 'N/A'}</td>
-                      <td >{appointment.age || 'N/A'}</td>
-                      <td>{appointment.appointmentType || 'N/A'}</td>
-                      <td>{appointment.date || 'N/A'}</td>
-                      <td>{appointment.time || 'N/A'}</td>
-                      <td>
-                        {/* Add buttons for approving and rejecting */}
-                        {/* <button className='done-btn' >Delete</button> */}
-                        <button className='done-btn' >Delete</button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              {/* Pending Appointments section */}
-              <h2>Pending Appointments</h2>
-              <table width="100%">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Age</th>
-                    <th>Type of Appointment</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Action</th>
+                ))}
+              </tbody>
+            </table>
+            {/* Pending Appointments section */}
+            <h2>Pending Appointments</h2>
+            <table width="100%">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                  <th>Type of Appointment</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pendingAppointments.map((appointment, index) => (
+                  <tr key={appointment.id}>
+                    <td>{index + 1}</td>
+                    <td>{appointment.name || 'N/A'}</td>
+                    <td>{appointment.email || 'N/A'}</td>
+                    <td>{appointment.age || 'N/A'}</td>
+                    <td>{appointment.appointmentType || 'N/A'}</td>
+                    <td>{appointment.date || 'N/A'}</td>
+                    <td>{appointment.time || 'N/A'}</td>
+                    <td>
+                      <button className='approve-btn' onClick={() => handleApprove(appointment.id)}>Approve</button>
+                      <button className='not-approve-btn' onClick={() => handleReject(appointment.id)}>Reject</button>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {pendingAppointments.map((appointment, index) => (
-                    <tr key={appointment.id}>
-                      <td>{index + 1}</td>
-                      <td>{appointment.name || 'N/A'}</td>
-                      <td>{appointment.email || 'N/A'}</td>
-                      <td>{appointment.age || 'N/A'}</td>
-                      <td>{appointment.appointmentType || 'N/A'}</td>
-                      <td>{appointment.date || 'N/A'}</td>
-                      <td>{appointment.time || 'N/A'}</td>
-                      <td>
-                        {/* Add buttons for approving and rejecting */}
-                        <button className='approve-btn' onClick={() => handleApprove(appointment.id)}>Approve</button>
-                        <button className='not-approve-btn'>Reject</button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </main>
-        </div>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </main>
       </div>
-    </>
+    </div>
   );
 }
 

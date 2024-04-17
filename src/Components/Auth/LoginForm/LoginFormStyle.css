@@ -141,17 +141,17 @@
 .welcome-message{
     /* display: inline-block; */
     position: absolute;
-    font-size: 80px;
+    font-size: 20px;
     top: -2%;
     /* margin-top: 60px; */
     font-family: 'Montserrat', sans-serif;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .welcome-message p{
     font-size: 25px;
     margin-top: auto;
-    font-family: 'Montserrat', sans-serif,;
+    font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     margin-left: 60px;
     text-align: justify;
@@ -179,3 +179,10 @@
       width: 100%;
   }
   }
+
+  /*.welcome-message-bkg {
+    background-color: rgb(199, 235, 255, 0.5);
+    margin-top: 10%;
+  }*/
+
+  

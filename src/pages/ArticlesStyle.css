@@ -16,15 +16,14 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     max-width: 1250px;
-    margin: 150px auto;
-    padding: 20px;
-    padding-left: 30%;
+    margin: -50% auto;
+    padding: 5px;
     gap: 20px;
 }
 
 .card-list .card-item {
     background: #fff;
-    padding: 26px;
+    padding: 12.5px;
     border-radius: 8px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
     list-style: none;
@@ -48,24 +47,24 @@ body {
 .card-list span {
     display: inline-block;
     background: #F7DFF5;
-    margin-top: 32px;
+    margin-top: 5px;
     padding: 8px 15px;
     font-size: 0.75rem;
     border-radius: 50px;
     font-weight: 600;
 }
 
-.card-list .developer {
+.card-list .Reproductive {
     background-color: #F7DFF5; 
     color: #B22485;
 }   
 
-.card-list .designer {
+.card-list .Sex {
     background-color: #d1e8ff;
     color: #2968a8;
 }
 
-.card-list .editor {
+.card-list .FP{
     background-color: #d6f8d6; 
     color: #205c20;
 }
@@ -73,8 +72,8 @@ body {
 .card-item h3 {
     color: #000;
     font-size: 1.438rem;
-    margin-top: 28px;
-    font-weight: 600;
+    margin-top: 10px;
+    font-weight: 400;
 }
 
 .card-item .arrow {
@@ -87,7 +86,7 @@ body {
     color: #000;
     border: 1px solid #000;
     border-radius: 50%;
-    margin-top: 40px;
+    margin-top: 20px;
     transition: 0.2s ease;
 }
 
@@ -111,10 +110,50 @@ body {
 
 .articles-image{
     position: absolute;
-    clip: rect(0px,2000px,350px,0px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip: rect(0px, 2000px, 400px, 0px);
+    z-index: -1;
 }
+
 
 .article-cards{
     padding-top: 30%;
+    display: flex;
     align-items: center;
 }
+
+.Heading{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Heading h2{
+    padding-top: 10%;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    color: #000;
+}
+
+.Underline h3{
+    font-family: "Montserrat",  sans-serif;
+    font-size: 21.5px;
+    text-align: center;
+    color: #4D4D4D;
+    text-align: center;
+    font-optical-sizing: auto;
+    margin-top: 10px;
+    font-weight: 100;
+}
+

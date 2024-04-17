@@ -1,11 +1,10 @@
 
-import "../Navbar/SidebarStyle.css"
-
+import "../Global/SidebarStyle.css"
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <>  
-    <h1>Dashboard</h1>
         <input type="checkbox" id="menu-toggle1" />
         <div className="sidebar-container1">
           <div className="side-menu">
@@ -23,18 +22,12 @@ const Sidebar = () => {
                 </a>
               </li>
               <li>
-                <a>
-                  <span/>
-                  <small>Patients</small>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span/>
-                  <small>Appointment</small>
-                </a>
-              </li>
-              <li>
+              <Link to="/PatientsRecord">
+                <span />
+                <small>Patients Record</small>
+              </Link>
+            </li>
+              <li>  
                 <a>
                   <span />
                   <small>Pregnancy Wheel</small>

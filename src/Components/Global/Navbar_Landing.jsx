@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "../Navbar/Navbar_LandingStyle.css"
+import "../Global/Navbar_LandingStyle.css"
 import { Link } from "react-router-dom"
 import { FaBars } from "react-icons/fa"
 import { ImCross } from "react-icons/im"
@@ -12,14 +12,7 @@ const Navbar = () => {
   const [Mobile, setMobile] = useState(false)
   return (
     <>
-    <div className="landingpagebkg">
-        <div className="flex-landingbkg1">
-          <img src={background1} alt="background1"  />
-          </div>
-        <div className="flex-landingbkg2" >
-          <img src={background2} alt="background2" />
-        </div>
-    </div>
+
 
       <nav className='navbar'>
         
@@ -44,6 +37,15 @@ const Navbar = () => {
           {Mobile ? <ImCross /> : <FaBars />}
         </button>
       </nav>
+
+      <div className="landingpagebkg">
+        <div className="flex-landingbkg1">
+          <img src={background1} alt="background1"  />
+          </div>
+        <div className="flex-landingbkg2" >
+          <img src={background2} alt="background2" />
+        </div>
+    </div>
 
     
 </>

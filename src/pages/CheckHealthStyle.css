@@ -1,286 +1,406 @@
-.selected_center {
+.admin-page-container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  /* text-align: center; */
-  justify-content: space-evenly;
-  position: fixed;
-  top: 50%;
-  right: 10%;
-  transform: translateY(-50%);
-  background-color: #ffffff;
-  border: 1px solid #A024A3;
-  padding: 50px;
-  max-width: 100%;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
 }
-.btn_appointment{
-  cursor: pointer;
-}
-
-.container_type{
-  /* display: inline-block; */
-  margin-top: 8%;
+.admin-clinic-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
   position: relative;
-}
-.second_search{
-  /* background-color:#B39595 ; */
-  height: 85vh;
-  margin-left: 3%;
-  margin-right: 3%;
-  /* margin-top: 100%; */
-}
-.second_search a{
-  font-size: 25px;
-  font-family:'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  color: #4d4d4d;
-}
-.third_search{
-  margin-top: 1%;
-}
-.typemoko_second{
-  border: none;
-  width: 490px;
-  height: 55px;
-  border-radius: 5px;
-  background: #E9E9E9;
-  color: #B39595;
-  font-family: Montserrat;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.fourth_para{
-  color: #A024A3;
-  font-family:'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  font-size: 20px;
-  margin-top: 2%;
-}.second_search{
-  height: 85vh;
-  margin-left: 7%;
-  margin-top: 2%;
-}
-.second_search a{
-  font-size: 25px;
-  font-family:'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  color: #4d4d4d;
-}
-.third_search{
-  margin-top: 1%;
-}
-.typemoko_second{
-  border: none;
-  width: 490px;
-  height: 55px;
-  border-radius: 5px;
-  background: #E9E9E9;
-  color: #B39595;
-  font-family: Montserrat;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.fourth_para{
-  color: #A024A3;
-  font-family:'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  font-size: 20px;
-  margin-top: 2%;
-}
-
-
-.tow_container {
-  border-radius: 5px;
-  /* border: 2px solid #a024a3; */
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(204, 204, 204, 0.9);
-  max-width: 523px;
-  margin-top: 2%;
-  padding: 10px 13px;
-  cursor: pointer;
-  transition: 2em;
-}
-/* 
-.tow_container:hover{
-  border: 2px solid #a024a3;
-} */
-
-.tow_container:active{
-  border: 2px solid #a024a3;
-}
-
-.image_wrapper {
-  gap: 20px;
-  display: flex;
-}
-
-.column {
-  display: flex;
-  flex-direction: column; 
-  line-height: normal;
-
-}
-
-
-.brgy_mo {
-  aspect-ratio: 1.08;
-  object-fit: contain;
-  object-position: center;
-  width: 140px;
-  overflow: hidden;
-  max-width: 100%;
-  flex-grow: 1;
-}
-
-.location {
-  display: flex;
-  flex-direction: column;
-  margin: auto 0;
-}
-
-.title {  
-  color: #4c4c4c;
-  border-radius: 5px;
-  background-color: #fff;
+  background: linear-gradient(149deg, rgba(245, 173, 207, 1) 25%, rgba(195, 255, 159, 1) 55%, rgba(253, 176, 255, 1) 83%);
+  align-items: center;
   justify-content: center;
-  padding: 5px 48px 8px 11px;
-  font: 700 16px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  flex-shrink: 0;
 }
-
-
-.details {
+.adminpage-infro-margaret{
   display: flex;
-  margin-top: 16px;
-  flex-direction: column;
-}
-
-.div_4 {
-  color: #1e1e1e;
-  font: 500 12px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.div_5 {
-  color: #1e1e1e;
-  margin-top: 16px;
-  white-space: nowrap;
-  font: 500 12px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-
-.third_container {
-  border-radius: 5px;
-  /* border: 2px solid #a024a3; */
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(204, 204, 204, 0.9);
-  max-width: 523px;
-  margin-top: 3%;
-  padding: 10px 13px;
-  cursor: pointer;
-}
-
-.image_wrapper_two {
-  gap: 20px;
-  display: flex;
-}
-
-.column_tow {
-  display: flex;
-  flex-direction: column; 
-  line-height: normal;
-}
-
-
-.brgy_mo_two{
-  aspect-ratio: 1.08;
-  object-fit: contain;
-  object-position: center;
-  width: 140px;
-  overflow: hidden;
-  max-width: 100%;
-  flex-grow: 1;
-}
-
-.location_two {
-  display: flex;
-  flex-direction: column;
-  margin: auto 0;
-}
-
-.title_two {  
-  color: #4c4c4c;
-  border-radius: 5px;
-  background-color: #fff;
+  align-items: center;
   justify-content: center;
-  padding: 5px 48px 8px 11px;
-  font: 700 16px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  width: 100%;
 }
-
-
-.details_two {
+.admin-profile-container {
+  top: 136px;
+  left: 5%;
+  width: 60%;
+  max-width: 60%;
+  height: 389px;
   display: flex;
-  margin-top: 16px;
-  flex-direction: column;
-}
-
-.div_4_two {
-  color: #1e1e1e;
-  font: 500 12px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.div_5_two {
-  color: #1e1e1e;
-  margin-top: 16px;
-  white-space: nowrap;
-  font: 500 12px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.hahahah_haha{
-  border-radius: 5px;
-  border: 2px solid #a024a3;
-  padding: 3% 5% 3%;
-}
-
-.brgy_mo_third{
-  border-radius: 5px;
-  border: 2px solid #a024a3;
-}
-.main_container_bahala{
-  display: flex;
-  flex-direction: column;
-  margin-left: 50%;
-  background-color: rgba(204, 204, 204, 0.9);
   position: absolute;
-  top: 2.1%;
-  cursor: pointer;
+  border-radius: 20px;
+  flex-shrink: 1;
+  background-color: rgba(252, 252, 252, 1);
 }
-.center_name_haha a{
-  color: #1e1e1e;
-  padding: 0 0 0 0;
-  /* padding-bottom: 0%; */
-}
-.location_bhala{
-  color: #1e1e1e;
-  padding: 2% 0 0 0;
-}
-.offers_kay{
-  padding: 2% 0 0 0;
-}
-.number_kay{
-  padding: 2% 0 0 0;
-}
-.appointment_kay{
-  padding: 2% 0 0 0;
-  color: #A024A3;
+.admin-view-page{
+  top: 225px;
+  left: 237.51751708984375px;
+  width: 660.7306518554688px;
+  height: 96px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
 }
 
+.admin-docs {
+  top: 7px;
+  left: 511.74237060546875px;
+  color: rgba(173, 167, 167, 1);
+  width: 110px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-staffs {
+  top: 45px;
+  left: 512.1913452148438px;
+  color: rgba(173, 167, 167, 1);
+  width: 80px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-title{
+  top: 25px;
+  color: rgba(75, 75, 75, 1);
+  width: 299px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-count-staffs {
+  top: 64px;
+  left: 539.1285400390625px;
+  color: rgba(170, 217, 70, 1);
+  width: 38px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-count-docs {
+  top: 21px;
+  left: 539.1285400390625px;
+  color: rgba(170, 217, 70, 1);
+  width: 38px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.admin-add-btn {
+  top: 320px;
+  left: 228px;
+  width: 19px;
+  height: 16px;
+  position: absolute;
+}
+.admin-cover {
+  /* top: 5px; */
+  /* left: 0px; */
+  width:100%;
+  height: 200px;
+  position: absolute;
+  border-radius: 20px 20px 0 0;
+}
+.btn-appointment {
+  top: 319px;
+  left: 251.5467529296875px;
+  color: rgba(75, 75, 75, 1);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  background: #C4FF9F;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  cursor: pointer;
+}
+.admin-logo {
+  top: 148px;
+  left: 48.68646240234375px;
+  width: 162px;
+  height: 160px;
+  position: absolute;
+}
+.admin-clinic-name {
+  top: 219px;
+  left: 237.51751708984375px;
+  color: rgba(30, 30, 30, 1);
+  width: 406px;
+  height: auto;
+  position: absolute;
+  font-size: 25px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-st-margaret-intro {
+  top: 136px;
+  left : 71%;
+  width: 455px;
+  height: 407px;
+  display: flex;
+  position: absolute;
+  flex-shrink: 1;
+}
+
+/* .admin-profileusersviewofclinicpage-line3 {
+  top: 76px;
+  left: 8.9566650390625px;
+  width: 416px;
+  height: 1px;
+  position: absolute;
+} */
+.information-st-margaret{
+  background-color: white;
+  border-radius: 10%;
+  width: 100%;
+  height: 95.5%;
+  display: flex;
+  flex-direction: column;
+}
+.intro-style{
+  top: 20px;
+  left: 24.3988037109375px;
+  color: rgba(30, 30, 30, 1);
+  width: 384px;
+  height: auto;
+  position: absolute;
+  font-size: 25px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-info-style {
+
+  color: rgba(102, 102, 102, 1);
+  width: 100%;
+  /* height: auto; */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 66.3988037109375px;
+  font-size: 19px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-info-style span{
+  margin-top: 5%;
+}
+.admin-page, .admin-location, .admin-contact, .admin-email {
+  color: rgba(102, 102, 102, 1);
+}
+
+
+.admin-clock {
+  color: rgba(170, 217, 70, 1);
+}
+
+.images-styles img{
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 5%; */
+}
+.information-style {
+  top: 70px;
+  left: 25.3988037109375px;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+}
+.place-marker-style {
+  top: 132px;
+  left: 24.3988037109375px;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+}
+.phone-style {
+  top: 200px;
+  left: 25.3988037109375px;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+}
+.letter-style {
+  top: 252px;
+  left: 24.3988037109375px;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+}
+.clock-style {
+  top: 307px;
+  left: 25.3988037109375px;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+}
+.admin-about-conntainer {
+  top: 543px;
+  width: 1375px;
+  height: 350px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 1;
+  background-color: rgba(252, 252, 252, 1);
+  border-radius: 20px;
+}
+
+.admin-about-footer{
+  top: 20px;
+  left: 32px;
+  color: rgba(30, 30, 30, 1);
+  width: 384px;
+  height: auto;
+  position: absolute;
+  font-size: 25px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-information-about{
+  top: 60px;
+  left: 48px;
+  color: rgba(75, 75, 75, 1);
+  width: 1285px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-services {
+  top: 42%;
+  left: 49px;
+  color: rgba(30, 30, 30, 1);
+  width: 384px;
+  height: auto;
+  position: absolute;
+  font-size: 25px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-clinic-services {
+  top: 190px;
+  left: 50px;
+  color: rgba(75, 75, 75, 1);
+  width: 362px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-clinic-services-2 {
+  top: 190px;
+  left: 487px;
+  color: rgba(75, 75, 75, 1);
+  width: 379px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.admin-clinic-services-3 {
+  top: 190px;
+  left: 937px;
+  color: rgba(75, 75, 75, 1);
+  width: 397px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Arimo;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

@@ -15,8 +15,9 @@ function Nav (){
      <Link to="/plancareone">
       <h1>Plan & Care</h1>
       </Link>
-
-      <h1>Find your Center</h1>
+      <Link to="/Type">
+      <h1>St. Margaret Lying In Clinic</h1>
+      </Link>
       <h1>About Us</h1>
 
 

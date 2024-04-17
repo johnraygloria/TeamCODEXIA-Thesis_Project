@@ -16,7 +16,9 @@ import Appointment from './pages/CalendarAppointment';
 import FillUpAppointment from './pages/FillUpAppointment';
 import Articles  from './pages/Articles';
 import Dashboard from './Components/Admin/DashboardAdmin'
-import PregnancyWheel from './pages/PregnancyWheel.jsx';
+import PregnancyWheel from './Components/Admin/TabView/PregnancyWheel.jsx';
+import Chatbot from './pages/Chatbot.jsx';
+import PatientsRecord from './Components/Admin/PatientsRecord'
 
 
 const App = () => {
@@ -62,6 +64,7 @@ const App = () => {
         <Dashboard/>
       </Route>
       
+
       <Route path='/Articles' compontent={ Articles } exact>
         <Articles />
       </Route>
@@ -73,15 +76,24 @@ const App = () => {
       <Route path='/PregnancyWheel' compontent={  PregnancyWheel } exact>
         <PregnancyWheel/>
       </Route>
+
+      <Route path='/Chatbot' compontent = { Chatbot } exact>
+        <Chatbot/>
+      </Route>
       
+     
+
     </Switch>
     </Router>
     
     <Router>
       <Switch>
         <Route path="/Dashboard" render={(props) => <Dashboard searchQuery={props.location.state?.searchQuery} />} />
+        <Route path="/PatientsRecord" component={ PatientsRecord } />
       </Switch>
     </Router>
+
+
 </>
 )
 }
