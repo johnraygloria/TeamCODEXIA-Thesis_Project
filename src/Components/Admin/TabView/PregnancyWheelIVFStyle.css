@@ -5,8 +5,8 @@
     /* Add other styles as needed */
     margin-top: 0%;
     background-color: rgba(238, 97, 153, 0.36);
-    width: 900px;
-    height: 700px;
+    width: 768px;
+    height: 650px;
     padding-bottom: 2.1rem;
     margin-left: 11rem;
     font-family:"Montserrat",  sans-serif;
@@ -25,9 +25,11 @@
     display: flex;
     align-items: center;
 }
-
+.IVF1 h2 {
+    font-size: 20px;
+}
 .inp-IVF {
-    margin-left: 4%;
+    margin-left: 7.2rem;
     padding: 4px;
     width: 6rem;
     border-radius: 5px;
@@ -41,6 +43,7 @@
     color: #363636;
     letter-spacing: .5px;
     font-size: 40px;
+    text-align: center;
 }
 
 .wrapper2 p{

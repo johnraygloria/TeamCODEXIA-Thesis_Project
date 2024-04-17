@@ -18,7 +18,8 @@ import Articles  from './pages/Articles';
 import Dashboard from './Components/Admin/DashboardAdmin'
 import PregnancyWheel from './Components/Admin/TabView/PregnancyWheel.jsx';
 import Chatbot from './pages/Chatbot.jsx';
-import PatientsRecord from './Components/Admin/PatientsRecord'
+import PatientsRecord from './Components/Admin/PatientsRecord';
+import UserProfile from './pages/UserProfile';
 
 
 const App = () => {
@@ -63,7 +64,14 @@ const App = () => {
       <Route path='/DashboardAdmin' compontent={ Dashboard } exact>
         <Dashboard/>
       </Route>
+
+      <Route path='/PatientsRecord' compontent={ PatientsRecord  } exact>
+        <PatientsRecord/>
+      </Route>
       
+      <Route path='/PregnancyWheel' compontent={  PregnancyWheel } exact>
+        <PregnancyWheel/>
+      </Route>
 
       <Route path='/Articles' compontent={ Articles } exact>
         <Articles />
@@ -73,15 +81,14 @@ const App = () => {
         <PasswordResetForm/>
       </Route>
 
-      <Route path='/PregnancyWheel' compontent={  PregnancyWheel } exact>
-        <PregnancyWheel/>
-      </Route>
 
       <Route path='/Chatbot' compontent = { Chatbot } exact>
         <Chatbot/>
       </Route>
       
-     
+      <Route path='/UserProfile' compontent = { UserProfile } exact>
+        <UserProfile/>
+      </Route>
 
     </Switch>
     </Router>
@@ -90,6 +97,8 @@ const App = () => {
       <Switch>
         <Route path="/Dashboard" render={(props) => <Dashboard searchQuery={props.location.state?.searchQuery} />} />
         <Route path="/PatientsRecord" component={ PatientsRecord } />
+        <Route path='/PregnancyWheel' compontent={  PregnancyWheel } />
+
       </Switch>
     </Router>
 

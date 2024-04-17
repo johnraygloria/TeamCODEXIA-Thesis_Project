@@ -1,0 +1,69 @@
+
+.main-body {
+  margin-bottom: 5%;
+  padding-top: 10%;
+  padding-left: 15%;
+
+}
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+/* 
+.secondary-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+} */
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.mb-3, .my-3 {
+  margin-bottom: 1rem;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+.shadow-none {
+  box-shadow: none;
+}
+.btn-info{
+  background-color: #EE6199;
+    padding: 1% 1.5% 1% 1.5%;
+    text-decoration: none;
+    color: #e2e8f0;
+    border-radius: 10%;
+    cursor: pointer;
+}
+.time-appointment{
+  display: flex;
+  justify-content: space-around;
+}
+.card-holder-appointment{
+  position: absolute;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 100rem;
+  background-color: aqua;
+}

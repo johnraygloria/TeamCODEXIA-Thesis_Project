@@ -1,0 +1,21 @@
+.navbaradmin {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.23) 0px 10px 30px -20px;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+}
+.navbar-logo-admin {
+  display: inline-block;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 60px;
+}
+.navbar-logo-admin span{
+  color: rgb(160, 36, 163);
+}

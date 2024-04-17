@@ -5,25 +5,28 @@
     /* Add other styles as needed */
     margin-top: 0%;
     background-color: rgba(238, 97, 153, 0.36);
-    width: 900px;
-    height: 900px;
-    padding-bottom: 2.1rem;
+    width: 768px;
+    height: 680px;
+    /* padding-bottom: 2.1rem; */
     margin-left: 11rem;
     font-family:"Montserrat",  sans-serif;
     border-radius: 0px 0px 20px 20px;
+    color: rgb(43, 43, 43);
 }
-
+.wrapper3 h2{   
+    font-size: 18px;
+}
 .CRLinput {
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
 .inp-CRL {
-    margin-left: 3%;
+    position: absolute;
+    margin-left: 13rem;
     padding: 4px;
     width: 5rem;
     border-radius: 5px;
-    text-align: justify;
     font-weight: 700;
     font-size: large;
     height: 2rem;
@@ -37,4 +40,5 @@
     color: #363636;
     letter-spacing: .5px;
     font-size: 40px;
+    text-align: center;
 }

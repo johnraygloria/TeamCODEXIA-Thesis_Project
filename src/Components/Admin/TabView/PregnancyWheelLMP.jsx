@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calendar from 'react-calendar';
 import Modal from 'react-modal';
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 import "../TabView/PregnancyWheelLMPStyle.css";
 import moment from 'moment';
 

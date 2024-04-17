@@ -147,14 +147,14 @@ const PregnancyWheelCRL = () => {
                 <Calendar selected={USDate} onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} className="calendar mt-0" />
               </Modal>
               <input className='inp-CRL' type="number" value={crl} onChange={handleInputChange} />
-            </div>
+           
 
 
             <h2>Intergrowth: {intergrowth}</h2>
             <h2>Sahota: {sahota}</h2>
             <h2>Verburg: {verburg}</h2>
             <h2>Robinsons: {robinsons}</h2>
-          
+          </div>
 
           <div className="input-US"> 
                         <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
