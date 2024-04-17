@@ -38,6 +38,15 @@ const PregnancyWheelCRL = () => {
       setEGA("");
     };
 
+    const calculateGestationalAge = (crlInMillimeters) => {
+      const factor = 1.037;
+      const adjustedCRL = crlInMillimeters * factor;
+      const gestationalAge = Math.sqrt(adjustedCRL);
+      return gestationalAge.toFixed(1); // Rounded to one decimal place
+    }
+
+    
+
     // Custom style for the modal
     const customStyles = {
       content: {
@@ -62,6 +71,8 @@ const PregnancyWheelCRL = () => {
       const value = event.target.value;
       if (value >= 1 && value <= 84) {
         setCrl(value);
+        const gestationalAgeWeeks = calculateGestationalAge(value);
+        console.log(`Estimated gestational age: ${gestationalAgeWeeks} weeks`);
       }
     };
 
@@ -125,36 +136,42 @@ const PregnancyWheelCRL = () => {
     return (
       <>
         <div className="wrapper3">
-
+          
           <form onSubmit={e => e.preventDefault()}>
-            <h2>Pregnancy Wheel</h2>
-            <p>This functions as wheel that represents the progression of pregnancy. </p>
-
+            <h1>Crown-rump Length</h1>
+              <p> The measurement between the top of the head to the area above where the legs begin.  </p>
+  
             <div className="CRLinput">
-            <input type="number" value={crl} onChange={handleInputChange} />
-            <p>Intergrowth: {intergrowth}</p>
-            <p>Sahota: {sahota}</p>
-            <p>Verburg: {verburg}</p>
-            <p>Robinsons: {robinsons}</p>
-          </div>
-
-
-              <div className="input-US"> 
-                <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
-                  <Modal isOpen={showUsCalendar} onRequestClose={() => setShowUsCalendar(false)} style={customStyles}>
-                      <Calendar selected={USDate} onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} className="calendar mt-0" />
-                    </Modal>
-              
-              <div className="input-USweeks"> 
-                <h3>Week/s:</h3>
-                <input type="number" value={USweeks} onChange={e => setUSweeks(e.target.value)}></input>
-              </div>
-
-              <div className="input-USdays">
-                <h3>Day/s: </h3>
-                <input type="number" value={USdays} onChange={e => setUSdays(e.target.value)}></input>
-              </div>
+              <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Crown-rump length: </h2>
+              <Modal isOpen={showUsCalendar} onRequestClose={() => setShowUsCalendar(false)} style={customStyles}>
+                <Calendar selected={USDate} onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} className="calendar mt-0" />
+              </Modal>
+              <input className='inp-CRL' type="number" value={crl} onChange={handleInputChange} />
             </div>
+
+
+            <h2>Intergrowth: {intergrowth}</h2>
+            <h2>Sahota: {sahota}</h2>
+            <h2>Verburg: {verburg}</h2>
+            <h2>Robinsons: {robinsons}</h2>
+          
+
+          <div className="input-US"> 
+                        <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
+                        <Modal isOpen={showUsCalendar} onRequestClose={() => setShowUsCalendar(false)} style={customStyles}>
+                            <Calendar selected={USDate} onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} className="calendar mt-0" />
+                        </Modal>
+
+                    <div className="input-USweeks"> 
+                        <h3>Week/s:</h3>
+                        <input className="inp-usweeks" type="number" value={USweeks} onChange={e => setUSweeks(e.target.value)}></input>
+                    </div>
+
+                    <div className="input-USdays">
+                        <h3>Day/s: </h3>
+                        <input className="inp-usdays" type="number" value={USdays} onChange={e => setUSdays(e.target.value)}></input>
+                    </div>
+                </div>
 
             <div className='LMP1'>
                 <h2 onClick={() => {setShowLmpCalendar(!showLmpCalendar); setShowUsCalendar(false);}}>Last Menstrual Period: 
@@ -165,44 +182,47 @@ const PregnancyWheelCRL = () => {
             </div>
 
             <div className='Conception1'>
-              <h2>Conception Date: {conceptionDate && conceptionDate.toDateString()}</h2>
-            </div>
+                    <h2>Conception Date: <span>{conceptionDate && conceptionDate.toDateString()}</span></h2>
+                </div>
 
-            <div className='SecondTrimester1'>
-              <h2>2nd Trimester Starts: {secondTrimester && secondTrimester.toDateString()}</h2>
-            </div>
+                <div className='SecondTrimester1'>
+                    <h2>2nd Trimester Starts: <span>{secondTrimester && secondTrimester.toDateString()}</span></h2>
+                </div>
 
-            <div className='ThirdTrimester1'>
-              <h2>3rd Trimester Starts: {thirdTrimester && thirdTrimester.toDateString()}</h2>
-            </div>
+                <div className='ThirdTrimester1'>
+                    <h2>3rd Trimester Starts: <span>{thirdTrimester && thirdTrimester.toDateString()}</span></h2>
+                </div>
 
-            <div className='DueDate1'>
-              <h2>Estimated Due Date: {dueDate && dueDate.toDateString()}</h2>
-            </div>
+                <div className='DueDate1'>
+                    <h2>Estimated Due Date: <span>{dueDate && dueDate.toDateString()}</span></h2>
+                </div>
 
-            <div className='CycleLength-slider1'>
-              <h2>Cycle Length: {cycle} days</h2>
-              <input type="range" min="20" max="45" value={cycle} onChange={e => setCycle(e.target.value)} />
-            </div>
 
-            <div className='EGA1'>
-              <h2>Estimated Gestational Age: {EGA}</h2>
-              <div className="input-EGAweeks"> 
-                <h3>Week/s:</h3>
-                <input type="number" value={EGAweeks} onChange={e => setEGAweeks(e.target.value)}></input>
-              </div>
+                <div className='CycleLength-slider1'>
+                    <h2>Cycle Length: {cycle} days</h2>
+                    <input type="range" min="20" max="45" value={cycle} onChange={e => setCycle(e.target.value)} />
+                </div>
 
-              <div className="input-EGAdays">
-                <h3>Day/s: </h3>
-                <input type="number" value={EGAdays} onChange={e => setEGAdays(e.target.value)}></input>
-              </div>
-            </div>
+                <div className='EGA1'>
+                    <h2>Estimated Gestational Age: {EGA}</h2>
+                    <div className="input-EGA">
+                        <div className="input-EGAweeks"> 
+                            <h3>Week/s:</h3>
+                            <input className="inp-EGAweeks" type="number" value={EGAweeks} onChange={e => setEGAweeks(e.target.value)}></input>
+                        </div>
 
-            <button className="resetBtn" onClick={reset}>Reset</button>
-          </form>
-        </div>
-      </>
-    );
-  };
+                        <div className="input-EGAdays">
+                            <h3>Day/s: </h3>
+                            <input className="inp-EGAdays" type="number" value={EGAdays} onChange={e => setEGAdays(e.target.value)}></input>
+                        </div>
+                    </div>
+                </div>
+
+                <button className="resetBtn" onClick={reset}>Reset</button>
+        </form>
+      </div>
+    </>
+  );
+};
 
 export default PregnancyWheelCRL;

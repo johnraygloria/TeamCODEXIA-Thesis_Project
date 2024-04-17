@@ -15,7 +15,6 @@ function PregnancyWheelIVF() {
     const [LMP, setLMP] = useState(new Date());
     const [EGAweeks, setEGAweeks] = useState("");
     const [EGAdays, setEGAdays] = useState("");
-    const [USDate, setUSDate] = useState(new Date());
     const [cycle, setCycle] = useState(28);
     const [showLmpCalendar, setShowLmpCalendar] = useState(false);
     const [showUsCalendar, setShowUsCalendar] = useState(false);
@@ -29,7 +28,6 @@ function PregnancyWheelIVF() {
         setEGAweeks("");
         setEGAdays("");
         setLMP(new Date());
-        setUSDate(new Date());
         setCycle(28);
         setShowLmpCalendar(false);
         setShowUsCalendar(false);
@@ -104,8 +102,6 @@ function PregnancyWheelIVF() {
                 <h2>IVF Embryo Age (1-9 days):</h2>
                 <input className="inp-IVF" type="number" min="1" max="9" value={IVFdays} onChange={e => setIVFdays(e.target.value)}></input>
             </div>
-
-
 
                 <div className='Conception1'>
                     <h2>Conception Date: <span>{conceptionDate && conceptionDate.toDateString()}</span></h2>
