@@ -38,6 +38,9 @@ NAV{
 .side-menu{
     margin-top: 15%;
 }
+.side-menu .decoration-text-sidebar{
+    text-decoration: none;
+}
 .side-menu ul li:hover {
     background: #F5ADCF;
     width: 100%;

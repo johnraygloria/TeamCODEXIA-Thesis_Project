@@ -55,24 +55,7 @@ const App = () => {
         <Type/>
       </Route>
 
-      <Route path='/Appointment' compontent={ Appointment } exact> 
-        <Appointment/>
-      </Route>
-      <Route path='/FillUpAppointment' compontent={ FillUpAppointment } exact>
-        <FillUpAppointment/>
-      </Route>
-      <Route path='/DashboardAdmin' compontent={ Dashboard } exact>
-        <Dashboard/>
-      </Route>
-
-      <Route path='/PatientsRecord' compontent={ PatientsRecord  } exact>
-        <PatientsRecord/>
-      </Route>
-      
-      <Route path='/PregnancyWheel' compontent={  PregnancyWheel } exact>
-        <PregnancyWheel/>
-      </Route>
-
+    
       <Route path='/Articles' compontent={ Articles } exact>
         <Articles />
       </Route>
@@ -90,17 +73,31 @@ const App = () => {
         <UserProfile/>
       </Route>
 
-    </Switch>
-    </Router>
-    
-    <Router>
+      <Route path='/Appointment' compontent={ Appointment } exact> 
+        <Appointment/>
+      </Route>
+      <Route path='/FillUpAppointment' compontent={ FillUpAppointment } exact>
+        <FillUpAppointment/>
+      </Route>
+
+      <Router>
       <Switch>
         <Route path="/Dashboard" render={(props) => <Dashboard searchQuery={props.location.state?.searchQuery} />} />
         <Route path="/PatientsRecord" component={ PatientsRecord } />
-        <Route path='/PregnancyWheel' compontent={  PregnancyWheel } />
-
+        {/* <Route path='/PregnancyWheel' compontent={  PregnancyWheel } /> */}
+        <Route path='/PregnancyWheel' compontent={  PregnancyWheel } exact>
+      <PregnancyWheel/>
+      </Route>
       </Switch>
     </Router>
+      
+ 
+
+
+    </Switch>
+    </Router>
+    
+ 
 
 
 </>

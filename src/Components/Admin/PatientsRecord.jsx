@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 
+import './PatientsRecordStyle.css';
+
+
+import NavbarAdmin from '../Global/NavbarAdmin';
+import Sidebar from '../Global/Sidebar';
+
 function PatientsRecord() {
   const [selectedRecord, setSelectedRecord] = useState(null);
   const patientsRecords = JSON.parse(localStorage.getItem('patientsRecords') || '[]');
@@ -16,9 +22,12 @@ function PatientsRecord() {
 
   return (
     <>
-      <div>
+    <NavbarAdmin/>
+    <Sidebar/>
+    <div className='main-container-patientrecord'>
+      <div className='record-patients-style'>
         <h2>Patient's Appointment Record</h2>
-        <table width="100%">
+        <table>
           <thead>
             <tr>
               <th>#</th>
@@ -63,6 +72,7 @@ function PatientsRecord() {
           </div>
         )}
       </div>
+  </div>
     </>
   );
 }

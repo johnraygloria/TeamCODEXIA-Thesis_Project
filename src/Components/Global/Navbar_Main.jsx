@@ -12,10 +12,10 @@ function Nav (){
 
     <nav className="navbar_master">
 
-     <Link to="/plancareone">
+     <Link className="plan-care-nav" to="/plancareone">
       <h1>Plan & Care</h1>
       </Link>
-      <Link to="/Type">
+      <Link className="st-margaret-nav" to="/Type">
       <h1>St. Margaret Lying In Clinic</h1>
       </Link>
       <h1>About Us</h1>

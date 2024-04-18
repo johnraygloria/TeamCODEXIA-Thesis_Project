@@ -1,14 +1,27 @@
-
+.bgd-patients-record{
+  height: 100vh;
+  background-color: #EE6199;
+}
 .main-body {
   margin-bottom: 5%;
   padding-top: 10%;
-  padding-left: 15%;
-
+  display: flex;
+  align-items: center;
 }
 .card {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
-/* 
+.card-two-style{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 2rem;
+  width: 30rem;
+  height:17rem;
+  margin-left: 15rem;
+}
 .secondary-card {
   position: relative;
   display: flex;
@@ -19,14 +32,16 @@
   background-clip: border-box;
   border: 0 solid rgba(0,0,0,.125);
   border-radius: .25rem;
-} */
+}
 
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1rem;
 }
-
+.card-grid-style{
+  display: flex;
+}
 .gutters-sm {
   margin-right: -8px;
   margin-left: -8px;
@@ -54,16 +69,79 @@
     border-radius: 10%;
     cursor: pointer;
 }
+
 .time-appointment{
   display: flex;
   justify-content: space-around;
+  background-color: white;
+  width: 85rem;
+
+}
+.card-display-style{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items:end ;
+  justify-content: end;
+}
+.card-three{
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 55rem;
+  height: 25rem;
+  padding-left  : 5rem;
+  padding-right: 5rem;
+  margin-right: 15rem;
 }
 .card-holder-appointment{
   position: absolute;
-  left: 5%;
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  width: 100rem;
-  background-color: aqua;
+  display:flex ;
+  align-items: center;
+  justify-content:center;
+  top: 65%;
 }
+
+@media (max-width: 1800px) {
+  .card-three {
+    width: 40rem;
+    height: 25rem;
+    margin-right: 8rem;
+  }
+  .card-two-style{
+    width: 30rem;
+    height:17rem;
+    margin-left: 8rem;
+  }
+  .card-holder-appointment{
+    top: 75%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card-three {
+    width: 40rem;
+    height: 25rem;
+    margin-right: 8rem;
+  }
+}
+
+/* @media (max-width: 922px) {
+  .card-three {
+    margin-top: 25rem;
+    width: 40rem;
+    height: 25rem;
+    margin-right: 8rem;
+  }
+  .card-two-style{
+    position: absolute;
+    left: 35%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+  }
+  .card-holder-appointment{
+    top: 135%;
+  }
+} */

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { getFirestore, collection, getDocs, updateDoc, doc, deleteDoc } from 'firebase/firestore';
-import Nav from '../Global/Navbar_Main';
+import Nav from '../Global/NavbarAdmin';
 import Sidebar from '../Global/Sidebar';
 import '../Admin/Dashboard.css';
 
