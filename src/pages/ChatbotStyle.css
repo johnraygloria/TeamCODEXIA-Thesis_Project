@@ -9,8 +9,11 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: #E3F2FD;
 }
+
 
 .chatbot {
   position: fixed;
@@ -27,58 +30,55 @@ body {
   transform-origin: bottom right;
   box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
              0 32px 64px -48px rgba(0,0,0,0.5);
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
 }
-
-.chatbot header {
-  padding: 16px 0;
+.chatbothead{
+  z-index: 1;
+  padding: 20px 0;
   position: relative;
-  text-align: center;
   color: #fff;
   background: #BC88C0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  height: 100px;
+  height: 150px;
+  max-width: 100%; /* Keep this line */
+  padding-left: 40px;
+  
 }
 
-header h2 {
+.chatbothead h2 {
+  font-size: 2.4rem;
+  position: left;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.chatbothead h3 {
   font-size: 1.4rem;
+  position: left;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
-.chatbot .chatbox {
-  overflow-y: auto;
-  height: calc(100% - 100px); /* Applied the suggested comment */
-  padding: 30px 20px 100px;
+.chatbothead h2, .chatbothead h3 {
+  text-align: left;
 }
-
-/* Applied the suggested comment */
-.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
-  width: 6px;
-}
-
-/* Applied the suggested comment */
-.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
-  background: #fff;
-  border-radius: 25px;
-}
-
-/* Applied the suggested comment */
-.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 25px;
-}
-
 .chatbox .chat {
   display: flex;
   list-style: none;
+  margin-top: 15px;
 }
 
 .chatbox .outgoing {
-  margin: 20px 0;
-  justify-content: flex-end;
+  margin: 40px 0;
+  justify-content: flex-end; /* Updated */
+}
+
+.chatbox{
+    overflow-y: auto;
+    height: 750px; /* Adjust this value according to your needs */
 }
 
 .chatbox .incoming span {
-  /* Adjust margins or use a different flexbox property based on layout needs */
   width: 42px;
   height: 42px;
   color: #fff;
@@ -86,31 +86,26 @@ header h2 {
   text-align: center;
   align-items: center;
   line-height: 32px;
-  /* Consider using a different property for vertical alignment */
   background: #BC88C0;
   border-radius: 4px;
-  margin: 0 10px 7px 0;
+  margin: 0 0 7px 10px; /* Updated */
 }
+
 .chatbox .chat p {
   white-space: pre-wrap;
-  padding: 12px 16px;
-  border-radius: 10px 10px 0 10px;
+  padding: 10px 15px 10px 15px; /* Updated */
+  border-radius: 20px 20px 20px 20px;
   max-width: 75%;
   color: #000;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   background: #E9D7ED;
+
 }
+
 .chatbox .incoming p {
-  border-radius: 10px 10px 10px 0;
+  border-radius: 10px 10px 0 10px; /* Updated */
 }
-.chatbox .chat p.error {
-  color: #721c24;
-  background: #f8d7da;
-}
-.chatbox .incoming p {
-  color: #000;
-  background: #f2f2f2;
-}
+
 .chatbot .chat-input {
   display: flex;
   gap: 5px;
@@ -118,19 +113,25 @@ header h2 {
   bottom: 0;
   width: 100%;
   background: #fff;
-  padding: 3px 20px;
-  border-top: 1px solid #ddd;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(160, 36, 163, 1);
 }
+
 .chat-input textarea {
-  height: 55px;
+  height: 60px;
   width: 100%;
   border: none;
   outline: none;
   resize: none;
-  max-height: 180px;
-  padding: 15px 15px 15px 0;
-  font-size: 0.95rem;
+  max-height: 200px;
+  padding: 15px 15px 25px 0px;
+  font-size: 1.3rem;
 }
+
+.chatbox .user {
+  justify-content: flex-end; /* Aligns the user's messages to the right */
+}
+
 .chat-input span {
   align-self: flex-end;
   color: #724ae8;
@@ -140,10 +141,32 @@ header h2 {
   align-items: center;
   visibility: hidden;
   font-size: 1.35rem;
+  font-weight: 400;
 }
+
 .chat-input textarea:valid ~ span {
   visibility: visible;
 }
+
+.chatbot .outgoing{
+  padding: 1px 0px;
+  font-weight: 400;
+}
+
+.refresh {
+  cursor: pointer;
+  margin-right:20px;
+  position: right;
+  justify-content: flex-end;
+}
+
+/* Adjust the size of AiImage */
+.AiImage {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 10px;
+}
+
 
 @media (max-width: 490px) {
   .chatbot {

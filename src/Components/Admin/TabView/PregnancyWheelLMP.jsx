@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calendar from 'react-calendar';
-import "react-calendar/dist/Calendar.css";
+import Modal from 'react-modal';
+// import "react-datepicker/dist/react-datepicker.css";
 import "../TabView/PregnancyWheelLMPStyle.css";
 import moment from 'moment';
 
@@ -41,6 +42,25 @@ function PregnancyWheelLMP() {
         setEGA("");
     };
 
+    // Custom style for the modal
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            width: 'fit-content',
+            height: 'fit-content',
+            minWidth: '300px', // Minimum width
+            minHeight: '300px', // Minimum height
+        }
+    };
+    
+    // To set up modal styles
+    Modal.setAppElement('#root');
+
     useEffect(() => {
         const conception = new Date(LMP.getTime());
         conception.setDate(conception.getDate() + (cycle - 14)); // Corrected for ovulation
@@ -59,7 +79,7 @@ function PregnancyWheelLMP() {
         setDueDate(due);
     }, [LMP, cycle]);
 
-    useEffect(() => {  // US is used when 5 days off from LMP dating.. 
+    useEffect(() => {  // Ultrasound is used when 5 days off from LMP dating.. 
         if (USweeks !== "" && USdays !== "") {
             const ultrasoundDate = new Date(USDate.getTime());
             ultrasoundDate.setDate(ultrasoundDate.getDate() + parseInt(USweeks) * 7 + parseInt(USdays));
@@ -90,14 +110,16 @@ function PregnancyWheelLMP() {
         <>
 
         <div className="wrapper1">
-        <form onSubmit={e => e.preventDefault()}>
-                <h2>Pregnancy Wheel</h2>
-                <p>This functions as wheel that represents the progression of pregnancy. </p>
+            <form onSubmit={e => e.preventDefault()}>
+                    <h1>Pregnancy Wheel</h1>
+                    <p>This functions as wheel that represents the progression of pregnancy. </p>
 
-                <div className="input-US"> 
-                    <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
-                    {showUsCalendar && <Calendar onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} value={USDate} className="calendar mt-0" />}
-                    
+                    <div className="input-US"> 
+                        <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
+                        <Modal isOpen={showUsCalendar} onRequestClose={() => setShowUsCalendar(false)} style={customStyles}>
+                            <Calendar selected={USDate} onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} className="calendar mt-0" />
+                        </Modal>
+
                     <div className="input-USweeks"> 
                         <h3>Week/s:</h3>
                         <input className="inp-usweeks" type="number" value={USweeks} onChange={e => setUSweeks(e.target.value)}></input>
@@ -110,10 +132,13 @@ function PregnancyWheelLMP() {
                 </div>
                 
                 <div className='LMP1'>
-                    <h2 onClick={() => {setShowLmpCalendar(!showLmpCalendar); setShowUsCalendar(false);}}>LMP: 
-                    {showLmpCalendar && <Calendar onChange={(date) => {setLMP(date); setShowLmpCalendar(false);}} value={LMP} className="calendar mt-0" />}
-                    {!showLmpCalendar && <span>{moment(LMP).format('MMMM Do YYYY')}</span>} {/* Display chosen date */}</h2>
-                </div>
+                <h2 onClick={() => {setShowLmpCalendar(!showLmpCalendar); setShowUsCalendar(false);}}>Last Menstrual Period: 
+                <Modal isOpen={showLmpCalendar} onRequestClose={() => setShowLmpCalendar(false)} style={customStyles}>
+                    <Calendar selected={LMP} onChange={(date) => {setLMP(date); setShowLmpCalendar(false);}} className="calendar mt-0" />
+                </Modal>
+                {!showLmpCalendar && <span>{moment(LMP).format('MMMM Do YYYY')}</span>} {/* Display chosen date */}</h2>
+            </div>
+
 
                 <div className='Conception1'>
                     <h2>Conception Date: <span>{conceptionDate && conceptionDate.toDateString()}</span></h2>
@@ -139,16 +164,19 @@ function PregnancyWheelLMP() {
 
                 <div className='EGA1'>
                     <h2>Estimated Gestational Age: {EGA}</h2>
-                    <div className="input-EGAweeks"> 
-                        <h3>Week/s:</h3>
-                        <input type="number" value={EGAweeks} onChange={e => setEGAweeks(e.target.value)}></input>
-                    </div>
+                    <div className="input-EGA">
+                        <div className="input-EGAweeks"> 
+                            <h3>Week/s:</h3>
+                            <input className="inp-EGAweeks" type="number" value={EGAweeks} onChange={e => setEGAweeks(e.target.value)}></input>
+                        </div>
 
-                    <div className="input-EGAdays">
-                        <h3>Day/s: </h3>
-                        <input type="number" value={EGAdays} onChange={e => setEGAdays(e.target.value)}></input>
+                        <div className="input-EGAdays">
+                            <h3>Day/s: </h3>
+                            <input className="inp-EGAdays" type="number" value={EGAdays} onChange={e => setEGAdays(e.target.value)}></input>
+                        </div>
                     </div>
                 </div>
+
 
                 <button className="resetBtn" onClick={reset}>Reset</button>
 

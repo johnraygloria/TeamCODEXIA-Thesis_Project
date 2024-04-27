@@ -10,10 +10,10 @@ const Sidebar = () => {
           <div className="side-menu">
             <ul>
               <li>
-                <a>
+              <Link className="decoration-text-sidebar" to="/Dashboard">
                   <span/>
                   <small>Dashboard</small>
-                </a>
+                </Link>
               </li>
               <li>
                 <a>
@@ -22,16 +22,16 @@ const Sidebar = () => {
                 </a>
               </li>
               <li>
-              <Link to="/PatientsRecord">
+              <Link  className="decoration-text-sidebar" to="/PatientsRecord">
                 <span />
                 <small>Patients Record</small>
               </Link>
             </li>
               <li>  
-                <a>
+              <Link  className="decoration-text-sidebar" to="/PregnancyWheel">
                   <span />
                   <small>Pregnancy Wheel</small>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

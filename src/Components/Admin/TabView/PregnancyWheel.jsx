@@ -2,7 +2,7 @@ import React from "react";
 import "../TabView/PregnancyWheelStyle.css";
 
 import Sidebar from '../../Global/Sidebar';
-import Navbar from '../../Global/Navbar_Main';
+import Navbar from '../../Global/NavbarAdmin';
 import PregnancyWheelTAB from './PregnancyWheelTAB.jsx';
 
 // Grandparent (Highest in the hierarchy)

@@ -1,11 +1,10 @@
-/* src/Components/TabComponent/Tabs.css */
-
 /* Container for the tab buttons */
 .Tabs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100%;
     gap: 0px;
     z-index: 1;
 }
@@ -13,6 +12,7 @@
 
 .TabButtons {
     margin-left: 11rem;
+    /* margin-bottom: 55%; */
     align-items: center;
     position: relative;
 }
@@ -21,7 +21,7 @@
   .tabBtn {
     background-color: #f0f0f0;
     border: none;
-    padding: 10px 113px;
+    padding: 10px 90px;
     font-size: 26px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -29,7 +29,7 @@
   
   /* Active tab button style */
   .Tabs button.active {
-    background-color: rgba(255, 205, 229, 0.8);
+    background-color: rgba(248, 205, 255, 0.8);
     color: #575757;
   }
   
@@ -43,7 +43,7 @@
   }
   
 .preg-bkg{
-    height: 64rem;
+    height: 100vh;
     background: rgb(245,173,207);
     background: linear-gradient(162deg,
      rgba(245,173,207,1) 29%, rgba(196,255,159,1) 73%, rgba(253,176,255,1) 92%);
