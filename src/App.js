@@ -20,6 +20,10 @@ import PregnancyWheel from './Components/Admin/TabView/PregnancyWheel.jsx';
 import Chatbot from './pages/Chatbot.jsx';
 import PatientsRecord from './Components/Admin/PatientsRecord';
 import UserProfile from './pages/UserProfile';
+import Chatbot1 from './pages/Chatbot1.jsx';
+import TestingPyServer from './pages/TestingPyServer.jsx';
+import MenstrualTracker from './pages/MenstrualTracker.jsx';
+import DataCheck from './Components/MachineLearning/DataCheck.jsx';
 
 
 const App = () => {
@@ -55,7 +59,6 @@ const App = () => {
         <Type/>
       </Route>
 
-    
       <Route path='/Articles' compontent={ Articles } exact>
         <Articles />
       </Route>
@@ -64,6 +67,9 @@ const App = () => {
         <PasswordResetForm/>
       </Route>
 
+      <Route path='/Chatbot1' compontent={ Chatbot1 } exact>
+        <Chatbot1/>
+      </Route>
 
       <Route path='/Chatbot' compontent = { Chatbot } exact>
         <Chatbot/>
@@ -76,30 +82,44 @@ const App = () => {
       <Route path='/Appointment' compontent={ Appointment } exact> 
         <Appointment/>
       </Route>
+
       <Route path='/FillUpAppointment' compontent={ FillUpAppointment } exact>
         <FillUpAppointment/>
       </Route>
 
-      <Router>
+      <Route path='/TestingPyServer' component={ TestingPyServer } exact>
+        <TestingPyServer/>
+      </Route>
+
+      
+      <Route path='/MenstrualTracker' component={ MenstrualTracker } exact>
+        <MenstrualTracker/>
+      </Route>
+
+      <Route path='/DataCheck' component={ DataCheck } exact>
+        <DataCheck/>
+      </Route>
+
+
+      
+    <Router>
       <Switch>
+
         <Route path="/Dashboard" render={(props) => <Dashboard searchQuery={props.location.state?.searchQuery} />} />
         <Route path="/PatientsRecord" component={ PatientsRecord } />
         {/* <Route path='/PregnancyWheel' compontent={  PregnancyWheel } /> */}
+        
         <Route path='/PregnancyWheel' compontent={  PregnancyWheel } exact>
-      <PregnancyWheel/>
-      </Route>
+          <PregnancyWheel/>
+        </Route>
+
       </Switch>
     </Router>
       
- 
-
 
     </Switch>
     </Router>
     
- 
-
-
 </>
 )
 }
