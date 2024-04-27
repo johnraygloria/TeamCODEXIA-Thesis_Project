@@ -86,14 +86,15 @@ function DashboardAdmin() {
   
 
   return (
+    <>
     <div className='bgd-page'>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Nav />
       
       <div className="page-content">
           <div className="analytics">
             <h1 className='dash-name'>Dashboard</h1>
-            <div className="card">
+            <div className="card-main-dashboard">
               <div className="card-head">
                 <h2>2</h2>
                 <span className="las la-user-friends" />
@@ -105,7 +106,7 @@ function DashboardAdmin() {
                 </div>
               </div>
             </div>
-            <div className="card">
+            <div className="card-main-dashboard-2">
               <div className="card-head">
                 <h2>10</h2>
                 <span className="las la-eye" />
@@ -117,7 +118,7 @@ function DashboardAdmin() {
                 </div>
               </div>
             </div>
-            <div className="card">
+            <div className="card-main-dashboard-3">
               <div className="card-head">
                 <h2>50</h2>
                 <span className="las la-shopping-cart" />
@@ -129,7 +130,7 @@ function DashboardAdmin() {
                 </div>
               </div>
             </div>
-            <div className="card">
+            <div className="card-main-dashboard-4">
               <div className="card-head">
                 <h2>5</h2>
                 <span className="las la-envelope" />
@@ -148,7 +149,9 @@ function DashboardAdmin() {
         <main>
           <div className="records table-responsive">
             {/* Approved Appointments section */}
-            <h2>Approved Appointments</h2>
+            <h2 className='approve-name-dashboard'>Approved Appointments</h2>
+          <div className='table-appointment-style'>
+            {/* <h2 className='approve-name-dashboard'>Approved Appointments</h2> */}
             <table className='appointment-content' width="100%">
               <thead>
                 <tr>
@@ -179,9 +182,12 @@ function DashboardAdmin() {
                 ))}
               </tbody>
             </table>
+          </div>
             {/* Pending Appointments section */}
-            <h2>Pending Appointments</h2>
-            <table width="100%">
+            <h2 className='pending-name-dashboard'>Pending Appointments</h2>
+          <div className='pending-appointment-style-name'>
+            {/* <h2 className='pending-name-dashboard'>Pending Appointments</h2> */}
+            <table className='pending-dashboard-appointment' width="100%">
               <thead>
                 <tr>
                   <th>#</th>
@@ -194,6 +200,7 @@ function DashboardAdmin() {
                   <th>Action</th>
                 </tr>
               </thead>
+
               <tbody>
                 {pendingAppointments.map((appointment, index) => (
                   <tr key={appointment.id}>
@@ -212,10 +219,12 @@ function DashboardAdmin() {
                 ))}
               </tbody>
             </table>
+        </div>
           </div>
         </main>
       </div>
     </div>
+</>
   );
 }
 

@@ -6,6 +6,9 @@ import { auth } from "../../../Config/firebase";
 import { useHistory } from 'react-router-dom'; // React Router's useHistory hook
 import Navbar from '../../Global/Navbar_Landing.jsx';
 
+import background1 from '../../Assets/landing_page_bkg1.png';
+import background2 from '../../Assets/landing_page_bkg2.png';
+
 
 function LoginForm  ()  {
   const [email, setEmail] = useState("");
@@ -15,7 +18,7 @@ function LoginForm  ()  {
 
 
 
-  useEffect(() => {         // Check if there are stored credentials and auto-fill the form
+  useEffect(() => {
     const storedEmail = localStorage.getItem("rememberedEmail");
     if (storedEmail) {
       setEmail(storedEmail);
@@ -44,8 +47,6 @@ function LoginForm  ()  {
       });
   };
 
-  
-
   return (
     <>
     <Navbar/>
@@ -59,15 +60,12 @@ function LoginForm  ()  {
       </div >
     </div>
     
-    
+  <div className="wrapper-landing-page">
     <div className= 'wrapper' > 
       <form onSubmit={SignIn}>
-        <h1>Welcome Back!</h1>
+        <h2>Welcome Back!</h2>
         
-        <h5> Let's start exploring the beneficial ways of
-          modern family planning here at PlanItFamIt!
-        </h5>
-        
+        <p> Let's start exploring the beneficial ways of modern family planning here at PlanItFamIt! </p>
         <div className="input-box" >
           <input type="email" placeholder='Enter your email' 
           value={email} 
@@ -87,11 +85,12 @@ function LoginForm  ()  {
           <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />
           Remember me
         </label>
-        </div>
-
         <div className="forgot-password">
           <a href="/Resetyourpassword">Forgot Password?</a>
         </div>
+        </div>
+
+       
 
         <button type="submit">Log In</button>
 
@@ -109,6 +108,16 @@ function LoginForm  ()  {
 
       </form>
     </div>
+</div>
+    <div className="landingpagebkg">
+        <div className="flex-landingbkg1">
+          <img src={background1} alt="background2"  />
+          </div>
+        <div className="flex-landingbkg2" >
+          <img src={background2} alt="background1" />
+        </div>
+    </div>
+
     </>
   );
 };

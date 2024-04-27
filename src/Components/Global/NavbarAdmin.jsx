@@ -12,6 +12,7 @@ const NavbarAdmin = () => {
 
       <nav className='navbaradmin'>
         
+        
         <div className='navbar-logo-admin'>
           <h1>PlanIt<span>FamIt</span></h1>
         </div>

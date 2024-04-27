@@ -13,12 +13,12 @@
 NAV{
     z-index: -1;
 }
-.bgd-page{
+/* .bgd-page{
     height: 58rem;
     background: rgb(245,173,207);
     background: linear-gradient(162deg,
      rgba(245,173,207,1) 29%, rgba(196,255,159,1) 73%, rgba(253,176,255,1) 92%);
-}
+} */
 .sidebar-container1 {
     position: fixed;
     width: 15%;
@@ -28,7 +28,7 @@ NAV{
     display: flex;
     flex-direction: column;
     /* margin-top: 50%; */
-    background: white;
+    background: rgb(229, 157, 167);
     transition: left 300ms;
     gap: 5%;
 }

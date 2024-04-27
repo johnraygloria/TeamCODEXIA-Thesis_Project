@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
 
-:root {
-    --main-color: #22BAA0;
-    --color-dark: #34425A;
-    --text-grey: #B0B0B0;
-}
-
-
 #menu-toggle1{
     display: none;
 }
-
+/* 
 .main-content {
     margin-left: 165px;
     width: calc(100% - 165px);
     transition: margin-left 300ms;
-}
+} */
 
 header {
     position: fixed;
@@ -65,7 +58,7 @@ header {
 
 .notify-icon span:last-child {
     position: absolute;
-    background: var(--main-color);
+    background: #22BAA0;
     height: 16px;
     width: 16px;
     display: flex;
@@ -118,25 +111,50 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
-    margin-top: 10rem;
-    margin-left: 20%;
-    margin-bottom: 2rem;
+    margin-top: 12rem;
+    margin-left: 18.5%;
+    margin-bottom: 0;
     z-index: -1;
 }
 .analytics .dash-name{
     position: absolute;
     top: 15%;
+    margin-bottom: 5%;
+    font-size: 25px;
     left: 17%;
 }
-.card {
+.card-main-dashboard {
     box-shadow: 0px 10px 10px -5px rgb(0 0 0 / 10%);
-    background: cadetblue;
-    /* padding: 1rem; */
+    background: rgb(71, 71, 244);
+    margin-top: 4%;
     width: 80%;
     padding: 1rem;
     border-radius: 3px;
 }
-
+.card-main-dashboard-2 {
+    box-shadow: 0px 10px 10px -5px rgb(0 0 0 / 10%);
+    background: rgb(231, 231, 76);
+    margin-top: 4%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 3px;
+}
+.card-main-dashboard-3 {
+    box-shadow: 0px 10px 10px -5px rgb(0 0 0 / 10%);
+    background: rgb(99, 191, 248);
+    margin-top: 4%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 3px;
+}
+.card-main-dashboard-4 {
+    box-shadow: 0px 10px 10px -5px rgb(0 0 0 / 10%);
+    background: rgb(255, 115, 64);
+    margin-top: 4%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 3px;
+}
 .card-head {
     display: flex;
     justify-content: space-between;
@@ -144,18 +162,18 @@ main {
 }
 
 .card-head h2 {
-    color: #333;
+    color: white;
     font-size: 1.8rem;
     font-weight: 500;
 }
 
 .card-head span {
     font-size: 3.2rem;
-    color: var(--text-grey);
+    color: #B0B0B0;
 }
 
 .card-progress small {
-    color: #777;
+    color: white;
     font-size: .8rem;
     font-weight: 600;
 }
@@ -230,7 +248,7 @@ input, button, select {
 }
 
 .add button {
-    background: var(--main-color);
+    background:#22BAA0;
     color: #fff;
     height: 37px;
     border-radius: 4px;
@@ -250,7 +268,9 @@ input, button, select {
 .table-responsive {
     position: absolute;
     width: 80%;
-    left: 15%;
+    left: 17.5%;
+    /* background-color: #22BAA0; */
+    /* height: 55%; */
     /* opacity: 0.5; */
     overflow: auto;
 }
@@ -281,7 +301,7 @@ table tbody td {
 
 table tbody td:first-child {
     padding-left: 1rem;
-    color: var(--main-color);
+    color: #22BAA0;
     font-weight: 600;
     font-size: .9rem;
 }
@@ -302,14 +322,6 @@ table tbody tr {
     width: 45px;
 }
 
-.client-info h4 {
-    color: #555;
-    font-size: .95rem;
-}
-
-.client-info small {
-    color: #777;
-}
 
 .actions span {
     display: inline-block;
@@ -321,7 +333,7 @@ table tbody tr {
     display: inline-block;
     text-align: center;
     font-weight: 600;
-    color: var(--main-color);
+    color: #22BAA0;
     background: #e5f8ed;
     padding: .5rem 1rem;
     border-radius: 20px;
@@ -354,25 +366,40 @@ table tbody tr {
     cursor: pointer;
     font-size: 115%;
 }
-.appointment-content{
-    position: relative;
-    /* background-color: #22BAA0; */
-    /* width: 100%; */
-}
+.table-appointment-style, .pending-appointment-style-name {
+    margin-top: 20px;
+    overflow: auto; 
+    max-height: 400px; 
+  }
+  
+  .appointment-content, .pending-dashboard-appointment {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .appointment-content th, .appointment-content td,
+  .pending-dashboard-appointment th, .pending-dashboard-appointment td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .appointment-content th, .pending-dashboard-appointment th {
+    background-color: #f2f2f2;
+  }
+  
+  .approved-name-dashboard, .pending-name-dashboard {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
 .number-content{
     position: relative;
-    /* left: %; */
+
 }
-.appointment-content thead{
-    position: relative;
-    /* left: 5%; */
-}
-.appointment-content tr{
-    position: relative;
-    /* left:  5%; */
-    width: 100%;
-    /* background-color: #22BAA0; */
-}
+
 .name-content{
     padding-left:2.5% ;
 }
@@ -392,4 +419,50 @@ table tbody tr {
 .age-content-approve{
     position: relative;
     right:14%;
+}
+.approve-name-dashboard{
+    font-size: 25px;
+    margin-left: 3%;
+    /* padding-top: 2%; */
+    /* margin-top: 15%; */
+}
+.pending-name-dashboard{
+    font-size: 25px;
+    margin-left: 3%;
+    /* position: fixed; */
+    padding-top: 1%;
+}
+
+
+
+
+@media (max-width:640px) {
+.analytics .dash-name{
+    margin-left: 10rem;
+    }
+.card-main-dashboard, .card-main-dashboard-2, .card-main-dashboard-3, .card-main-dashboard-4{
+    width: 100%;
+    padding: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    }
+.analytics{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.approve-name-dashboard, .pending-name-dashboard{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-right: 17.9%;
+    /* background-color: #11a8c3; */
+}
+
+
+.table-responsive .table-appointment-style, .pending-appointment-style-name{
+    display: flex;
+    flex-direction: row;
+    margin-right: 15%;
+    /* width: 100%; */
+}
 }
