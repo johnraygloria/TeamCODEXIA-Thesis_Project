@@ -5,6 +5,8 @@ import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import './searchbar.css';
 import DashboardAdmin from '../Components/Admin/DashboardAdmin';
 
+import Navbar from '../Components/Global/Navbar_Main'
+
 const AppointmentFillUp = () => {
   // State to manage form inputs
   const [searchQuery, setSearchQuery] = useState({
@@ -54,10 +56,14 @@ const AppointmentFillUp = () => {
   };
 
   return (
+    <>
+    <Navbar/>
+    <div className="backgorund-filuup">
     <div className="search-bar-main-container">
       <form onSubmit={handleSubmit} className="search-bar">
         {/* Input fields for search criteria */}
-        <input
+      <div className="name-email-appointment">
+        <input className="name-appointment-client"
           type="text"
           placeholder="Name"
           name="name"
@@ -65,7 +71,7 @@ const AppointmentFillUp = () => {
           onChange={handleChange}
           autoComplete="name"
         />
-        <input
+        <input className="email-appointment-client"
           type="text"
           placeholder="Email"
           name="email"
@@ -73,6 +79,8 @@ const AppointmentFillUp = () => {
           onChange={handleChange}
           autoComplete="email"
         />
+      </div>
+      <div className="age-ToA-appointment">
         <input
           type="number"
           placeholder="Age"
@@ -89,6 +97,8 @@ const AppointmentFillUp = () => {
           onChange={handleChange}
           autoComplete="off"
         />
+        </div>
+        <div className="time-date-appointment">
         <input
           type="time" // Input field for time
           placeholder="Time"
@@ -105,12 +115,27 @@ const AppointmentFillUp = () => {
           onChange={handleChange}
           autoComplete="off"
         />
-
-        <button type="submit">Proceed</button>
+                </div>
+      <div className="btn-proceed-client">
+        <button  type="submit">Proceed</button>
+      </div>
+        {/* </div> */}
       </form>
+      </div>
+
+      <div className="design-fil-up">
+        <div className="design-fil-up-text">
+          <h1>Make An Appointment</h1>
+        </div>
+        <div className="fill-up-secondpara">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis magni quo inventore in ad, temporibus ullam aperiam corporis eaque doloribus delectus! Officiis deleniti
+           sapiente nostrum inventore explicabo blanditiis modi facere?</p>
+        </div>
+      </div>
+      </div>
       {/* Display DashboardAdmin component with search results */}
       {/* <DashboardAdmin searchQuery={searchQuery} /> */}
-    </div>
+</>
   );
 };
 
