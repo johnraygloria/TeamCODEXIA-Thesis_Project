@@ -21,10 +21,6 @@ import Chatbot from './pages/Chatbot.jsx';
 import PatientsRecord from './Components/Admin/PatientsRecord';
 import UserProfile from './pages/UserProfile';
 import Chatbot1 from './pages/Chatbot1.jsx';
-import TestingPyServer from './pages/TestingPyServer.jsx';
-import MenstrualTracker from './pages/MenstrualTracker.jsx';
-import DataCheck from './Components/MachineLearning/DataCheck.jsx';
-
 
 const App = () => {
   return(
@@ -86,20 +82,6 @@ const App = () => {
       <Route path='/FillUpAppointment' compontent={ FillUpAppointment } exact>
         <FillUpAppointment/>
       </Route>
-
-      <Route path='/TestingPyServer' component={ TestingPyServer } exact>
-        <TestingPyServer/>
-      </Route>
-
-      
-      <Route path='/MenstrualTracker' component={ MenstrualTracker } exact>
-        <MenstrualTracker/>
-      </Route>
-
-      <Route path='/DataCheck' component={ DataCheck } exact>
-        <DataCheck/>
-      </Route>
-
 
       
     <Router>
