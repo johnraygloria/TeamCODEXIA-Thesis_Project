@@ -88,7 +88,7 @@ function DashboardAdmin() {
   return (
     <>
     <div className='bgd-page'>
-      {/* <Sidebar /> */}
+      <Sidebar />
       <Nav />
       
       <div className="page-content">

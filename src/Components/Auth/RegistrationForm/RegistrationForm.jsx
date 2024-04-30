@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
 import { auth } from "../../../Config/firebase";
 import { useHistory } from "react-router-dom";
 import Navbar from "../../Global/Navbar_Landing.jsx";
 import Modal from "react-modal";
 import { FaUser, FaLock } from "react-icons/fa";
-import "./RegistrationFormStyle.css"; // Import your CSS file
+import "./RegistrationFormStyle.css"; 
+
+import background1 from '../../Assets/landing_page_bkg1.png'
+import background2 from '../../Assets/landing_page_bkg2.png'
 
 function RegistrationForm() {
   const [email, setEmail] = useState("");
@@ -16,11 +19,17 @@ function RegistrationForm() {
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  // const openModal = (e) => {
+  //   e.preventDefault();
+  //   setModalIsOpen(true);
+  // };
   const openModal = (e) => {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     setModalIsOpen(true);
   };
-
+  
   const closeModal = () => {
     setAgreedToTerms(true);
     setModalIsOpen(false);
@@ -39,9 +48,11 @@ function RegistrationForm() {
       return;
     }
 
+    const auth = getAuth(); // Get the auth instance
+
     try {
       // Check if the email is already registered
-      const existingUser = await auth.fetchSignInMethodsForEmail(email);
+      const existingUser = await fetchSignInMethodsForEmail(auth, email);
       if (existingUser.length > 0) {
         alert("This email is already registered. Please use a different email.");
         return;
@@ -63,9 +74,7 @@ function RegistrationForm() {
   return (
     <>
 
-
     <Navbar/>
-
 
       <Modal
       isOpen={modalIsOpen}
@@ -143,14 +152,13 @@ function RegistrationForm() {
       
       </Modal>
 
-    <div className='welcome-message'>
-      <h1>PlanIt
-        <h1 className='logo-color'>FamIt</h1>
-      </h1>
-        <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.
-          </p>
-    </div>
-    <div className= 'wrapper'>
+      <div className='welcome-message'>
+  <h1>PlanIt</h1>
+  <h1 className='logo-color'>FamIt</h1>
+  <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
+</div>
+<div className="wrapper-register-page">
+    <div className= 'wrapper-register'>
       <form onSubmit={SignUp}>
         <h1>Let's get started.</h1>
         
@@ -177,15 +185,15 @@ function RegistrationForm() {
           <FaLock className='icon'/>
         </div>
         
-        <label>
-          <input
-          type="checkbox"
-          checked={agreedToTerms}
-          onChange={() => setAgreedToTerms(!agreedToTerms)}
-          />
-          I agree to the <a href="#" onClick={openModal}>Terms and Conditions</a>
-        </label>
-
+        <label htmlFor="checkboxId">
+  <input
+    type="checkbox"
+    id="checkboxId"
+    checked={agreedToTerms}
+    onChange={() => setAgreedToTerms(!agreedToTerms)}
+  />
+  I agree to the <a href="#" onClick={openModal}>Terms and Conditions</a>
+</label>
 
         <button type="submit">Register</button>
 
@@ -205,10 +213,18 @@ function RegistrationForm() {
       </form>
       {registrationSuccess && <p style={{ color: 'green' }}>Successfully registered! You can now log in.</p>}
     </div>
+    </div>
+
+    <div className="landingpagebkg">
+        <div className="flex-landingbkg1">
+          <img src={background1} alt="background2"  />
+          </div>
+        <div className="flex-landingbkg2" >
+          <img src={background2} alt="background1" />
+        </div>
+    </div>
   </>  
   );
 };
-
-
 
 export default RegistrationForm;

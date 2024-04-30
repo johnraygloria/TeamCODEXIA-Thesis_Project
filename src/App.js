@@ -25,7 +25,6 @@ import TestingPyServer from './pages/TestingPyServer.jsx';
 import MenstrualTracker from './pages/MenstrualTracker.jsx';
 import DataCheck from './Components/MachineLearning/DataCheck.jsx';
 
-
 const App = () => {
   return(
     
@@ -58,6 +57,7 @@ const App = () => {
       <Route path="/type" compontent={ Type } exact> 
         <Type/>
       </Route>
+
 
       <Route path='/Articles' compontent={ Articles } exact>
         <Articles />
