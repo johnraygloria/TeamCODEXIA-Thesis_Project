@@ -20,6 +20,9 @@
   z-index: 1;
   text-decoration: none;
 } */
+.background_home{
+  height: 50vh;
+}
 .page_name{
   text-decoration: none;
 }
@@ -64,7 +67,7 @@
   text-transform: uppercase;
   text-decoration: none;
 }
-.st-mar-style-font li a{
+.navbar_master .st-mar-style-font li a{
   color:#2c3e50;
 }
 .checkbtn{
@@ -119,16 +122,19 @@
     background-color: aqua;
     text-align: center;
     transition: all .5s;
+    z-index: 3;
   }
   #check:checked ~ ul{
     left: 0;
   }
   .background_home .home_intro{
     border: none;
-    box-shadow: none;
+    /* box-shadow: none; */
+    border-radius: 15rem;
+    background-color: #A024A3;
     width:auto;
-    /* background-color: #A024A3; */
-    height:auto; 
+    height:auto;
+    z-index: 2;
   }
   .home_intro {
     margin-top: 25rem;
@@ -148,6 +154,13 @@
   font-size: 12px;
   text-align: center;
   width: auto;
+  /* z-index: 1; */
+  }
+  .fix_moko .button_type{
+    z-index: 4;
+  }
+  .picture_fix .home_picture img{
+    z-index: -1;
   }
 }
 @media (max-width: 858px){
@@ -180,6 +193,7 @@
   .home_intro {
     margin-left:16rem;
   }
+  
 }
 
 @media (max-width: 768px){
@@ -190,6 +204,7 @@
   .home_intro {
     margin-left:13.4rem;
   }
+  
 }
 @media (max-width: 640px ){
   .page_name{
@@ -301,24 +316,27 @@
   left: 8%;
   width: 480px;
   height: 460px;
-  background-color: white;
+  /* background-color: white; */
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 10px 10px;
 }
 
 .first_para{
-  color: #A024A3;
+  /* color: #A024A3; */
+  color: white;
   font-family:'Montserrat', sans-serif;
   font-size: 35px;
   width: 85%;
   font-weight: 650;
-  margin-top: 8%;
+  margin-top:8%;
   margin-left: 10%;
 }
 
 .second_para{
   width: 85%;
 font-size: 16px;
+color: #A024A3;
+  color: white;
   margin-top: 3%;
   margin-bottom: 3%;
   margin-left: 10%;
@@ -328,26 +346,44 @@ font-size: 16px;
 
 .flex_more{
   display: flex;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-bottom: 2%;
-}
-
-.assistant_intro{
+  margin-top: 5%;
   width: 100%;
-  height: 65px;
+}
+.flex_more p{
+  font-size: 13px;
+}
+.assistant_intro{
+  height: 5%;
   margin-right: 10%;
-  border-radius: 5px;
   background: #E9E9E9;
-  color: #A024A3;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: #A024A3;
+  background-image: -webkit-linear-gradient(top, #A024A3, #A024A3);
+  background-image: -moz-linear-gradient(top, #A024A3, #A024A3);
+  background-image: -ms-linear-gradient(top, #A024A3, #A024A3);
+  background-image: -o-linear-gradient(top, #A024A3, #A024A3);
+  background-image: linear-gradient(to bottom, #A024A3, #A024A3);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
   font-family:'Montserrat', sans-serif;
   font-size: 17px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 1;
 }
+
 
 .fix_moko{
   display: flex;
@@ -356,9 +392,20 @@ font-size: 16px;
 }
 
 .button_type{
-  padding: 3%;
-  background-color: #E9E9E9;
-  color: #A024A3;
+  background: #A024A3;
+  background-image: -webkit-linear-gradient(top, #A024A3, #A024A3);
+  background-image: -moz-linear-gradient(top, #A024A3, #A024A3);
+  background-image: -ms-linear-gradient(top, #A024A3, #A024A3);
+  background-image: -o-linear-gradient(top, #A024A3, #A024A3);
+  background-image: linear-gradient(to bottom, #A024A3, #A024A3);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
   font-family:'Montserrat', sans-serif;
   font-size: 17px;
   font-style: normal;
@@ -366,10 +413,20 @@ font-size: 16px;
   line-height: normal;
   cursor: pointer;
   text-decoration: none;
+  z-index: 1;
 }
-
+.button_type:hover{
+  background: #88488a;
+  background-image: -webkit-linear-gradient(top, #88488a, A024A3);
+  background-image: -moz-linear-gradient(top, #88488a, A024A3);
+  background-image: -ms-linear-gradient(top, #88488a, A024A3);
+  background-image: -o-linear-gradient(top, #88488a, A024A3);
+  background-image: linear-gradient(to bottom, #88488a, A024A3);
+  text-decoration: none;
+}
 .home_picture{
-  position: absolute;
-  left: 63%;
-  height: 100%;
+  /* object-fit: cover; */
+  height: 52.688rem ;
+  width: 100%;
+  z-index: -1;
 }

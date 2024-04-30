@@ -1,5 +1,5 @@
 import './HomeStyle.css';
-// import newhome from '../Components/Assets/newhome.png'
+import newhome from '../Components/Assets/back-new1.png'
 import Nav from '../Components/Global/Navbar_Main'
 import { Link } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ function Home() {
   <Nav/>
 
   <div className='picture_fix'>
-    {/* <img className="home_picture" src={newhome} alt="" /> */}
+    <img className="home_picture" src={newhome} alt="" />
   </div>
 
 <div className="home_intro">

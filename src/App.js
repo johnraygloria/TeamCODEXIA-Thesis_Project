@@ -55,6 +55,7 @@ const App = () => {
         <Type/>
       </Route>
 
+
       <Route path='/Articles' compontent={ Articles } exact>
         <Articles />
       </Route>

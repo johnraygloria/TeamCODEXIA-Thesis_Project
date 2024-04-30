@@ -50,8 +50,10 @@ function LoginForm  ()  {
   return (
     <>
     <Navbar/>
-
+  
+    {/* <img src={background1} alt="" /> */}
     <div className='welcome-message'>
+    <img src={background1} alt="" />
         <div className='welcome-message-bkg'>
           <h1>PlanIt
         <h1 className='logo-color'>FamIt</h1>
@@ -61,7 +63,7 @@ function LoginForm  ()  {
     </div>
     
   <div className="wrapper-landing-page">
-    <div className= 'wrapper' > 
+    <div className= 'wrapper-login' > 
       <form onSubmit={SignIn}>
         <h2>Welcome Back!</h2>
         
@@ -108,6 +110,7 @@ function LoginForm  ()  {
 
       </form>
     </div>
+    
 </div>
     <div className="landingpagebkg">
         <div className="flex-landingbkg1">

@@ -2,12 +2,12 @@
   width: 100%;
   display: flex;
   overflow: auto;
-  min-height: 100vh;
+  height: 87.5vh;
   align-items: center;
 }
 .admin-clinic-container {
   width: 100%;
-  height: 100vh;
+  height: 87.5vh;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -23,7 +23,7 @@
   width: 100%;
 }
 .admin-profile-container {
-  top: 136px;
+  top: 60px;
   left: 5%;
   width: 60%;
   max-width: 60%;
@@ -185,7 +185,7 @@
   text-decoration: none;
 }
 .admin-st-margaret-intro {
-  top: 136px;
+  top: 60px;
   left : 71%;
   width: 455px;
   height: 407px;
@@ -297,7 +297,7 @@
   position: absolute;
 }
 .admin-about-conntainer {
-  top: 543px;
+  top: 470px;
   width: 1375px;
   height: 350px;
   display: flex;
@@ -307,7 +307,9 @@
   background-color: rgba(252, 252, 252, 1);
   border-radius: 20px;
 }
-
+.admin-about-conntainer p{
+  margin-bottom: 1%;
+}
 .admin-about-footer{
   top: 20px;
   left: 32px;
@@ -325,13 +327,13 @@
   text-decoration: none;
 }
 .admin-information-about{
-  top: 60px;
-  left: 48px;
+  top: 55px;
+  left: 44px;
   color: rgba(75, 75, 75, 1);
   width: 1285px;
   height: auto;
   position: absolute;
-  font-size: 18px;
+  font-size: 15px;
   font-style: Regular;
   text-align: left;
   font-family: Arimo;
@@ -341,7 +343,7 @@
   text-decoration: none;
 }
 .admin-services {
-  top: 42%;
+  top: 38%;
   left: 49px;
   color: rgba(30, 30, 30, 1);
   width: 384px;
@@ -357,13 +359,13 @@
   text-decoration: none;
 }
 .admin-clinic-services {
-  top: 190px;
+  top: 178px;
   left: 50px;
   color: rgba(75, 75, 75, 1);
   width: 362px;
   height: auto;
   position: absolute;
-  font-size: 18px;
+  font-size: 15px;
   font-style: Regular;
   text-align: left;
   font-family: Arimo;
@@ -373,13 +375,13 @@
   text-decoration: none;
 }
 .admin-clinic-services-2 {
-  top: 190px;
+  top: 178px;
   left: 487px;
   color: rgba(75, 75, 75, 1);
   width: 379px;
   height: auto;
   position: absolute;
-  font-size: 18px;
+  font-size: 15px;
   font-style: Regular;
   text-align: left;
   font-family: Arimo;
@@ -389,13 +391,13 @@
   text-decoration: none;
 }
 .admin-clinic-services-3 {
-  top: 190px;
+  top: 178px;
   left: 937px;
   color: rgba(75, 75, 75, 1);
   width: 397px;
   height: auto;
   position: absolute;
-  font-size: 18px;
+  font-size: 15px;
   font-style: Regular;
   text-align: left;
   font-family: Arimo;
