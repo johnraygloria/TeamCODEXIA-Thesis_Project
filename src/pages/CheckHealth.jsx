@@ -11,6 +11,8 @@ import Add from '../Components/Assets/Add.png';
 import './CheckHealthStyle.css';
 import Navbar from '../Components/Global/Navbar_Main';
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const Type = (props) => {
   const history = useHistory(); // Initialize useHistory hook
 
@@ -20,110 +22,183 @@ const Type = (props) => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="admin-page-container">
-        <div className="admin-clinic-container">
-          <div className="adminpage-infro-margaret">
-            <div className="admin-profile-container">
-              <div className="admin-view-page">
-                <span className="admin-docs">
-                  <span>No. of Doctors:</span>
-                </span>
-                <span className="admin-staffs">
-                  <span>No. of Staff:</span>z
-                </span>
-                <span className="admin-title">
-                  <span>Pregnancy Care &amp; Family Planning Center</span>
-                </span>
-                <span className="admin-count-staffs">
-                  <span>10</span>
-                </span>
-                <span className="admin-count-docs">2</span>
-              </div>
+<>
+<Navbar/>
+  <div className="homeFullScreen">
+    <div className="header-text">
+      <h1>St. Margaret Lying In Clinic </h1>
+      <div className="vertical-line" />
+      <button className='btn-app-user-clic'>Appointment</button>
+    </div>
+  </div>
+  
+  <section className="feature">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-15 col-sm-15">
+        {/* <h1 className='about-app'>About</h1> */}
+          <div className="feature-box-about">
+            <h1>About:</h1>
+            <p>
+            Lorem ipsum dolor sit amet. Et voluptatibus perferendis ex quia minus ut deserunt nobis
+             et assumenda facilis qui fugiat dolorum ut commodi maiores. Aut iusto saepe et tempora
+              architecto aut autem reiciendis. Id unde obcaecati ut sunt quos in debitis repellendus.
+            Et repellendus natus aut natus rerum et ipsa aspernatur et voluptates dignissimos.
 
-              <span className="btn-appointment" onClick={handleAppointmentClick}>
-                <span>Add Appointment</span>
-              </span>
-              <img src={Add} alt="Add1451" className="admin-add-btn" />
-              <img src={Cover} alt="cover1451" className="admin-cover" />
-              <img src={Clinic} alt="cliniclogo1451" className="admin-logo" />
-              <span className="admin-clinic-name">
-                <span>St. Margaret Lying In Clinic</span>
-                <br></br>
-                <span></span>
-              </span>
-            </div>
-
-            <div className="admin-st-margaret-intro">
-              <div className="information-st-margaret">
-                <span className="intro-style">
-                  <span>Intro:</span>
-                  <span></span>
-                </span>
-                <div className="admin-info-style">
-                  <span className="admin-page">Page· Pregnancy Care Center</span>
-                  <span className="admin-location">
-                    GF 74A 20TH ST. EAST BAJAC BAJAC, Olongapo, Philippines
-                  </span>
-                  <span className="admin-contact">0968 240 5533</span>
-                  <span className="admin-email">stmargaretlyingin@gmail.com</span>
-                  <span className="admin-clock">Always open</span>
-                </div>
-                <div className="images-styles">
-                  <img src={info} alt="Info1452" className="information-style" />
-                  <img src={Mark} alt="PlaceMarker1452" className="place-marker-style" />
-                  <img src={Phone} alt="Phone1452" className="phone-style" />
-                  <img src={Letter} alt="Letter1452" className="letter-style" />
-                  <img src={Clock} alt="Clock1452" className="clock-style" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="admin-about-conntainer">
-            <span className="admin-about-footer">
-              <span>About:</span>
-            </span>
-            <div className="admin-information-about">
-              <p>
-                Lorem ipsum dolor sit amet. Et voluptatibus perferendis ex quia minus ut deserunt
-                nobis et assumenda facilis qui fugiat dolorum ut commodi maiores. Aut iusto saepe et
-                tempora architecto aut autem reiciendis. Id unde obcaecati ut sunt quos in debitis
-                repellendus. Et repellendus natus aut natus rerum et ipsa aspernatur et voluptates
-                dignissimos.
-              </p>
-            </div>
-
-            <span className="admin-services">
-              <span>Services:</span>
-            </span>
-
-            <div className="admin-clinic-services">
-              <p>MATERNITY PACKAGE</p>
-              <p>MATERNITY PACKAGE</p>
-              <p>NSD PACKAGE</p>
-              <p>NSD PACKAGE</p>
-              <p>NEWBORN CARE PACKAGE</p>
-            </div>
-            <div className="admin-clinic-services-2">
-              <p>NEWBORN CARE PACKAGE</p>
-              <p>FAMILY PLANNING CONSULT</p>
-              <p>PRENATAL CONSULTATION</p>
-              <p>POSTNATAL CONSULTATION</p>
-              <p>NEWBORN SCREENING</p>
-            </div>
-            <div className="admin-clinic-services-3">
-              <p>NEWBORN HEARING SCREENING</p>
-              <p>PAP-SMEAR</p>
-              <p>NON-STRESS TEST</p>
-              <p>EAR PIERCING</p>
-              <p>INTERNAL EXAMINATION</p>
-            </div>
+            </p>
           </div>
         </div>
+        <h1 className="nopadding mx-auto services-ceenter">Services:</h1>
+        <div className="col-md-auto col-sm-5 nopadding mx-auto">
+          
+        <div className="feature-box">
+            <p>
+            MATERNITY PACKAGE (RM)<br/>
+            MATERNITY PACKAGE (OB)<br/>
+            NSD PACKAGE (RM)<br/>
+            NSD PACKAGE (OB)<br/>
+            NEWBORN CARE PACKAGE(RM)<br/>
+            </p>
+          </div>
+          {/* <img src={Cover} /> */}
+        </div>
+        <div className="col-md-auto col-sm-5 nopadding mx-auto">
+        <div className="feature-box">
+            <p>
+            NEWBORN CARE PACKAGE (OB)<br/>
+            FAMILY PLANNING CONSULT<br/>
+            PRENATAL CONSULTATION<br/>
+            POSTNATAL CONSULTATION<br/>
+            NEWBORN SCREENING<br/>
+
+            </p>
+          </div>
+          {/* <img src={Cover} /> */}
+        </div>
+        <br/>
+        <div className="col-md-auto col-sm-5 nopadding mx-auto">
+        <div className="feature-box">
+            <p>
+            NEWBORN HEARING SCREENING<br/>
+            PAP-SMEAR<br/>
+            NON-STRESS TEST<br/>
+            EAR PIERCING<br/>
+            INTERNAL EXAMINATION<br/>
+            </p>
+          </div>
+        </div>
+        {/* <div className="clearfix" />
+        <div className="col-md-6 col-sm-6 nopadding">
+          <img src="images/1.png" />
+        </div> */}
+        {/* End col-md-6 */}
+        <div className="col-md-6 col-sm-6 mx-auto">
+          <div className="info-page-margaret ">
+            <h1>Info:</h1>
+            <p>
+            Page · Pregnancy Care Center <br/>
+            GF 74A 20TH ST. EAST BAJAC BAJAC, Olongapo, Philippines<br/>
+            0968 240 5533<br/>
+            stmargaretlyingin@gmail.com<br/>
+            Always open<br/>
+            </p>
+          </div>
+        </div>
+        {/* End col-md-6 */}
       </div>
-    </>
+    </div>
+  </section>
+
+  {/* <section className="portfolio">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <h1 className="heading">Portfolio</h1>
+        </div>
+
+        <div className="col-md-4 col-sm-4">
+          <img src="images/p-1.png" />
+        </div>
+
+        <div className="col-md-4 col-sm-4">
+          <img src="images/p-2.png" />
+        </div>
+
+        <div className="col-md-4 col-sm-4 last-img">
+          <img src="images/p-3.png" />
+        </div>
+
+        <div className="clearfix" />
+
+        <div className="col-md-4 col-sm-4">
+          <img src="images/p-4.png" />
+        </div>
+
+        <div className="col-md-4 col-sm-4">
+          <img src="images/p-5.png" />
+        </div>
+
+        <div className="col-md-4 col-sm-4 last-img">
+          <img src="images/p-6.png" />
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section className="call-top-action text-center">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <h1>many variations of passages</h1>
+          <p>
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration
+            <br />
+            in some form, by injected humour, or randomised words which don't
+            look even slightly believable
+          </p>
+          <span>LOREM IPSUM</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <ul className="in-line">
+      <li>
+        <a href="#">
+          <span>
+            <i className="fa fa-facebook" />
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>
+            <i className="fa fa-twitter" />
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>
+            <i className="fa fa-youtube" />
+          </span>
+        </a>
+      </li>
+    </ul>
+    <span className="copyright">
+      © Untitled . All rights reserved. Design By{" "}
+      <a href="http://templatestock.co">Templatestock.co</a>
+    </span>
+  </footer> */}
+</>
+
   );
 };
 

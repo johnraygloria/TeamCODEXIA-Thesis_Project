@@ -1,5 +1,5 @@
 import './HomeStyle.css';
-import newhome from '../Components/Assets/back-new1.png'
+import newhome from '../Components/Assets/back-new3.jpg'
 import Nav from '../Components/Global/Navbar_Main'
 import { Link } from 'react-router-dom'
 

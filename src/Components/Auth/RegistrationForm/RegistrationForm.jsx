@@ -153,9 +153,13 @@ function RegistrationForm() {
       </Modal>
 
       <div className='welcome-message'>
-  <h1>PlanIt</h1>
-  <h1 className='logo-color'>FamIt</h1>
-  <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
+      <img src={background1} alt="" />
+      <div className='welcome-message-bkg'>
+          <h1>PlanIt
+        <h1 className='logo-color'>FamIt</h1>
+      </h1>
+        <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
+      </div >
 </div>
 <div className="wrapper-register-page">
     <div className= 'wrapper-register'>
@@ -215,14 +219,14 @@ function RegistrationForm() {
     </div>
     </div>
 
-    <div className="landingpagebkg">
+    {/* <div className="landingpagebkg">
         <div className="flex-landingbkg1">
           <img src={background1} alt="background2"  />
           </div>
         <div className="flex-landingbkg2" >
           <img src={background2} alt="background1" />
         </div>
-    </div>
+    </div> */}
   </>  
   );
 };

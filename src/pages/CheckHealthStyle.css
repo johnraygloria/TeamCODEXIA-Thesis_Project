@@ -1,411 +1,588 @@
-.admin-page-container {
-  width: 100%;
-  display: flex;
-  overflow: auto;
-  height: 87.5vh;
-  align-items: center;
-}
-.admin-clinic-container {
-  width: 100%;
-  height: 87.5vh;
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(149deg, rgba(245, 173, 207, 1) 25%, rgba(195, 255, 159, 1) 55%, rgba(253, 176, 255, 1) 83%);
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.adminpage-infro-margaret{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-.admin-profile-container {
-  top: 60px;
-  left: 5%;
-  width: 60%;
-  max-width: 60%;
-  height: 389px;
-  display: flex;
-  position: absolute;
-  border-radius: 20px;
-  flex-shrink: 1;
-  background-color: rgba(252, 252, 252, 1);
-}
-.admin-view-page{
-  top: 225px;
-  left: 237.51751708984375px;
-  width: 660.7306518554688px;
-  height: 96px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
-}
+/*
+	Rocket Internet by TEMPLATE STOCK
+    templatestock.co @templatestock
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
 
-.admin-docs {
-  top: 7px;
-  left: 511.74237060546875px;
-  color: rgba(173, 167, 167, 1);
-  width: 110px;
-  height: auto;
-  position: absolute;
-  font-size: 12px;
-  font-style: Medium;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.admin-staffs {
-  top: 45px;
-  left: 512.1913452148438px;
-  color: rgba(173, 167, 167, 1);
-  width: 80px;
-  height: auto;
-  position: absolute;
-  font-size: 12px;
-  font-style: Medium;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.admin-title{
-  top: 25px;
-  color: rgba(75, 75, 75, 1);
-  width: 299px;
-  height: auto;
-  position: absolute;
-  font-size: 12px;
-  font-style: Medium;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.admin-count-staffs {
-  top: 64px;
-  left: 539.1285400390625px;
-  color: rgba(170, 217, 70, 1);
-  width: 38px;
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  font-style: Bold;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.admin-count-docs {
-  top: 21px;
-  left: 539.1285400390625px;
-  color: rgba(170, 217, 70, 1);
-  width: 38px;
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  font-style: Bold;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.admin-add-btn {
-  top: 320px;
-  left: 228px;
-  width: 19px;
-  height: 16px;
-  position: absolute;
-}
-.admin-cover {
-  /* top: 5px; */
-  /* left: 0px; */
-  width:100%;
-  height: 200px;
-  position: absolute;
-  border-radius: 20px 20px 0 0;
-}
-.btn-appointment {
-  top: 319px;
-  left: 251.5467529296875px;
-  color: rgba(75, 75, 75, 1);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  background: #C4FF9F;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  height: auto;
-  position: absolute;
-  font-size: 12px;
-  font-style: Medium;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: normal;
-  font-stretch: normal;
-  cursor: pointer;
-}
-.admin-logo {
-  top: 148px;
-  left: 48.68646240234375px;
-  width: 162px;
-  height: 160px;
-  position: absolute;
-}
-.admin-clinic-name {
-  top: 219px;
-  left: 237.51751708984375px;
-  color: rgba(30, 30, 30, 1);
-  width: 406px;
-  height: auto;
-  position: absolute;
-  font-size: 25px;
-  font-style: Bold;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.admin-st-margaret-intro {
-  top: 60px;
-  left : 71%;
-  width: 455px;
-  height: 407px;
-  display: flex;
-  position: absolute;
-  flex-shrink: 1;
-}
-
-/* .admin-profileusersviewofclinicpage-line3 {
-  top: 76px;
-  left: 8.9566650390625px;
-  width: 416px;
-  height: 1px;
-  position: absolute;
+/* Typography CSS */
+/* body
+{
+    font-family: 'Lato', sans-serif;
+    color: #41484b;
 } */
-.information-st-margaret{
-  background-color: white;
-  border-radius: 10%;
-  width: 100%;
-  height: 95.5%;
-  display: flex;
-  flex-direction: column;
-}
-.intro-style{
-  top: 20px;
-  left: 24.3988037109375px;
-  color: rgba(30, 30, 30, 1);
-  width: 384px;
-  height: auto;
-  position: absolute;
-  font-size: 25px;
-  font-style: Bold;
-  text-align: left;
-  font-family: Arimo;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.admin-info-style {
-
-  color: rgba(102, 102, 102, 1);
-  width: 100%;
-  /* height: auto; */
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 50px;
-  left: 66.3988037109375px;
-  font-size: 19px;
-  font-style: Bold;
-  text-align: left;
-  font-family: Arimo;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.admin-info-style span{
-  margin-top: 5%;
-}
-.admin-page, .admin-location, .admin-contact, .admin-email {
-  color: rgba(102, 102, 102, 1);
-}
 
 
-.admin-clock {
-  color: rgba(170, 217, 70, 1);
+
+/* Heder */
+.homeFullScreen {
+    width:100vh;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: top center;
 }
 
-.images-styles img{
-  display: flex;
-  flex-direction: column;
-  /* margin-bottom: 5%; */
+.homeFullScreen {
+    background-image:url('../Components/Assets/family.png');
+    overflow: hidden;
 }
-.information-style {
-  top: 70px;
-  left: 25.3988037109375px;
-  width: 33px;
-  height: 33px;
-  position: absolute;
+
+.homeFullScreen {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
 }
-.place-marker-style {
-  top: 132px;
-  left: 24.3988037109375px;
-  width: 33px;
-  height: 33px;
-  position: absolute;
+
+.header-text h1
+{
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
 }
-.phone-style {
-  top: 200px;
-  left: 25.3988037109375px;
-  width: 33px;
-  height: 33px;
-  position: absolute;
+
+.header-text .vertical-line
+{
+    height: px;
+    background-color: #fff;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
-.letter-style {
-  top: 252px;
-  left: 24.3988037109375px;
-  width: 33px;
-  height: 33px;
-  position: absolute;
+
+.header-text p
+{
+    font-size: 26px;
+    color: #fff;
 }
-.clock-style {
-  top: 307px;
-  left: 25.3988037109375px;
-  width: 33px;
-  height: 33px;
-  position: absolute;
+.btn-app-user-clic{
+    background: #5c195e;
+    background-image: -webkit-linear-gradient(top, #5c195e, #A024A3);
+    background-image: -moz-linear-gradient(top, #5c195e, #A024A3);
+    background-image: -ms-linear-gradient(top, #5c195e, #A024A3);
+    background-image: -o-linear-gradient(top, #5c195e, #A024A3);
+    background-image: linear-gradient(to bottom, #5c195e, #A024A3);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 30px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    border: none;
+    /* opacity: 10; */
 }
-.admin-about-conntainer {
-  top: 470px;
-  width: 1375px;
-  height: 350px;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  flex-shrink: 1;
-  background-color: rgba(252, 252, 252, 1);
-  border-radius: 20px;
+.btn-app-user-clic:hover {
+        background: #A024A3;
+        background-image: -webkit-linear-gradient(top, #A024A3, #5c195e);
+        background-image: -moz-linear-gradient(top, #A024A3, #5c195e);
+        background-image: -ms-linear-gradient(top, #A024A3, #5c195e);
+        background-image: -o-linear-gradient(top, #A024A3, #5c195e);
+        background-image: linear-gradient(to bottom, #A024A3, #5c195e);
+        text-decoration: none;
+      
 }
-.admin-about-conntainer p{
-  margin-bottom: 1%;
+
+/* feature */
+.feature img
+{
+    width: 100%;
 }
-.admin-about-footer{
-  top: 20px;
-  left: 32px;
-  color: rgba(30, 30, 30, 1);
-  width: 384px;
-  height: auto;
-  position: absolute;
-  font-size: 25px;
-  font-style: Bold;
-  text-align: left;
-  font-family: Arimo;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
 }
-.admin-information-about{
-  top: 55px;
-  left: 44px;
-  color: rgba(75, 75, 75, 1);
-  width: 1285px;
-  height: auto;
-  position: absolute;
-  font-size: 15px;
-  font-style: Regular;
-  text-align: left;
-  font-family: Arimo;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.feature-box
+{   
+    margin-bottom: 0;
+    /* background-color: #A024A3; */
+    border-radius: 1rem;
+    padding: 50px;
 }
-.admin-services {
-  top: 38%;
-  left: 49px;
-  color: rgba(30, 30, 30, 1);
-  width: 384px;
-  height: auto;
-  position: absolute;
-  font-size: 25px;
-  font-style: Bold;
-  text-align: left;
-  font-family: Arimo;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+.feature-box-about{
+    font-size: 25px;
+    background-color: #ffffff;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2%;
+    border-radius:2rem;
 }
-.admin-clinic-services {
-  top: 178px;
-  left: 50px;
-  color: rgba(75, 75, 75, 1);
-  width: 362px;
-  height: auto;
-  position: absolute;
-  font-size: 15px;
-  font-style: Regular;
-  text-align: left;
-  font-family: Arimo;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+.feature-box-about h1{
+    text-align: center;
 }
-.admin-clinic-services-2 {
-  top: 178px;
-  left: 487px;
-  color: rgba(75, 75, 75, 1);
-  width: 379px;
-  height: auto;
-  position: absolute;
-  font-size: 15px;
-  font-style: Regular;
-  text-align: left;
-  font-family: Arimo;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+.services-ceenter{
+    text-align: center;
 }
-.admin-clinic-services-3 {
-  top: 178px;
-  left: 937px;
-  color: rgba(75, 75, 75, 1);
-  width: 397px;
-  height: auto;
-  position: absolute;
-  font-size: 15px;
-  font-style: Regular;
-  text-align: left;
-  font-family: Arimo;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+.info-page-margaret{
+    font-size: 25px;
+    margin-top: 5%;
+    padding: 3%;
+    background-color: white;
+    border-radius:2rem;
 }
-@media(max-width:952px){
+.info-page-margaret p{
+    margin-left: 5%;
+}
+.feature-box h1
+{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;   
+    margin-top:2rem ;
+}
+
+.feature-box p
+{
+    font-size: 15px;
+    text-align: justify;
+}
+.about-app{
+    margin-top: 3%;
+    margin-bottom: 0;
+}
+/* Portfolio */
+.portfolio .heading
+{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.portfolio img
+{
+    width: 100%;
+    cursor: pointer;
+}
+
+.portfolio .last-img
+{
+    margin-bottom: 20px;
+}
+
+/* Call to Action */
+.call-top-action
+{
+    background-color: #42484c;
+    color: #fff;
+    padding: 50px 0px;
+    margin-top: 50px;
+}
+
+.call-top-action h1
+{
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    margin: 0px;
+}
+
+.call-top-action p
+{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.call-top-action span
+{
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer
+{
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer ul
+{
+    padding: 0px;
+    list-style: none;
+    margin: 20px;
+}
+
+footer ul li
+{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+footer ul li a span
+{
+    width: 50px;
+    height: 50px;
+    background: #42484C;
+    display: block;
+    font-size: 30px;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+}
+
+footer .copyright
+{
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+
+/* Extra Small devices  */
+@media (max-width: 480px) {
+	
+}
+
+/* Extra Small devices  */
+@media (max-width: 767px) {
+    .header-text h1 {
+        font-size: 45px;
+    }
+
+    .header-text .vertical-line {        
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .header-text p {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .feature-box {
+        padding: 0px;
+    }
+
+    .feature-box h1 {
+        font-size: 25px;
+        margin-top: 2em;
+    }
+
+    .feature-box p {
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .nopadding {
+        padding: 15px !important;
+        margin: 0 !important;
+    }
+
+    .portfolio img {        
+        margin-bottom: 15px;
+    }
+
+    .call-top-action h1 {
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 15px !important;
+        margin: 0px;
+    }
+
+    .call-top-action p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .call-top-action span {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    footer ul li a span {
+        width: 40px;
+        height: 40px;
+        background: #42484C;
+        display: block;
+        font-size: 22px;
+        line-height: 40px;
+        color: #fff;
+        border-radius: 50%;
+    }
+
+    footer .copyright {
+        font-size: 16px;
+        margin-bottom: 20px;
+        display: block;
+    }
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {  
+    .header-text h1 {
+        font-size: 45px;
+    }
+
+    .header-text p {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .feature-box h1 {
+        font-size: 25px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 1em;
+    }
+	
+    .feature-box p {
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    .call-top-action h1 {
+        font-size: 25px;
+        text-transform: uppercase;
+        margin-bottom: 13px !important;
+        margin: 0px;
+    }
+
+    .call-top-action p {
+        font-size: 14px;
+        margin-bottom: 13px;
+    }
+
+    .call-top-action span {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 23px;
+    }
+
+    footer ul li a span {
+        width: 40px;
+        height: 40px;
+        background: #42484C;
+        display: block;
+        font-size: 22px;
+        line-height: 40px;
+        color: #fff;
+        border-radius: 50%;
+    }   
+
+    footer .copyright {
+        font-size: 18px;
+    }
+
+
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .feature-box {
+        padding: 10px;
+    }
+
+    .feature-box h1 {
+        font-size: 30px;    
+    }
+
+    .feature-box p {
+        font-size: 20px;
+    }
+
+    .call-top-action p
+    {
+        font-size: 19px;
+    }
+
+    .call-top-action h1 {
+        font-size: 30px;
+       margin-bottom: 15px !important;
+    }
+
+    .call-top-action span {
+        font-size: 20px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* Typography CSS */
+/* body
+{
+    font-family: 'Lato', sans-serif;
+    color: #41484b;
+} */
+
+
+
+/* Heder */
+.homeFullScreen {
+    width:200vh;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: top center;
+    background-image: url('../Components/Assets/type-user.png');
+    overflow: hidden;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      margin: auto;
+      object-fit:cover ;
+      margin-top: 55%;
+}
+
+.header-text h1
+{
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: -15%;
+}
+
+.header-text .vertical-line
+{   
+    /* margin-bottom: 5%; */
+    height: 2px;
+    background-color: #fff;
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+.header-text p
+{
+    font-size: 26px;
+    color: #fff;
+}
+
+
+/* feature */
+.feature img
+{
+    width: 100%;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.feature-box
+{
+    padding: 20px;
+}
+
+.feature-box h1
+{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;   
+    margin-top: 2em;
+}
+
+.feature-box p
+{
+    font-size: 25px;
+    text-align: justify;
+}
+
+/* Portfolio */
+.portfolio .heading
+{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.portfolio img
+{
+    width: 100%;
+    cursor: pointer;
+}
+
+.portfolio .last-img
+{
+    margin-bottom: 20px;
+}
+
+/* Call to Action */
+.call-top-action
+{
+    background-color: #42484c;
+    color: #fff;
+    padding: 50px 0px;
+    margin-top: 50px;
+}
+
+.call-top-action h1
+{
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    margin: 0px;
+}
+
+.call-top-action p
+{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.call-top-action span
+{
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer
+{
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer ul
+{
+    padding: 0px;
+    list-style: none;
+    margin: 20px;
+}
+
+footer ul li
+{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+footer ul li a span
+{
+    width: 50px;
+    height: 50px;
+    background: #42484C;
+    display: block;
+    font-size: 30px;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+}
+
+footer .copyright
+{
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: block;
+}
+
 
 }

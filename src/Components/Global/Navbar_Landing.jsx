@@ -21,7 +21,7 @@ const Navbar = () => {
     <i><img src={humber} alt="" /></i>
   </label>
 
- <label  className="landing-nav">PlanIt<span>FamiIt</span></label>
+ <label  className="landing-nav">PlanIt<span>FamIt</span></label>
   <ul>
   <Link to="/Login"> 
     <li>

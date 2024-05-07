@@ -12,7 +12,9 @@
 
 .wrapper-login {
     width:500px;
-    background: transparent;
+    /* background: transparent; */
+    background-image: url(../../Assets/landing_page_bkg2.png);  
+    object-fit: cover;
     color: #000;
     border-radius: 10px;
     padding: 30px 15.5px;
@@ -25,6 +27,39 @@
     right:2rem;
     display: flex;
 }
+
+@media (max-width: 360px){
+.wrapper-landing-page{
+  right: 38.7rem;
+  bottom: 3.5%;
+
+}
+.wrapper-login{
+    height: 100%;
+}
+.input-box .icon{
+    left: 90%;
+}
+.welcome-message{
+    display: none;
+}
+
+.remember-forgot label {
+    font-size: 4px;
+}
+.forgot-password a{
+    font-size: 55%;
+}
+.input-box input{
+    margin-bottom: 0;
+}
+.wrapper-login .register-link p{
+    margin-top: 13%;
+}
+.wrapper-landing-page .version p{
+    top: 12%;
+}
+}
 @media (max-width: 952px){
     .wrapper-landing-page{
     height: 80%;
@@ -33,11 +68,10 @@
     .wrapper-login{
     top: 3%;
     width: 350px;
-    height: 80%;
+    /* height: 80%; */
     margin-top:1%;
     }
     .wrapper-login h2{
-
     margin-top:1%;
     font-size:20px;
     }
@@ -58,6 +92,9 @@
     
     .register-link a {
         font-size: 14px;
+    }
+    .wrapper-login button{
+        width: 50%;
     }
 
 }   
@@ -88,11 +125,11 @@
     margin: 30px 0;
 }
 
-
+/* 
 .input-box input {
-    /* margin-left: 50%; */
+    margin-left: 50%;
     margin-right: 50%;
-    width: 50%;
+    width: 100%;
     height: 50%;
     background: transparent;
     outline: none;
@@ -101,8 +138,15 @@
     font-size: 16px;
     color: black;
     padding: 20px 45px 20px 20px;
+} */
+.input-box input{
+    border-radius:1rem;
+    padding: 2%;
+    /* margin-left: 5%; */
+    margin-right: 15%;
+    border-radius:none ;
+    margin-bottom: 0;
 }
-
 .input-box input::placeholder{
     color: gray ;
 }
@@ -129,23 +173,22 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    font-size: 20.5px;
+    /* font-size: 20.5px; */
+    /* padding-top: 5rem; */
     /* margin: -15px 0 15px; */
 }
 
-.remember-forgot label input{
+.remember-forgot label{
     accent-color: gray;
-    margin-right: 4px;
-    /* margin-top: 20px; */
+    /* margin-bottom: 15%; */
+    margin-bottom: 7%;
 }
 
 .remember-forgot a{
     color: purple;
     text-decoration: none;
-    margin-top: auto;
     font-size: auto;
 }
-
 .remember-forgot a:hover{
     text-decoration: none;
 }
@@ -163,9 +206,11 @@
     color: black;
     font-weight: 700;
     transition: all .3s ease;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
-
+.wrapper-login input{
+    width: 100%;
+}
 .wrapper-login .register-link {
     font-size: 18.5px;
     text-align: center;

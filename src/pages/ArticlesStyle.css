@@ -113,6 +113,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    margin-top: 7.6rem;
     height: auto;
     display: flex;
     justify-content: center;
@@ -123,7 +124,7 @@ body {
 
 
 .article-cards{
-    padding-top: 15rem;
+    padding-top: 13rem;
     display: flex;
     align-items: center;
 }
@@ -137,7 +138,7 @@ body {
 }
 
 .Heading h2{
-    padding-top: 10%;
+    padding-top: 8%;
     font-size: 50px;
     text-align: center;
     font-weight: bold;
