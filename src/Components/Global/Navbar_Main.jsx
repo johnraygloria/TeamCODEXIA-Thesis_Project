@@ -14,7 +14,7 @@ function Nav (){
     <i><img src={humber} alt="" /></i>
   </label>
 
- <Link  className="page_name" to="/Home"> <label>PlanIt<span>FamiIt</span></label></Link>
+ <Link  className="page_name" to="/Home"> <label>PlanIt<span>FamIt</span></label></Link>
   <ul>
     <li>
       <a className="active">
