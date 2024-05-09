@@ -14,6 +14,7 @@ import './CheckHealthStyle.css';
 import Navbar from '../Components/Global/Navbar_Main';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Footer from '../Components/Global/Footer';
 
 const Type = (props) => {
   const history = useHistory();
@@ -39,13 +40,12 @@ const Type = (props) => {
         <div className="col-md-20 col-sm-20">
           {/* <img className='about-pic-style' src={Aboutpic} alt="" /> */}
         {/* <h1 className='about-app'>About</h1> */}
-          <div className="feature-box-about">
+          <div className="feature-box-about" style={{ textAlign:'justify' }}>
             <p>
-            Lorem ipsum dolor sit amet. Et voluptatibus perferendis ex quia minus ut deserunt nobis
-             et assumenda facilis qui fugiat dolorum ut commodi maiores. Aut iusto saepe et tempora
-              architecto aut autem reiciendis. Id unde obcaecati ut sunt quos in debitis repellendus.
-            Et repellendus natus aut natus rerum et ipsa aspernatur et voluptates dignissimos.
-
+            Welcome to St. Margaret Lying In Clinic! We are thrilled to be a part of your journey through the miracle of life. 
+            As a dedicated pregnancy care center, we are committed to providing comprehensive and compassionate care. 
+            Partnered with the innovative family planning application, PlanItFamIt, we aim to empower and support you in every step 
+            of your family planning journey. Together, let's celebrate the joy of parenthood!
             </p>
           </div>
         </div>
@@ -106,6 +106,8 @@ const Type = (props) => {
       </div>
     </div>
   </section>
+
+  <Footer/>
 
   {/* <section className="portfolio">
     <div className="container">

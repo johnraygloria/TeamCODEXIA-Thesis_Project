@@ -20,7 +20,7 @@ import PregnancyWheel from './Components/Admin/TabView/PregnancyWheel.jsx';
 import Chatbot from './pages/Chatbot.jsx';
 import PatientsRecord from './Components/Admin/PatientsRecord';
 import UserProfile from './pages/UserProfile';
-import Chatbot1 from './pages/Chatbot1.jsx';
+
 
 const App = () => {
   return(
@@ -62,10 +62,6 @@ const App = () => {
 
       <Route path='/Resetyourpassword' compontent={ PasswordResetForm } exact>
         <PasswordResetForm/>
-      </Route>
-
-      <Route path='/Chatbot1' compontent={ Chatbot1 } exact>
-        <Chatbot1/>
       </Route>
 
       <Route path='/Chatbot' compontent = { Chatbot } exact>
