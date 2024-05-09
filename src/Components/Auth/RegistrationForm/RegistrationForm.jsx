@@ -74,7 +74,7 @@ function RegistrationForm() {
   return (
     <>
 
-    <Navbar/>
+    {/* <Navbar/> */}
 
       <Modal
       isOpen={modalIsOpen}
@@ -153,12 +153,11 @@ function RegistrationForm() {
       </Modal>
 
       <div className='welcome-message'>
-      <img src={background1} alt="" />
-      <div className='welcome-message-bkg'>
-          <h1>PlanIt
-        <h1 className='logo-color'>FamIt</h1>
-      </h1>
-        <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
+    <img src={background1} alt="" />
+        <div className='welcome-message-bkg'>
+          <h1>PlanIt<span>FamIt</span></h1>
+        <p>Approachable modern family planning methods for partners
+           and families here in the Philippines.</p>
       </div >
 </div>
 <div className="wrapper-register-page">

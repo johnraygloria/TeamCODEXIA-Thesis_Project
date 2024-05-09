@@ -49,15 +49,14 @@ function LoginForm  ()  {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
 
     <div className='welcome-message'>
     <img src={background1} alt="" />
         <div className='welcome-message-bkg'>
-          <h1>PlanIt
-        <h1 className='logo-color'>FamIt</h1>
-      </h1>
-        <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
+          <h1>PlanIt<span>FamIt</span></h1>
+        <p>Approachable modern family planning methods for partners
+           and families here in the Philippines.</p>
       </div >
     </div>
     
@@ -66,7 +65,7 @@ function LoginForm  ()  {
       <form onSubmit={SignIn}>
         <h2>Welcome Back!</h2>
         
-        <p> Let's start exploring the beneficial ways of modern family planning here at PlanItFamIt! </p>
+        <p> Let's start exploring the beneficial ways of modern family planning here at <p className="wel-message-span"> PlanIt<span>FamIt!</span> </p> </p>
         <div className="input-box" >
           <input type="email" placeholder='Enter your email' 
           value={email} 

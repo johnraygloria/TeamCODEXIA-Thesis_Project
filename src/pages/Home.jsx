@@ -1,5 +1,5 @@
 import './HomeStyle.css';
-import newhome from '../Components/Assets/back-new3.jpg'
+import newhome from '../Components/Assets/back-new1.png'
 import Nav from '../Components/Global/Navbar_Main'
 import { Link } from 'react-router-dom'
 
@@ -20,7 +20,7 @@ function Home() {
     
     <div className="flex_more">
     <p className="assistant_intro" href="">Start chatting with Planlt Assistant</p>
-    <p className="assistant_intro" href="">Lorem lpsum dolor sit amet</p>
+    <p className="assistant_intro" href="">Healthcare Articles</p>
     </div>
 
     <div className="fix_moko">

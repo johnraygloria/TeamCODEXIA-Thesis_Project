@@ -24,7 +24,7 @@
 }
 
 .homeFullScreen {
-    background-image:url('../Components/Assets/family.png');
+    background-image: url('../Components/Assets/type-user.png');
     overflow: hidden;
 }
 
@@ -69,7 +69,7 @@
     border-radius: 28px;
     font-family: Georgia;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 20px;
     padding: 5px 20px 5px 20px;
     text-decoration: none;
     border: none;
@@ -99,16 +99,22 @@
 
 .feature-box
 {   
-    margin-bottom: 0;
-    /* background-color: #A024A3; */
+    margin-top: 10%;
+    border: 3px solid rgb(87, 87, 87);
+    /* background-color: #42484c; */
+    box-shadow: #42484C;
     border-radius: 1rem;
-    padding: 50px;
+    padding: 45px;
+    z-index: 1                                          ;
 }
 .feature-box-about{
+    /* position: relative; */
+    /* right: 5%; */
     font-size: 25px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     margin-top: 5%;
     margin-bottom: 5%;
+    /* margin-right: 5%; */
     padding: 2%;
     border-radius:2rem;
 }
@@ -124,6 +130,9 @@
     padding: 3%;
     background-color: white;
     border-radius:2rem;
+}
+.info-page-margaret h1 {
+    text-align: center;
 }
 .info-page-margaret p{
     margin-left: 5%;
@@ -235,8 +244,12 @@ footer .copyright
     display: block;
 }
 
-
-
+.feature .about-pic-style {
+    position: absolute;
+    left: -5%;
+    height: 50%;
+    width: 50%;
+}
 /* Extra Small devices  */
 @media (max-width: 480px) {
 	
@@ -409,6 +422,11 @@ footer .copyright
         font-size: 20px;
     }
 }
+@media (min-width: 1024px) {
+    .homeFullScreen {
+        width:200vh;  
+    }  
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -424,7 +442,7 @@ footer .copyright
 /* Heder */
 .homeFullScreen {
     width:200vh;
-    height: 100vh;
+    height: 90vh;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -467,7 +485,7 @@ footer .copyright
 /* feature */
 .feature img
 {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .nopadding {

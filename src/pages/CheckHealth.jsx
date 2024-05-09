@@ -8,17 +8,18 @@ import Letter from '../Components/Assets/Letter.png';
 import Clinic from '../Components/Assets/stmargaretlogo.png';
 import Cover from '../Components/Assets/cover.png';
 import Add from '../Components/Assets/Add.png';
+import Aboutpic from '../Components/Assets/about_pic.jpg'
+
 import './CheckHealthStyle.css';
 import Navbar from '../Components/Global/Navbar_Main';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Type = (props) => {
-  const history = useHistory(); // Initialize useHistory hook
+  const history = useHistory();
 
-  // Function to handle navigation to the appointment page
   const handleAppointmentClick = () => {
-    history.push('/Appointment'); // Navigate to the appointment page
+    history.push('/FillUpAppointment'); 
   };
 
   return (
@@ -28,17 +29,17 @@ const Type = (props) => {
     <div className="header-text">
       <h1>St. Margaret Lying In Clinic </h1>
       <div className="vertical-line" />
-      <button className='btn-app-user-clic'>Appointment</button>
+      <button onClick={handleAppointmentClick} className='btn-app-user-clic'>Set Appointment</button>
     </div>
   </div>
   
   <section className="feature">
     <div className="container">
       <div className="row">
-        <div className="col-md-15 col-sm-15">
+        <div className="col-md-20 col-sm-20">
+          {/* <img className='about-pic-style' src={Aboutpic} alt="" /> */}
         {/* <h1 className='about-app'>About</h1> */}
           <div className="feature-box-about">
-            <h1>About:</h1>
             <p>
             Lorem ipsum dolor sit amet. Et voluptatibus perferendis ex quia minus ut deserunt nobis
              et assumenda facilis qui fugiat dolorum ut commodi maiores. Aut iusto saepe et tempora
@@ -49,8 +50,8 @@ const Type = (props) => {
           </div>
         </div>
         <h1 className="nopadding mx-auto services-ceenter">Services:</h1>
-        <div className="col-md-auto col-sm-5 nopadding mx-auto">
-          
+        <div className="col-md-auto col-sm-10 nopadding mx-auto">
+            
         <div className="feature-box">
             <p>
             MATERNITY PACKAGE (RM)<br/>
@@ -62,7 +63,7 @@ const Type = (props) => {
           </div>
           {/* <img src={Cover} /> */}
         </div>
-        <div className="col-md-auto col-sm-5 nopadding mx-auto">
+        <div className="col-md-auto col-sm-10 nopadding mx-auto">
         <div className="feature-box">
             <p>
             NEWBORN CARE PACKAGE (OB)<br/>
@@ -76,7 +77,7 @@ const Type = (props) => {
           {/* <img src={Cover} /> */}
         </div>
         <br/>
-        <div className="col-md-auto col-sm-5 nopadding mx-auto">
+        <div className="col-md-auto col-sm-10 nopadding mx-auto">
         <div className="feature-box">
             <p>
             NEWBORN HEARING SCREENING<br/>
@@ -87,14 +88,11 @@ const Type = (props) => {
             </p>
           </div>
         </div>
-        {/* <div className="clearfix" />
-        <div className="col-md-6 col-sm-6 nopadding">
-          <img src="images/1.png" />
-        </div> */}
+
         {/* End col-md-6 */}
         <div className="col-md-6 col-sm-6 mx-auto">
           <div className="info-page-margaret ">
-            <h1>Info:</h1>
+            <h1>Information:</h1>
             <p>
             Page · Pregnancy Care Center <br/>
             GF 74A 20TH ST. EAST BAJAC BAJAC, Olongapo, Philippines<br/>

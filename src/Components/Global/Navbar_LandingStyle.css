@@ -61,6 +61,18 @@
 #check{
   display: none;
 }
+@media (max-width: 390px){
+  .navbar-landing-page{
+    display: none;
+  }
+  
+}
+@media (max-width: 490px){
+  .navbar-landing-page{
+    display: none;
+  }
+  
+}
 
 
 /* @media (max-width: 952px){
