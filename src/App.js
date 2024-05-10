@@ -20,6 +20,7 @@ import PregnancyWheel from './Components/Admin/TabView/PregnancyWheel.jsx';
 import Chatbot from './pages/Chatbot.jsx';
 import PatientsRecord from './Components/Admin/PatientsRecord';
 import UserProfile from './pages/UserProfile';
+import OvulationTracker from './pages/OvulationTracker.jsx';
 
 
 const App = () => {
@@ -78,6 +79,10 @@ const App = () => {
 
       <Route path='/FillUpAppointment' compontent={ FillUpAppointment } exact>
         <FillUpAppointment/>
+      </Route>
+
+      <Route path='/OvulationTracker' compontent= { OvulationTracker } exact>
+        <OvulationTracker/>
       </Route>
 
       

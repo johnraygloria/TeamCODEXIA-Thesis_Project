@@ -1,0 +1,116 @@
+.ov-container {
+    position: relative;
+    height: 100vh; /* Adjust as needed */
+    background-image: url('../Components/Assets/pink_gradient.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Add this line */
+}
+
+.title-container{
+    position: relative;
+    z-index: 1;
+    padding: 0px;
+}
+
+.ot-title h2{
+    color: #0b2941;
+    letter-spacing: -3px;
+    margin-left: 8rem;
+    font-size: 70px;
+    font-family: 'Poppins';
+    padding-top: 50px; /* Adjust as needed */
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.containertitle{
+    width: 800px;
+    height: 100px;
+    z-index: 1;
+    margin-left: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+}
+
+.glasstitle{
+    background: linear-gradient(135deg, rgba(247, 173, 241, 0.4), rgba(232, 120, 120, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+}
+
+.container0{
+    width: 800px;
+    height: 800px;
+    z-index: 1;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.container0 h3{
+    text-align: center;
+    font-size: 40px;
+}
+
+.container0 h1{
+    text-align: center;
+    font-size: 105px;
+}
+
+.container0 p{
+    font-size: 25px;
+}
+
+.glass1{
+    background: linear-gradient(135deg, rgba(247, 173, 241, 0.4), rgba(232, 120, 120, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+}
+
+.glass{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+}
+
+.container{
+    width: 500px;
+    height: 300px;
+    z-index: 1;
+}
+
+.container1{
+    width: 500px;
+    height: 300px;
+    z-index: 1;
+    margin-left: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
