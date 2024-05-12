@@ -96,7 +96,7 @@ body {
     color: #fff; 
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .card-list .card-item {
         padding: 15px;
     }

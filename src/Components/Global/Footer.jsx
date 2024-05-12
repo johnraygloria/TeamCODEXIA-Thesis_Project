@@ -1,12 +1,14 @@
 import { Margin, Padding } from '@mui/icons-material';
 import React from 'react';
 
+import './FooterStyle.css';
+
 const Footer = () => {
   return (
       <footer style={{backgroundColor: '#ffff', borderColor: '#81088', borderTop: '1px solid #81088', position: 'relative', bottom: '0', width: '100%'}}>
-        <div className="container p-4">
+        <div className="container p-7">
           <div className="row">
-            <div className="col-lg-6 col-md-12 mb-4">
+            <div className="col-lg-3 col-md-6 mb-4">
               <h1 className="mb-3" style={{letterSpacing: '0px', color: '#520057', textAlign: 'justify'}}>PlanItFamIt </h1>
               <p style={{textAlign: 'justify'}}>
                 PlanItFamIt your guide to family planning!<br/>
@@ -25,6 +27,23 @@ const Footer = () => {
                 </li>
                 <li className="mb-1">
                   <a href="/Articles" style={{color: '#810088'}}>Articles</a>
+                </li>
+                <li>
+                  <a href="/Type" style={{color: '#810088'}}>St. Margaret Lying In Clinic</a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-lg-3 col-md-6 mb-4">
+              <h3 className="mb-3" style={{letterSpacing: '0px', color: '#520057', textAlign: 'justify'}}>Clinic Information:</h3>
+              <ul className="list-unstyled mb-0" style={{ textAlign: 'justify', Padding: '10px'}}>
+                <li className="mb-1">
+                  <a href="/Home" style={{color: '#810088'}}>Page · Pregnancy Care Center</a>
+                </li>
+                <li className="mb-1">
+                  <a href="/Chatbot" style={{color: '#810088'}}>GF 74A 20TH ST. EAST BAJAC BAJAC, Olongapo, Philippines</a>
+                </li>
+                <li className="mb-1">
+                  <a href="/Articles" style={{color: '#810088'}}>0968 240 5533</a>
                 </li>
                 <li>
                   <a href="/Type" style={{color: '#810088'}}>St. Margaret Lying In Clinic</a>

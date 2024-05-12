@@ -40,7 +40,7 @@ const Type = (props) => {
         <div className="col-md-20 col-sm-20">
           {/* <img className='about-pic-style' src={Aboutpic} alt="" /> */}
         {/* <h1 className='about-app'>About</h1> */}
-          <div className="feature-box-about" style={{ textAlign:'justify' }}>
+          <div className="feature-box-about" style={{ textAlign:'justify',background:'brown' }}>
             <p>
             Welcome to St. Margaret Lying In Clinic! We are thrilled to be a part of your journey through the miracle of life. 
             As a dedicated pregnancy care center, we are committed to providing comprehensive and compassionate care. 
@@ -51,7 +51,6 @@ const Type = (props) => {
         </div>
         <h1 className="nopadding mx-auto services-ceenter">Services:</h1>
         <div className="col-md-auto col-sm-10 nopadding mx-auto">
-            
         <div className="feature-box">
             <p>
             MATERNITY PACKAGE (RM)<br/>
@@ -61,7 +60,6 @@ const Type = (props) => {
             NEWBORN CARE PACKAGE(RM)<br/>
             </p>
           </div>
-          {/* <img src={Cover} /> */}
         </div>
         <div className="col-md-auto col-sm-10 nopadding mx-auto">
         <div className="feature-box">
@@ -74,7 +72,6 @@ const Type = (props) => {
 
             </p>
           </div>
-          {/* <img src={Cover} /> */}
         </div>
         <br/>
         <div className="col-md-auto col-sm-10 nopadding mx-auto">
@@ -90,7 +87,7 @@ const Type = (props) => {
         </div>
 
         {/* End col-md-6 */}
-        <div className="col-md-6 col-sm-6 mx-auto">
+        {/* <div className="col-md-6 col-sm-6 mx-auto">
           <div className="info-page-margaret ">
             <h1>Information:</h1>
             <p>
@@ -101,7 +98,7 @@ const Type = (props) => {
             Always open<br/>
             </p>
           </div>
-        </div>
+        </div> */}
         {/* End col-md-6 */}
       </div>
     </div>

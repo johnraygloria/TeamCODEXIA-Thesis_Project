@@ -17,6 +17,7 @@
   max-width: 2000px;
   background: #fff;
   border-radius: 0px;
+  /* margin-top: 55; */
 }
 
 .footer .footer-row {
@@ -111,6 +112,7 @@
   color: #fff;
 }
 
+
 @media (max-width: 768px) {
   .footer {
     position: relative;
@@ -136,5 +138,13 @@
 
   .footer-col form button {
     margin: 10px 0 0 0;
+  }
+}
+@media (max-width: 320px) {
+  footer .container .row{
+    width: 185%;
+  }
+  footer .text-center{
+    width: 172%;
   }
 }

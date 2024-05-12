@@ -35,12 +35,11 @@ function DashboardAdmin() {
   const handleApprove = async (id) => {
     const appointmentToApprove = pendingAppointments.find(appointment => appointment.id === id);
     if (appointmentToApprove) {
-      try {
+      try { 
         const firestore = getFirestore();
         await updateDoc(doc(firestore, 'searchQueries', id), { approved: true });
         setPendingAppointments(prevAppointments => prevAppointments.filter(appointment => appointment.id !== id));
 
-        // Store in localStorage
         const updatedPendingAppointments = pendingAppointments.filter(appointment => appointment.id !== id);
         localStorage.setItem('pendingAppointments', JSON.stringify(updatedPendingAppointments));
 
@@ -48,9 +47,14 @@ function DashboardAdmin() {
         setApprovedAppointments(prevAppointments => [...prevAppointments, appointmentToApprove]);
         const approvedAppointmentsFromStorage = JSON.parse(localStorage.getItem('approvedAppointments') || '[]');
         localStorage.setItem('approvedAppointments', JSON.stringify([...approvedAppointmentsFromStorage, appointmentToApprove]));
+        history.push({
+          pathname: '/UserProfile',
+          state: { appointmentData: appointmentToApprove, action: 'approve' }
+        });
       } catch (error) {
         console.error("Error approving appointment: ", error);
       }
+      
     }
   };
 
@@ -61,6 +65,7 @@ function DashboardAdmin() {
       const updatedPendingAppointments = pendingAppointments.filter(appointment => appointment.id !== id);
       setPendingAppointments(updatedPendingAppointments);
       localStorage.setItem('pendingAppointments', JSON.stringify(updatedPendingAppointments));
+    
     } catch (error) {
       console.error("Error rejecting appointment: ", error);
     }

@@ -34,14 +34,15 @@ const AppointmentFillUp = () => {
     setSubmitted(true);
     const isEmpty = Object.values(searchQuery).some(value => value === "");
     if (isEmpty) {
-      {submitted && Object.values(searchQuery).some(value => value === "") && (
-        <p className="error-message">Please fill out all fields.</p>
-      )}
+      setSubmitted(true);
       return;
     }
     try {
-      await addSearchQuery(searchQuery); 
-      setAppointmentSet(true); 
+      await addSearchQuery(searchQuery);
+      history.push({
+        pathname: '/UserProfile',
+        state: { appointmentData: searchQuery }
+      });
     } catch (error) {
       console.error("Error adding document: ", error);
     }
@@ -51,9 +52,6 @@ const AppointmentFillUp = () => {
     try {
       const docRef = await addDoc(collection(firestore, 'searchQueries'), searchQuery);
       console.log("Document written with ID: ", docRef.id);
-      history.push({ 
-        state: { searchQuery }
-      });
     } catch (error) {
       console.error("Error adding document: ", error);
       throw error;
