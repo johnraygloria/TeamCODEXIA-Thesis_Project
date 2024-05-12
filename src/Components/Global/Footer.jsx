@@ -37,11 +37,11 @@ const Footer = () => {
                 <tbody>
                   <tr>
                     <td>Mon - Fri:</td>
-                    <td>8am - 9pm</td>
+                    <td>8am - 5pm</td>
                   </tr>
                   <tr>
                     <td>Sat - Sun:</td>
-                    <td>8am - 1am</td>
+                    <td>8am - 4pm</td>
                   </tr>
                 </tbody>
               </table>
