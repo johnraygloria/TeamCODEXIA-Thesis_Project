@@ -21,6 +21,7 @@ import Chatbot from './pages/Chatbot.jsx';
 import PatientsRecord from './Components/Admin/PatientsRecord';
 import UserProfile from './pages/UserProfile';
 import OvulationTracker from './pages/OvulationTracker.jsx';
+import Error404 from '../src/Components/Global/Error404.jsx';
 
 
 const App = () => {
@@ -85,6 +86,8 @@ const App = () => {
       <Route path='/OvulationTracker' compontent= { OvulationTracker } exact>
         <OvulationTracker/>
       </Route>
+
+      <Route component={Error404} />
 
       
     <Router>

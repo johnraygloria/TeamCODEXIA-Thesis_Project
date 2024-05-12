@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container-ot{
     /* display: inline-block; */
     /* flex-direction: column; */
@@ -17,10 +18,21 @@
     height: auto;
     padding: 10%;
     border-radius: 1.5rem;
+=======
+.ov-container {
+    position: relative;
+    height: 100vh;
+    /*background-image: url('../Components/Assets/pink_gradient.jpg');**/
+    background-color: rgb(243, 246, 249);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+>>>>>>> 053d5d3c9970b38e0277a8f4709d4ee8e9e89344
 }
 .box-style-ot p{
     font-size: 55px;
 }
+<<<<<<< HEAD
 .box-style-ot .little-small{
     font-size: 35px;
 }
@@ -68,4 +80,204 @@
 .box-style-third p{
     font-size: 25px;
     font-weight:500;
+=======
+
+.ot-title h2{
+    color: #0b2941;
+    letter-spacing: -3px;
+    padding-left: 5rem;
+    font-size: 70px;
+    font-family: 'Poppins';
+    padding-top: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+    padding-left: 5rem;
+}
+
+.containertitle{
+    width: 800px;
+    height: 100px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+}
+
+
+.container0{
+    width: 800px;
+    height: 800px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.logperiod-btn{
+  background: #38b5db;
+  border-radius: 999px;
+  box-shadow: #4cbec0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 22px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  word-break: break-word;
+  border: 0;
+  margin-top: 5px;
+}
+
+.container0 h3{
+    text-align: center;
+    font-size: 60px;
+}
+
+.container0 h1{
+    text-align: center;
+    font-size: 155px;
+}
+
+.container0 p{
+    font-size: 35px;
+}
+
+.glass0{
+    background: linear-gradient(135deg, rgba(247, 173, 241, 0.4), rgba(253, 203, 117, 0.4));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+}
+
+.container1{    
+    width: 500px;
+    height: 470px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.glass1{
+    background: linear-gradient(321deg, rgb(232, 175, 235, .4) 0%, rgb(162, 207, 246, .4) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+}
+
+.container2{    
+    width: 500px;
+    height: 300px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.glass2{
+    background: linear-gradient(321deg, rgba(255,152,151,.2) 0%, rgba(246,80,160,.4) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+}
+
+.container3{
+    width: 500px;
+    height: 380px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.glass3{
+    background: linear-gradient(321deg, rgba(255,205,165,.3) 0%, rgba(238,77,245,.3) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+}
+
+.container4{    
+    width: 500px;
+    height: 400px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -6rem;
+}
+
+.glass4{
+    background: linear-gradient(321deg, rgba(110,226,245,.3) 0%, rgba(100,84,240,.3) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
+}
+
+.container1, .container2 {
+    grid-column: 2;
+}
+.container1 {
+    grid-row: 1;
+}
+
+.container2 {
+    grid-row: 2;
+}
+
+.container3, .container4 {
+    grid-column: 3;
+}
+
+.container3 {
+    grid-row: 1;
+}
+
+.container4 {
+    grid-row: 2;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+>>>>>>> 053d5d3c9970b38e0277a8f4709d4ee8e9e89344
 }
