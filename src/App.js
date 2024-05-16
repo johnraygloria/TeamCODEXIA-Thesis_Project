@@ -87,6 +87,18 @@ const App = () => {
         <OvulationTracker/>
       </Route>
 
+      <Route path='/PregnancyWheel' compontent= { PregnancyWheel } exact>
+        <PregnancyWheel/>
+      </Route>
+
+      <Route path='/Dashboard' compontent= { Dashboard } exact>
+        <Dashboard/>
+      </Route>
+
+      <Route path='/PatientsRecord' compontent= { PatientsRecord } exact>
+        <PatientsRecord/>
+      </Route>
+
       <Route component={Error404} />
 
       
