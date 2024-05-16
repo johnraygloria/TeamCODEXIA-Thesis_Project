@@ -1,4 +1,4 @@
-/* Importing Google font - Open Sans */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -102,7 +102,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1024px) {
     .card-list {
         margin: 0px auto;
     }
@@ -125,10 +125,10 @@ body {
 
 
 .article-cards{
-    padding-top: 13rem;
+    padding-top: 9rem;
     display: flex;
     align-items: center;
-}
+} 
 
 .Heading{
     z-index: 1;
@@ -159,3 +159,6 @@ body {
     font-weight: 100;
 }
 
+.article-cards{
+    height: 100vh;
+}
