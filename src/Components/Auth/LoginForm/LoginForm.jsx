@@ -1,4 +1,10 @@
 import "../LoginForm/LoginFormStyle.css";
+import { FaUser, FaLock, FaFacebookF, FaTwitter, FaGoogle   } from "react-icons/fa";
+import React, {useState, useEffect} from "react";
+import { signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from "../../../Config/firebase";
+import { useHistory } from 'react-router-dom'; // React Router's useHistory hook
+
 import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 import React, { useState, useEffect } from "react";
 import { signInWithEmailAndPassword, signInWithPopup, FacebookAuthProvider, GoogleAuthProvider, getAuth } from "firebase/auth";
@@ -53,7 +59,9 @@ function LoginForm() {
         } else {
           localStorage.removeItem("rememberedEmail");
         }
-        history.push("/home");
+      
+        // Redirect to the desired page after successful login
+        history.push("/home"); // (Change to desired route) Proceeds to Home.
       })
       .catch((error) => {
         console.error(error);
@@ -76,6 +84,9 @@ function LoginForm() {
             <form onSubmit={SignIn}>
               <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <p className="lead fw-normal mb-0 me-3">Login with</p>
+                <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
+                    <FaFacebookF style={{color: 'white'}} />
+                </button>
                 
                 <button type="button" onClick={FacebookAuthBtnClicked} data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
                     <FaFacebookF style={{color: 'white'}} />
@@ -144,6 +155,15 @@ function LoginForm() {
           </div>
 
           <div>
+
+            <a href="#!" className="text-white me-4">
+              <FaFacebookF/>
+            </a>
+            <a href="#!" className="text-white me-4">
+              <FaTwitter/>
+            </a>
+            <a href="#!" className="text-white me-4">
+
             <a href="https://www.facebook.com/people/Planitfamit/61559385112154/?viewas&show_switched_toast=false&show_switched_
             tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_
             changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_
