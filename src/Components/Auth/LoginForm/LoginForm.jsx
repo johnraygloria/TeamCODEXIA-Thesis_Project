@@ -1,21 +1,39 @@
 import "../LoginForm/LoginFormStyle.css";
-import { FaUser, FaLock, FaFacebookF, FaTwitter, FaGoogle   } from "react-icons/fa";
-import React, {useState, useEffect} from "react";
-import { signInWithEmailAndPassword} from "firebase/auth";
-import { auth } from "../../../Config/firebase";
-import { useHistory } from 'react-router-dom'; // React Router's useHistory hook
+import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { signInWithEmailAndPassword, signInWithPopup, FacebookAuthProvider, GoogleAuthProvider, getAuth } from "firebase/auth";
+import { useHistory } from 'react-router-dom';
 
 import background1 from '../../Assets/landing_page_bkg1.png';
-import background2 from '../../Assets/landing_page_bkg2.png';
 
-
-function LoginForm  ()  {
+function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false); // New state for Remember Me
+  const [rememberMe, setRememberMe] = useState(false);
   const history = useHistory();
+  const fbprovider = new FacebookAuthProvider();
+  const googleprovider = new GoogleAuthProvider();
+  const auth = getAuth();
 
+  const FacebookAuthBtnClicked = async (e) => {
+    try {
+      const user = await signInWithPopup(auth, fbprovider);
+      console.log("Facebook user: ", user);
+    } catch (error) {
+      console.error(error);
+      // Show error message to user
+    }
+  }
 
+  const GoogleAuthBtnClicked = async (e) => {
+    try {
+      const user = await signInWithPopup(auth, googleprovider);
+      console.log("Google user: ", user);
+    } catch (error) {
+      console.error(error);
+      // Show error message to user
+    }
+  }
 
   useEffect(() => {
     const storedEmail = localStorage.getItem("rememberedEmail");
@@ -25,26 +43,23 @@ function LoginForm  ()  {
     }
   }, []);
 
-
   const SignIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
         if (rememberMe) {
-          // Store email in LocalStorage if Remember Me is checked
           localStorage.setItem("rememberedEmail", email);
         } else {
-          // Clear stored email if Remember Me is not checked
           localStorage.removeItem("rememberedEmail");
         }
-        // Redirect to the desired page after successful login
-        history.push("/home"); // (Change to desired route) Proceeds to Home.
+        history.push("/home");
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
+        // Show error message to user
       });
-  };
+  }
 
   return (
     <>
@@ -61,12 +76,18 @@ function LoginForm  ()  {
             <form onSubmit={SignIn}>
               <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <p className="lead fw-normal mb-0 me-3">Login with</p>
-                <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
+                
+                <button type="button" onClick={FacebookAuthBtnClicked} data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
                     <FaFacebookF style={{color: 'white'}} />
-                </button>
+                </button> {/*Facebook Login*/}
+
 
                 <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
                   <FaTwitter style={{color: 'white'}} />
+                </button>
+
+                <button  type="button" onClick={GoogleAuthBtnClicked} data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
+                  <FaGoogle style={{color: 'white'}} />
                 </button>
               </div>
 
@@ -123,11 +144,11 @@ function LoginForm  ()  {
           </div>
 
           <div>
-            <a href="#!" className="text-white me-4">
+            <a href="https://www.facebook.com/people/Planitfamit/61559385112154/?viewas&show_switched_toast=false&show_switched_
+            tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_
+            changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_
+            rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true" className="text-white me-4">
               <FaFacebookF/>
-            </a>
-            <a href="#!" className="text-white me-4">
-              <FaTwitter/>
             </a>
             <a href="#!" className="text-white me-4">
               <FaGoogle />
