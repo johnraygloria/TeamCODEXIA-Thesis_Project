@@ -1,14 +1,10 @@
 import "../LoginForm/LoginFormStyle.css";
 import { FaUser, FaLock, FaFacebookF, FaTwitter, FaGoogle   } from "react-icons/fa";
 import React, {useState, useEffect} from "react";
-import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../../../Config/firebase";
-import { useHistory } from 'react-router-dom'; // React Router's useHistory hook
-
-import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
-import React, { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom'; // React Router's useHistory hook;
 import { signInWithEmailAndPassword, signInWithPopup, FacebookAuthProvider, GoogleAuthProvider, getAuth } from "firebase/auth";
-import { useHistory } from 'react-router-dom';
+
 
 import background1 from '../../Assets/landing_page_bkg1.png';
 
@@ -84,10 +80,7 @@ function LoginForm() {
             <form onSubmit={SignIn}>
               <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <p className="lead fw-normal mb-0 me-3">Login with</p>
-                <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
-                    <FaFacebookF style={{color: 'white'}} />
-                </button>
-                
+               
                 <button type="button" onClick={FacebookAuthBtnClicked} data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
                     <FaFacebookF style={{color: 'white'}} />
                 </button> {/*Facebook Login*/}
@@ -162,7 +155,6 @@ function LoginForm() {
             <a href="#!" className="text-white me-4">
               <FaTwitter/>
             </a>
-            <a href="#!" className="text-white me-4">
 
             <a href="https://www.facebook.com/people/Planitfamit/61559385112154/?viewas&show_switched_toast=false&show_switched_
             tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_
