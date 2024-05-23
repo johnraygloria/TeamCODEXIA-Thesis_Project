@@ -1,4 +1,4 @@
-/* Importing Google font - Open Sans */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    z-index: 1;
 }
 
 body {
@@ -95,13 +96,13 @@ body {
     color: #fff; 
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .card-list .card-item {
         padding: 15px;
     }
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1024px) {
     .card-list {
         margin: 0px auto;
     }
@@ -113,6 +114,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    margin-top: 7.6rem;
     height: auto;
     display: flex;
     justify-content: center;
@@ -123,10 +125,10 @@ body {
 
 
 .article-cards{
-    padding-top: 15rem;
+    padding-top: 9rem;
     display: flex;
     align-items: center;
-}
+} 
 
 .Heading{
     z-index: 1;
@@ -137,7 +139,7 @@ body {
 }
 
 .Heading h2{
-    padding-top: 10%;
+    padding-top: 8%;
     font-size: 50px;
     text-align: center;
     font-weight: bold;
@@ -157,3 +159,6 @@ body {
     font-weight: 100;
 }
 
+.article-cards{
+    height: 100vh;
+}

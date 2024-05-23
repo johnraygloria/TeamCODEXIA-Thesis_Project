@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Calendar from 'react-calendar';
+import DatePicker from "react-datepicker";
 import Modal from 'react-modal';
-// import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css";
 import "../TabView/PregnancyWheelLMPStyle.css";
 import moment from 'moment';
+import Calendar from 'react-calendar';
 
 
 // Children 1: Last Menstruation Period 
@@ -24,6 +25,7 @@ function PregnancyWheelLMP() {
     const [thirdTrimester, setThirdTrimester] = useState(null);
     const [dueDate, setDueDate] = useState(null);
     const [EGA, setEGA] = useState("");
+    const [startDate, setStartDate] = useState(new Date());
 
     const reset = () => {
         setUSweeks("");
@@ -49,7 +51,7 @@ function PregnancyWheelLMP() {
             left: '50%',
             right: 'auto',
             bottom: 'auto',
-            marginRight: '-50%',
+            marginRight: '0%',
             transform: 'translate(-50%, -50%)',
             width: 'fit-content',
             height: 'fit-content',
@@ -117,7 +119,12 @@ function PregnancyWheelLMP() {
                     <div className="input-US"> 
                         <h2 onClick={() => {setShowUsCalendar(!showUsCalendar); setShowLmpCalendar(false);}}>Ultrasound Date</h2>
                         <Modal isOpen={showUsCalendar} onRequestClose={() => setShowUsCalendar(false)} style={customStyles}>
-                            <Calendar selected={USDate} onChange={(date) => {setUSDate(date); setShowUsCalendar(false);}} className="calendar mt-0" />
+                            <DatePicker
+                                selected={startDate}
+                                onChange={(date) => {setStartDate(date); setShowUsCalendar(false);}}
+                                monthsShown={1}
+                                showYearDropdown
+                            />
                         </Modal>
 
                     <div className="input-USweeks"> 

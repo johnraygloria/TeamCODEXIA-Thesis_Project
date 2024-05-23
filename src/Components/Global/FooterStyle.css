@@ -17,6 +17,7 @@
   max-width: 2000px;
   background: #fff;
   border-radius: 0px;
+  /* margin-top: 55; */
 }
 
 .footer .footer-row {
@@ -24,11 +25,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: .5rem;
-  padding: 60px 220px;
+  padding: 60px 240px;
 }
 
 .footer-row .footer-col h4 {
-  color: #810088;
+  color: #d24bd9;
   font-size: 1.4rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -62,7 +63,7 @@
 
 .footer-col form {
   display: flex;
-  gap: 60px;
+  gap: 100px;
 }
 
 .footer-col input {
@@ -111,6 +112,7 @@
   color: #fff;
 }
 
+
 @media (max-width: 768px) {
   .footer {
     position: relative;
@@ -136,5 +138,13 @@
 
   .footer-col form button {
     margin: 10px 0 0 0;
+  }
+}
+@media (max-width: 320px) {
+  footer .container .row{
+    width: 185%;
+  }
+  footer .text-center{
+    width: 172%;
   }
 }

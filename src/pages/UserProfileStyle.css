@@ -1,6 +1,7 @@
 .bgd-patients-record{
   height: 100vh;
-  background-color: #EE6199;
+  /* background-color: #EE6199; */
+  z-index: -1;
 }
 .main-body {
   margin-bottom: 5%;
@@ -102,6 +103,7 @@
   align-items: center;
   justify-content:center;
   top: 65%;
+  /* z-index: 1; */
 }
 
 @media (max-width: 1800px) {

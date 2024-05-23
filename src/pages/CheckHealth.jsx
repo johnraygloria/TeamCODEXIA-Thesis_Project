@@ -6,124 +6,300 @@ import Phone from '../Components/Assets/Phone.png';
 import Clock from '../Components/Assets/Clock.png';
 import Letter from '../Components/Assets/Letter.png';
 import Clinic from '../Components/Assets/stmargaretlogo.png';
-import Cover from '../Components/Assets/cover.png';
+import Cover from '../Components/Assets/type-user.png';
 import Add from '../Components/Assets/Add.png';
+import Aboutpic from '../Components/Assets/about_pic.jpg'
+
 import './CheckHealthStyle.css';
 import Navbar from '../Components/Global/Navbar_Main';
 
-const Type = (props) => {
-  const history = useHistory(); // Initialize useHistory hook
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Footer from '../Components/Global/Footer';
 
-  // Function to handle navigation to the appointment page
+const Type = (props) => {
+  const history = useHistory();
+
   const handleAppointmentClick = () => {
-    history.push('/Appointment'); // Navigate to the appointment page
+    history.push('/FillUpAppointment'); 
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="admin-page-container">
-        <div className="admin-clinic-container">
-          <div className="adminpage-infro-margaret">
-            <div className="admin-profile-container">
-              <div className="admin-view-page">
-                <span className="admin-docs">
-                  <span>No. of Doctors:</span>
-                </span>
-                <span className="admin-staffs">
-                  <span>No. of Staff:</span>z
-                </span>
-                <span className="admin-title">
-                  <span>Pregnancy Care &amp; Family Planning Center</span>
-                </span>
-                <span className="admin-count-staffs">
-                  <span>10</span>
-                </span>
-                <span className="admin-count-docs">2</span>
-              </div>
+<>
+<Navbar/>
 
-              <span className="btn-appointment" onClick={handleAppointmentClick}>
-                <span>Add Appointment</span>
-              </span>
-              <img src={Add} alt="Add1451" className="admin-add-btn" />
-              <img src={Cover} alt="cover1451" className="admin-cover" />
-              <img src={Clinic} alt="cliniclogo1451" className="admin-logo" />
-              <span className="admin-clinic-name">
-                <span>St. Margaret Lying In Clinic</span>
-                <br></br>
-                <span></span>
-              </span>
-            </div>
-
-            <div className="admin-st-margaret-intro">
-              <div className="information-st-margaret">
-                <span className="intro-style">
-                  <span>Intro:</span>
-                  <span></span>
-                </span>
-                <div className="admin-info-style">
-                  <span className="admin-page">Page· Pregnancy Care Center</span>
-                  <span className="admin-location">
-                    GF 74A 20TH ST. EAST BAJAC BAJAC, Olongapo, Philippines
-                  </span>
-                  <span className="admin-contact">0968 240 5533</span>
-                  <span className="admin-email">stmargaretlyingin@gmail.com</span>
-                  <span className="admin-clock">Always open</span>
-                </div>
-                <div className="images-styles">
-                  <img src={info} alt="Info1452" className="information-style" />
-                  <img src={Mark} alt="PlaceMarker1452" className="place-marker-style" />
-                  <img src={Phone} alt="Phone1452" className="phone-style" />
-                  <img src={Letter} alt="Letter1452" className="letter-style" />
-                  <img src={Clock} alt="Clock1452" className="clock-style" />
-                </div>
-              </div>
-            </div>
+  {/* header close */}
+  {/* Slider Start */}
+  <section className="slider">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="block">
+            <h1 className="animated fadeInUp">
+            St. Margaret Lying In Clinic
+            </h1>
+            {/* <p className="animated fadeInUp">
+              We love the Web and the work we do.We work closely with our
+              clients to deliver <br /> the best possible solutions for their
+              needs
+            </p> */}
           </div>
-
-          <div className="admin-about-conntainer">
-            <span className="admin-about-footer">
-              <span>About:</span>
-            </span>
-            <div className="admin-information-about">
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* Wrapper Start */}
+  <section className="about section">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-7">
+          <div className="block">
+            <div className="section-title">
+              <h2> Welcome to St. Margaret Lying In Clinic!</h2>
               <p>
-                Lorem ipsum dolor sit amet. Et voluptatibus perferendis ex quia minus ut deserunt
-                nobis et assumenda facilis qui fugiat dolorum ut commodi maiores. Aut iusto saepe et
-                tempora architecto aut autem reiciendis. Id unde obcaecati ut sunt quos in debitis
-                repellendus. Et repellendus natus aut natus rerum et ipsa aspernatur et voluptates
-                dignissimos.
+              We are thrilled to be a part of your journey through the miracle of life. 
+            As a dedicated pregnancy care center, we are committed to providing comprehensive and compassionate care. 
+            Partnered with the innovative family planning application, PlanItFamIt, we aim to empower and support you in every step 
+            of your family planning journey. Together, let's celebrate the joy of parenthood!
               </p>
             </div>
-
-            <span className="admin-services">
-              <span>Services:</span>
-            </span>
-
-            <div className="admin-clinic-services">
-              <p>MATERNITY PACKAGE</p>
-              <p>MATERNITY PACKAGE</p>
-              <p>NSD PACKAGE</p>
-              <p>NSD PACKAGE</p>
-              <p>NEWBORN CARE PACKAGE</p>
-            </div>
-            <div className="admin-clinic-services-2">
-              <p>NEWBORN CARE PACKAGE</p>
-              <p>FAMILY PLANNING CONSULT</p>
-              <p>PRENATAL CONSULTATION</p>
-              <p>POSTNATAL CONSULTATION</p>
-              <p>NEWBORN SCREENING</p>
-            </div>
-            <div className="admin-clinic-services-3">
-              <p>NEWBORN HEARING SCREENING</p>
-              <p>PAP-SMEAR</p>
-              <p>NON-STRESS TEST</p>
-              <p>EAR PIERCING</p>
-              <p>INTERNAL EXAMINATION</p>
+            {/* <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id{" "}
+            </p> */}
+          </div>
+        </div>
+        {/* .col-md-7 close */}
+        <div className="col-md-5">
+          <div className="block">
+            <img src={Cover} alt="Img" />
+          </div>
+        </div>
+        {/* .col-md-5 close */}
+      </div>
+    </div>
+  </section>
+  <section className="feature bg-2">
+    <div className="container">
+      <div className="row justify-content-end">
+        <div className="col-md-6">
+          <h2 className="section-subtitle">Embark on Your Journey: Convenient Online Appointments at St. Margaret's</h2>
+          <p>
+          Welcome to motherhood and beyond at St. Margaret's Lying-In Clinic. Our dedicated staff is here to support
+           your exciting journey, from family planning consultations to postpartum care for your precious newborn. 
+           Schedule your appointment online today for a convenient time that fits your busy schedule.  We offer online
+            booking during our regular clinic hours, making it simple and secure to plan your visit from the comfort of your
+             home. We're excited to be a part of your story.
+          </p>
+          <a className="btn btn-view-works" onClick={handleAppointmentClick}>
+            Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* Service Start */}
+  <section className="service">
+    <div className="container">
+      <div className="row">
+        <div className="col-12 text-center">
+          <div className="section-title">
+            <h2>Services</h2>
+            <p>
+            In order to meet the specific requirements of pregnant women, babies, 
+            and their families, St. Margaret Lying-In Clinic provides outstanding
+            maternity and newborn care in a caring setting. This ensures a secure and supportive experience from conception to postpartum recovery.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="row  ">
+        <div className="col-lg-3 col-md-3 col-sm-3  mx-auto">
+          <div className="service-item">
+            <i className="icon ion-coffee" />
+            <i class="bi bi-bandaid"></i>
+            <p>
+            MATERNITY PACKAGE (RM)<br/>
+            MATERNITY PACKAGE (OB)<br/>
+            NSD PACKAGE (RM)<br/>
+            NSD PACKAGE (OB)<br/>
+            NEWBORN CARE PACKAGE(RM)<br/>
+            </p>
+          </div>
+        </div>
+        <div className="col-lg-3 col-md-3 col-sm-3 mx-auto">
+          <div className="service-item">
+            <i className="ion-compass" />
+            {/* <h4>Web Design</h4> */}
+            <i class="bi bi-heart-pulse"></i> 
+            <p>
+            NEWBORN CARE PACKAGE (OB)<br/>
+            FAMILY PLANNING CONSULT<br/>
+            PRENATAL CONSULTATION<br/>
+            POSTNATAL CONSULTATION<br/>
+            NEWBORN SCREENING<br/>
+            </p>
+          </div>
+        </div>
+        <div className="col-lg-3 col-md-3 col-sm-3  mx-auto">
+          <div className="service-item">
+            <i className="ion-image" />
+            <i class="bi bi-bandaid"></i>
+            <p>
+            NEWBORN HEARING SCREENING<br/>
+            PAP-SMEAR<br/>
+            NON-STRESS TEST<br/>
+            EAR PIERCING<br/>
+            INTERNAL EXAMINATION<br/>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* Call to action Start */}
+  <section className="call-to-action bg-1 section-sm overly">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="block">
+            <h2 className="mb-3"> Lorem ipsum dolor sit amet consectetur</h2>
+            <p>
+       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, nemo. Accusamus, nam magni sed reiciendis quisquam sapiente.
+        Velit, odio id. Ad obcaecati, nostrum aut odit ullam atque rerum nam esse.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* Content Start */}
+  <section className="testimonial">
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <div className="section-title text-center">
+            <h2>About</h2>
+            <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt debitis dolore nulla sint
+             tempore ducimus. Delectus vel ratione
+             animi eligendi magni. Id saepe unde quisquam quae esse eum dignissimos in.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="row align-items-center">
+        {/* <div className="col-md-6">
+          <div className="block">
+            <ul className="counter-box clearfix">
+              <li>
+                <div className="counter-item">
+                  <i className="ion-ios-chatboxes-outline" />
+                  <h4 className="count" data-count={99}>
+                    0
+                  </h4>
+                  <span>Cups Of Coffee</span>
+                </div>
+              </li>
+              <li>
+                <div className="counter-item">
+                  <i className="ion-ios-glasses-outline" />
+                  <h4 className="count" data-count={45}>
+                    0
+                  </h4>
+                  <span>Article Written</span>
+                </div>
+              </li>
+              <li>
+                <div className="counter-item">
+                  <i className="ion-ios-compose-outline" />
+                  <h4 className="count" data-count={125}>
+                    0
+                  </h4>
+                  <span>Projects Completed</span>
+                </div>
+              </li>
+              <li>
+                <div className="counter-item">
+                  <i className="ion-ios-timer-outline" />
+                  <h4 className="count" data-count={200}>
+                    0
+                  </h4>
+                  <span>Combined Projects</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div> */}
+        <div className="col-md-5 col-md-offset-1 mx-auto">
+          <div className="testimonial-carousel text-center">
+            <div className="testimonial-slider owl-carousel">
+              <div>
+                <i className="ion-quote" />
+                <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid nulla quasi cumque error minus ex quidem vitae quae non, omnis molestiae
+                   corrupti architecto commodi inventore illum necessitatibus ipsum atque aut?
+                </p>
+                <div className="user">
+                  <img src="images/item-img1.jpg" alt="tao" />
+                  <p>
+                  <span>  Lorem ipsum,y</span>   Lorem ipsum,
+                  </p>
+                </div>
+              </div>
+              <div>
+                <i className="ion-quote" />
+                <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid nulla quasi cumque error minus ex quidem vitae quae non, omnis molestiae
+                   corrupti architecto commodi inventore illum necessitatibus ipsum atque aut?
+                </p>
+                <div className="user">
+                  <img src="images/item-img1.jpg" alt="tao" />
+                  <p>
+                    <span>  Lorem ipsum,y</span>   Lorem ipsum,
+                  </p>
+                </div>
+              </div>
+              <div>
+                <i className="ion-quote" />
+                <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid nulla quasi cumque error minus ex quidem vitae quae non, omnis molestiae
+                   corrupti architecto commodi inventore illum necessitatibus ipsum atque aut?
+                </p>
+                <div className="user">
+                  <img src="images/item-img1.jpg" alt="tao" />
+                  <p>
+                    <span>  Lorem ipsum,</span>  Lorem ipsum,
+                  </p>
+                </div>
+              </div>
+              <div>
+                <i className="ion-quote" />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid nulla quasi cumque error minus ex quidem vitae quae non, omnis molestiae
+                   corrupti architecto commodi inventore illum necessitatibus ipsum atque aut?
+                </p>
+                <div className="user">
+                  <img src="images/item-img1.jpg" alt="tao" />
+                  <p>
+                  <span>  Lorem ipsum,</span>  Lorem ipsum,
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
+  </section>
+  {/* footer Start */}
+</>
+
+
   );
 };
 

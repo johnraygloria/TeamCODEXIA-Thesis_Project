@@ -1,284 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@700&display=swap');
-
-.wrapper-landing-page{
-    display: flex;
-    justify-content: end;
-    position: absolute;
-    /* height: 100vh; */
-    width: 45%;
-
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
 }
 
-.wrapper-login {
-    width:500px;
-    background: transparent;
-    color: #000;
-    border-radius: 10px;
-    padding: 30px 15.5px;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(25px);
-    border-color: whitesmoke;
-    position: absolute;
-    transform: translateX(185%);
-    margin-top:2%;
-    right:2rem;
-    display: flex;
-}
-@media (max-width: 952px){
-    .wrapper-landing-page{
-    height: 80%;
-    width: 5%;
-    }
-    .wrapper-login{
-    top: 3%;
-    width: 350px;
-    height: 80%;
-    margin-top:1%;
-    }
-    .wrapper-login h2{
-
-    margin-top:1%;
-    font-size:20px;
-    }
-    .wrapper-landing-page .wrapper-login p{
-        font-size:14px;
-    }
-    .remember-forgot label{
-        font-size: 15px;
-    }
-    .forgot-password a{
-        font-size: 15px;
-    }
-    .wrapper-login .register-link p {
-        font-size: 14px;
-        text-align: center;
-        margin: 10px 0 15px;
-    }
-    
-    .register-link a {
-        font-size: 14px;
-    }
-
-}   
-@media (max-width: 756px){
-
-}
-.wrapper-login h2 {
-    /* font-size: 25px; */
-    text-align: center;
-    font-weight: bolder;
-    margin-bottom: 27.5px;
+/* CSS */
+.btn-login {
+  align-items: center;
+  appearance: none;
+  background-color: #680074;
+  background-image: linear-gradient(1deg,  rgb(132, 52, 137), #b34bd6 99%);
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 10px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Poppins';
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 8px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s,background-position .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
 }
 
-.wrapper-login p {
-    font-size: 20px;
-    /* font-weight: 35; */
-    text-align: center;
+.btn-login:active,
+.btn-login:focus {
+  outline: none;
 }
 
- .input-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width:100%;
-    height: 30px;
-    margin-left: 50%;
-    margin: 30px 0;
+.btn-login:hover {
+  background-position: -20px -20px;
 }
 
-
-.input-box input {
-    /* margin-left: 50%; */
-    margin-right: 50%;
-    width: 50%;
-    height: 50%;
-    background: transparent;
-    outline: none;
-    border: 2px solid rgba(209, 209, 209, 0.766);
-    border-radius: 40px;
-    font-size: 16px;
-    color: black;
-    padding: 20px 45px 20px 20px;
+.btn-login:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }
 
-.input-box input::placeholder{
-    color: gray ;
+.bg-fotlogin{
+    background-color: #8b1a98;
 }
-
-.input-box .icon {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
+.h-custom {
+height: calc(100% - 73px);
 }
-
-.input-box .icon{
-    position: absolute;
-    right: 35px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: rgb(39, 39, 39);
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
 }
-
- .remember-forgot{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    font-size: 20.5px;
-    /* margin: -15px 0 15px; */
 }
-
-.remember-forgot label input{
-    accent-color: gray;
-    margin-right: 4px;
-    /* margin-top: 20px; */
-}
-
-.remember-forgot a{
-    color: purple;
-    text-decoration: none;
-    margin-top: auto;
-    font-size: auto;
-}
-
-.remember-forgot a:hover{
-    text-decoration: none;
-}
-
-.wrapper-login button {
-    width: 100%;
-    height: 47.5px;
-    background: #fff ;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 16px;
-    color: black;
-    font-weight: 700;
-    transition: all .3s ease;
-    margin-top: 20px;
-}
-
-.wrapper-login .register-link {
-    font-size: 18.5px;
-    text-align: center;
-    margin: 20px 0 15px;
-}
-
-.register-link p a {
-    color: lightcoral;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.wrapper-login .version{
-    margin-top: 20px;
-    text-align: center;
-    font-size: 18px;
-}
-
-.wrapper-login .reserved{
-    margin-top: 20px;
-    text-align: center;
-    font-size: 18px;
-}
-
-.welcome-message{
-    /* display: inline-block; */
-    position: absolute;
-    font-size: 20px;
-    /* top: -2%; */
-    /* margin-top: 0px; */
-    font-family: 'Montserrat', sans-serif;
-    /* margin-left: 20px; */
-    height: 87.5vh;
-    width: 50%;    
-    z-index: -1;
-}
-.welcome-message img{
-    z-index: -1;
-    height: 70vh;
-    width: 100%;
-    margin-top: 15%;
-    object-fit: contain;
-}
-
-.welcome-message p{
-    /* top */
-    font-size: 25px;
-    /* margin-top: auto; */
-    font-family: 'Montserrat', sans-serif;
-    font-weight: normal;
-    margin-left: 60px;
-    text-align: justify;
-    color: rgb(70, 70, 70);
-}
-.welcome-message-bkg{
-    position: absolute;
-    top: -15%;
-}
-.landingpagebkg{
-    display: flex;
-    flex-direction: row;
-    /* position: absolute;   */
-    z-index: -1;
-    right: 0;
-  }
-  .flex-landingbkg2{
-    position: absolute;
-    float: right;
-    width: 100%;
-    /* height: 100px; */
-    z-index: -1;
-  }
-  .flex-landingbkg1 img{
-    width:100%;
-    height: 80vh;
-    margin-left: 5%;
-    margin-top: 9%;
-  }
-  .flex-landingbkg2 img{
-    width:35%;
-    margin-right: 5%;
-    float: right;
-    height: 80vh;
-    /* height: 45%; */
-    /* position: absolute; */
-    /* height: 87vh; */
-  }
-
-.welcome-message .logo-color {
-    color: rgb(160, 36, 163);
-    margin-left: auto;
-}
-@media screen and (max-width: 768px){
-    a{
-      margin-bottom: 40px;
-    }
-  }
-
-  @media(max-width: 767px){
-    .footer-col{
-      width: 50%;
-      margin-bottom: 30px;
-  }
-  }
-  @media(max-width: 574px){
-    .footer-col{
-      width: 100%;
-  }
-  }
-
-  /*.welcome-message-bkg {
-    background-color: rgb(199, 235, 255, 0.5);
-    margin-top: 10%;
-  }*/
-
-  

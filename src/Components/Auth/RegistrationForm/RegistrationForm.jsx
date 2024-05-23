@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import { FaUser, FaLock, FaFacebookF, FaTwitter, FaGoogle   } from "react-icons/fa";
 import { getAuth, createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
 import { auth } from "../../../Config/firebase";
 import { useHistory } from "react-router-dom";
-import Navbar from "../../Global/Navbar_Landing.jsx";
 import Modal from "react-modal";
-import { FaUser, FaLock } from "react-icons/fa";
-import "./RegistrationFormStyle.css"; 
+
 
 import background1 from '../../Assets/landing_page_bkg1.png'
 import background2 from '../../Assets/landing_page_bkg2.png'
@@ -19,10 +18,6 @@ function RegistrationForm() {
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  // const openModal = (e) => {
-  //   e.preventDefault();
-  //   setModalIsOpen(true);
-  // };
   const openModal = (e) => {
     if (e) {
       e.preventDefault();
@@ -74,8 +69,6 @@ function RegistrationForm() {
   return (
     <>
 
-    <Navbar/>
-
       <Modal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
@@ -85,9 +78,8 @@ function RegistrationForm() {
         width: '40%', // Adjust the width of the modal
         height: '85%', // Adjust the height of the modal
         margin: 'auto', // Center the modal
-      },
-    }}
->
+        },
+      }}>
   
       <section class="flex_center">
         <div class="tc_main">
@@ -152,77 +144,112 @@ function RegistrationForm() {
       
       </Modal>
 
-      <div className='welcome-message'>
-  <h1>PlanIt</h1>
-  <h1 className='logo-color'>FamIt</h1>
-  <p>Approachable modern family planning methods for partners <br/> and families here in the Philippines.</p>
-</div>
-<div className="wrapper-register-page">
-    <div className= 'wrapper-register'>
-      <form onSubmit={SignUp}>
-        <h1>Let's get started.</h1>
-        
-        <h5> Create your account now and access the latest and most effective family planning solutions within reach.</h5>
-        
-        <div className="input-box" >
-          <input type="email" placeholder='Enter your email' 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)}  />
-          <FaUser className='icon' /> 
-        </div>
-        
-        <div className="input-box password">
-          <input type="password" placeholder='Enter your password' 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} />
-          <FaLock className='icon'/>
-        </div>
 
-        <div className="input-box password">
-          <input type="password" placeholder='Confirm your password' 
-          value={confirmPassword} 
-          onChange={(e) => setConfirmPassword(e.target.value)} />
-          <FaLock className='icon'/>
-        </div>
-        
-        <label htmlFor="checkboxId">
-  <input
-    type="checkbox"
-    id="checkboxId"
-    checked={agreedToTerms}
-    onChange={() => setAgreedToTerms(!agreedToTerms)}
-  />
-  I agree to the <a href="#" onClick={openModal}>Terms and Conditions</a>
-</label>
+    <section className="vh-100">
+            <div className="container-fluid h-custom">
+              <div className="row d-flex justify-content-center align-items-center h-100">
+                <div className="col-md-9 col-lg-6 col-xl-5">
+                  <img src={ background1 }
+                    className="img-fluid" alt="Log/Regis Illustration"></img>
+                </div>
+                
+                <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form onSubmit={SignUp}>
+                    <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                      <p className="lead fw-normal mb-0 me-3">Register with</p>
+                      <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
+                          <FaFacebookF style={{color: 'white'}} />
+                      </button>
 
-        <button type="submit">Register</button>
+                      <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-floating mx-1" style={{backgroundColor: '#c825da'}}>
+                        <FaTwitter style={{color: 'white'}} />
+                      </button>
+                    </div>
 
 
-        <div className="register-link">
-          <p>Already have an account? <a href='/Login'> Login </a> </p>
-        </div>
+                    <div className="divider d-flex align-items-center my-4">
+                      <p className="text-center fw-bold mx-3 mb-0">Or</p>
+                    </div>
 
-        <div className= "version">
-          <p> PlanItFamIt v1.0.1 </p>
-        </div>
 
-        <div className= "reserved">
-          <p> All rights reserved 2024.</p>
-        </div>
-      
-      </form>
-      {registrationSuccess && <p style={{ color: 'green' }}>Successfully registered! You can now log in.</p>}
-    </div>
-    </div>
+                    <div data-mdb-input-init className="form-outline mb-8">
+                      <input type="email" id="form3Example3" className="form-control form-control-lg"
+                        placeholder="Enter a valid email address" 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)}/>
+                      <label className="form-label" for="form3Example3">Email address</label>
+                    </div>
 
-    <div className="landingpagebkg">
-        <div className="flex-landingbkg1">
-          <img src={background1} alt="background2"  />
-          </div>
-        <div className="flex-landingbkg2" >
-          <img src={background2} alt="background1" />
-        </div>
-    </div>
+
+                    <div data-mdb-input-init className="form-outline mb-3">
+                      <input type="password" id="form3Example4" className="form-control form-control-lg"
+                        placeholder="Enter password"  
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)} />
+                      <label className="form-label" for="form3Example4">Password</label>
+                    </div>
+
+                    <div data-mdb-input-init className="form-outline mb-3">
+                      <input type="password" id="form3Example4cp" className="form-control form-control-lg"
+                        placeholder="Please, confirm your password"  
+                        value={confirmPassword} 
+                        onChange={(e) => setConfirmPassword(e.target.value)} />
+                      <label className="form-label" for="form3Example4cp">Confirm your password</label>
+                    </div>
+
+                    <div className="d-flex justify-content-between align-items-center">
+                    <div className="form-check mb-0">
+                      <input 
+                          className="form-check-input me-2" 
+                          type="checkbox" 
+                          id="form2Example3" 
+                          checked={agreedToTerms} 
+                          onChange={() => setAgreedToTerms(!agreedToTerms)}
+                      />
+                      <label className="form-check-label" htmlFor="form2Example3">
+                          <a href="#" onClick={openModal}>Terms and Conditions</a>
+                      </label>
+                  </div>
+
+                      <a href="/Resetyourpassword" className="text-body">Forgot password?</a>
+                    </div>
+
+                    <div className="text-center text-lg-start mt-4 pt-2">
+                      <button type="submit" data-mdb-button-init data-mdb-ripple-init className="btn-login "
+                        style={{ paddingLeft: '2.5rem', paddingRight: '2.5rem' }}>Register Now!</button>
+                      <p className="small fw-bold mt-2 pt-1 mb-0" style={{ paddingBottom: '1.5rem' }}>Already have an account? <a href="/Login"
+                          className="link-danger">Login</a></p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            
+            
+            <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-2 px-xl-5 bg-fotlogin">
+
+              <div className="text-white mb-3 mb-md-0">
+                Copyright © 2024 PlanItFamIt. All rights reserved. 
+              </div>
+
+              <div>
+                <a href="#!" className="text-white me-4">
+                  <FaFacebookF/>
+                </a>
+                <a href="#!" className="text-white me-4">
+                  <FaTwitter/>
+                </a>
+                <a href="#!" className="text-white me-4">
+                  <FaGoogle />
+                </a>
+              </div>
+
+            </div>
+          </section>
+    
+          {registrationSuccess && <p style={{ color: 'green' }}>Successfully registered! You can now log in.</p>}
+
   </>  
   );
 };

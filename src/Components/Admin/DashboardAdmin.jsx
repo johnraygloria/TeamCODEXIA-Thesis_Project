@@ -3,7 +3,19 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { getFirestore, collection, getDocs, updateDoc, doc, deleteDoc } from 'firebase/firestore';
 import Nav from '../Global/NavbarAdmin';
 import Sidebar from '../Global/Sidebar';
+import { Link } from 'react-router-dom';
+
+import Clinic from '../Assets/stmargaretlogo.png'
+import logomini from '../Assets/logo-mini.svg'
+import Circle from '../Assets/circle.png'
+
 import '../Admin/Dashboard.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
+// import "@icon/themify-icons/themify-icons.css"
+// import "unpkg.com/@icon/themify-icons/themify-icons.css"
+
 
 function DashboardAdmin() {
   const location = useLocation();
@@ -35,12 +47,11 @@ function DashboardAdmin() {
   const handleApprove = async (id) => {
     const appointmentToApprove = pendingAppointments.find(appointment => appointment.id === id);
     if (appointmentToApprove) {
-      try {
+      try { 
         const firestore = getFirestore();
         await updateDoc(doc(firestore, 'searchQueries', id), { approved: true });
         setPendingAppointments(prevAppointments => prevAppointments.filter(appointment => appointment.id !== id));
 
-        // Store in localStorage
         const updatedPendingAppointments = pendingAppointments.filter(appointment => appointment.id !== id);
         localStorage.setItem('pendingAppointments', JSON.stringify(updatedPendingAppointments));
 
@@ -48,9 +59,14 @@ function DashboardAdmin() {
         setApprovedAppointments(prevAppointments => [...prevAppointments, appointmentToApprove]);
         const approvedAppointmentsFromStorage = JSON.parse(localStorage.getItem('approvedAppointments') || '[]');
         localStorage.setItem('approvedAppointments', JSON.stringify([...approvedAppointmentsFromStorage, appointmentToApprove]));
+        history.push({
+          pathname: '/UserProfile',
+          state: { appointmentData: appointmentToApprove, action: 'approve' }
+        });
       } catch (error) {
         console.error("Error approving appointment: ", error);
       }
+      
     }
   };
 
@@ -61,6 +77,7 @@ function DashboardAdmin() {
       const updatedPendingAppointments = pendingAppointments.filter(appointment => appointment.id !== id);
       setPendingAppointments(updatedPendingAppointments);
       localStorage.setItem('pendingAppointments', JSON.stringify(updatedPendingAppointments));
+    
     } catch (error) {
       console.error("Error rejecting appointment: ", error);
     }
@@ -87,73 +104,194 @@ function DashboardAdmin() {
 
   return (
     <>
-    <div className='bgd-page'>
-      <Sidebar />
-      <Nav />
-      
-      <div className="page-content">
-          <div className="analytics">
-            <h1 className='dash-name'>Dashboard</h1>
-            <div className="card-main-dashboard">
-              <div className="card-head">
-                <h2>2</h2>
-                <span className="las la-user-friends" />
-              </div>
-              <div className="card-progress">
-                <small>Doctors</small>
-                <div className="card-indicator">
-                  <div className="indicator one" style={{ width: "2%" }} />
-                </div>
+   <div className="container-scroller">
+
+  <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+      <a className="navbar-brand brand-logo" href="index.html">
+        <img src={Clinic} alt="logo" />
+      </a>
+      <a className="navbar-brand brand-logo-mini" href="index.html">
+        <img src={logomini} alt="logo" />
+      </a>
+    </div>
+    <div className="navbar-menu-wrapper  d-flex align-items-stretch">
+    <button className="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">
+              <i className="bi bi-list mdi-menu"></i>
+            </button>
+      <div className="search-field d-none d-md-block">
+        <form className="d-flex align-items-center h-100" action="#">
+          <div className="input-group">
+            <div className="input-group-prepend bg-transparent">
+              <i className="input-group-text border-0 mdi mdi-magnify" />
+            </div>
+            <input
+              type="text"
+              className="form-control bg-transparent border-0"
+              placeholder="Search projects"
+            />
+          </div>
+        </form>
+      </div>
+    
+      <button
+        className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
+        data-toggle="offcanvas"
+      >
+        <i class="bi bi-list"></i>
+        {/* <span className="mdi mdi-menu" /> */}
+        {/* <img height="32" width="32" src="@icon/themify-icons/icons/arrow-up.svg" /> */}
+      </button>
+    </div>
+  </nav>
+  {/* partial */}
+  <div className="container-fluid page-body-wrapper">
+    {/* partial:partials/_sidebar.html */}
+    <nav className="sidebar sidebar-offcanvas" id="sidebar">
+      <ul className="nav">
+        <li className="nav-item nav-profile">
+          <a href="#" className="nav-link">
+            <div className="nav-profile-image">
+              <img src={Clinic} alt="profile" />
+              <span className="login-status online" />
+              {/*change to offline or busy as needed*/}
+            </div>
+            <div className="nav-profile-text d-flex flex-column">
+              <span className="font-weight-bold mb-2">St. Margaret Lying<br/> In Clinic</span>
+              <span className="text-secondary text-small">Project Manager</span>
+            </div>
+            <i className="mdi mdi-bookmark-check text-success nav-profile-badge" />
+          </a>
+        </li>
+        <li className="nav-item">
+        <Link to="/Dashboard"> <a className="nav-link" href="index.html">
+           <span className="menu-title">Dashboard</span>
+            {/* <i className="mdi mdi-home menu-icon" /> */}
+            <i class="bi bi-house-fill menu-icon"></i>
+          </a>
+          </Link>
+        </li>
+
+        <li className="nav-item">
+      <Link to="/PatientsRecord"><a className="nav-link" href="PatientsRecord">
+       <span className="menu-title">Patients Record</span>
+          <i class="bi bi-folder menu-icon"></i>
+        </a>
+        </Link>
+      </li>
+        <li className="nav-item">
+        <Link to="/PregnancyWheel">  <a className="nav-link" href="PregnancyWheel">
+            <span className="menu-title">PregnancyWheel</span>
+            {/* <i className="mdi mdi-format-list-bulleted menu-icon" /> */}
+            {/* <i class="bi bi-arrow-down-circle-fill menu-icon"></i> */}
+            <i class="bi bi-calendar-heart  menu-icon"></i>
+          </a>
+          </Link>
+        </li>
+   
+        <li className="nav-item">
+          <a
+            className="nav-link"
+            data-bs-toggle="collapse"
+            href="#auth"
+            aria-expanded="false"
+            aria-controls="auth"
+          >
+            <span className="menu-title">User Pages</span>
+            {/* <i className="menu-arrow" /> */}
+            <i class="bi bi-arrow-down-circle-fill menu-icon"></i>
+            {/* <i className="mdi mdi-lock menu-icon" /> */}
+          </a>
+          <div className="collapse" id="auth">
+            <ul className="nav flex-column sub-menu">
+              <li className="nav-item">
+                <a className="nav-link" >
+                  {" "}
+                  Blank Page{" "}
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="pages/samples/login.html">
+                  {" "}
+                  Login{" "}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    {/* partial */}
+
+    <div className="main-panel">
+      <div className="content-wrapper">
+        <div className="page-header">
+          <h3 className="page-title">
+            <span className="page-title-icon bg-gradient-primary text-white me-2">
+            <i class="bi bi-house-fill menu-icon"></i>
+            </span>{" "}
+            Dashboard
+          </h3>
+          <nav aria-label="breadcrumb">
+            <ul className="breadcrumb">
+              <li className="breadcrumb-item active" aria-current="page">
+                <span />
+                Overview{" "}
+                <i className="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" />
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="row">
+          <div className="col-md-4 stretch-card grid-margin">
+            <div className="card bg-gradient-danger card-img-holder text-white">
+              <div className="card-body">
+              <img src={Circle} class="card-img-absolute" alt="circle-image" />
+                <h4 className="font-weight-normal mb-3">
+                  Medical Staff{" "}
+                  <i class="bi bi-person mdi-24px float-end"></i>
+                </h4>
+                <h2 className="mb-5">10</h2>
               </div>
             </div>
-            <div className="card-main-dashboard-2">
-              <div className="card-head">
-                <h2>10</h2>
-                <span className="las la-eye" />
-              </div>
-              <div className="card-progress">
-                <small>Medical Staffs</small>
-                <div className="card-indicator">
-                  <div className="indicator two" style={{ width: "10%" }} />
-                </div>
-              </div>
-            </div>
-            <div className="card-main-dashboard-3">
-              <div className="card-head">
-                <h2>50</h2>
-                <span className="las la-shopping-cart" />
-              </div>
-              <div className="card-progress">
-                <small>Patients</small>
-                <div className="card-indicator">
-                  <div className="indicator three" style={{ width: "50%" }} />
-                </div>
+          </div>
+          <div className="col-md-4 stretch-card grid-margin">
+            <div className="card bg-gradient-info card-img-holder text-white">
+              <div className="card-body">
+              <img src={Circle} class="card-img-absolute" alt="circle-image" />
+                <h4 className="font-weight-normal mb-3">
+                  Patients{" "}
+                  {/* <i className="mdi mdi-bookmark-outline mdi-24px float-end" /> */}
+                  <i class="bi bi-postcard-heart-fill mdi-24px float-end"></i>
+                </h4>
+                <h2 className="mb-5">50</h2>
               </div>
             </div>
-            <div className="card-main-dashboard-4">
-              <div className="card-head">
-                <h2>5</h2>
-                <span className="las la-envelope" />
-              </div>
-              <div className="card-progress">
-                <small>Appointment</small>
-                <div className="card-indicator">
-                  <div className="indicator four" style={{ width: "5%" }} />
-                </div>
+          </div>
+
+          <div className="col-md-4 stretch-card grid-margin">
+            <div className="card bg-gradient-success card-img-holder text-white">
+              <div className="card-body">
+              <img src={Circle} class="card-img-absolute" alt="circle-image" />
+                <h4 className="font-weight-normal mb-3">
+                  Appointment{" "}
+                  {/* <i className="mdi mdi-diamond mdi-24px float-end" /> */}
+                  <i class="bi bi-clipboard2-check mdi-24px float-end"></i>
+                </h4>
+                <h2 className="mb-5">5</h2>
               </div>
             </div>
           </div>
         </div>
-
-      <div className="main-content">
-        <main>
-          <div className="records table-responsive">
-            {/* Approved Appointments section */}
-            <h2 className='approve-name-dashboard'>Approved Appointments</h2>
-          <div className='table-appointment-style'>
-            {/* <h2 className='approve-name-dashboard'>Approved Appointments</h2> */}
-            <table className='appointment-content' width="100%">
-              <thead>
+       
+        <div className="row">
+          <div className="col-12 grid-margin">
+            <div className="card">
+              <div className="card-body">
+                <h4 className="card-title">Approved Appointment</h4>
+                <div className="table-responsive">
+                  <table className="table">
+                  <thead>
                 <tr>
                   <th>#</th>
                   <th>Name</th>
@@ -176,19 +314,27 @@ function DashboardAdmin() {
                     <td>{appointment.date || 'N/A'}</td>
                     <td>{appointment.time || 'N/A'}</td>
                     <td>
-                      <button className='done-btn' onClick={() => handleDone(appointment)}>Done</button>
+                      <button className='badge badge-gradient-success' onClick={() => handleDone(appointment)}>Done</button>
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </table>
+                  </table>
+                  
+                </div>
+              </div>
+            </div>
           </div>
-            {/* Pending Appointments section */}
-            <h2 className='pending-name-dashboard'>Pending Appointments</h2>
-          <div className='pending-appointment-style-name'>
-            {/* <h2 className='pending-name-dashboard'>Pending Appointments</h2> */}
-            <table className='pending-dashboard-appointment' width="100%">
-              <thead>
+        </div>
+
+        <div className="row">
+          <div className="col-12 grid-margin">
+            <div className="card">
+              <div className="card-body">
+                <h4 className="card-title">Approved Appointment</h4>
+                <div className="table-responsive">
+                  <table className="table">
+                  <thead>
                 <tr>
                   <th>#</th>
                   <th>Name</th>
@@ -200,7 +346,6 @@ function DashboardAdmin() {
                   <th>Action</th>
                 </tr>
               </thead>
-
               <tbody>
                 {pendingAppointments.map((appointment, index) => (
                   <tr key={appointment.id}>
@@ -212,18 +357,25 @@ function DashboardAdmin() {
                     <td>{appointment.date || 'N/A'}</td>
                     <td>{appointment.time || 'N/A'}</td>
                     <td>
-                      <button className='approve-btn' onClick={() => handleApprove(appointment.id)}>Approve</button>
-                      <button className='not-approve-btn' onClick={() => handleReject(appointment.id)}>Reject</button>
+                    <button className='badge badge-gradient-warning' onClick={() => handleApprove(appointment.id)}>Approve</button>
+                      <button className='badge badge-gradient-danger' onClick={() => handleReject(appointment.id)}>Reject</button>
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </table>
-        </div>
+                  </table>
+                  
+                </div>
+              </div>
+            </div>
           </div>
-        </main>
-      </div>
+        </div>
+
+</div>
+
     </div>
+  </div>
+</div>
 </>
   );
 }
