@@ -60,7 +60,7 @@ function DashboardAdmin() {
         const approvedAppointmentsFromStorage = JSON.parse(localStorage.getItem('approvedAppointments') || '[]');
         localStorage.setItem('approvedAppointments', JSON.stringify([...approvedAppointmentsFromStorage, appointmentToApprove]));
         history.push({
-          pathname: '/UserProfile',
+          // pathname: '/UserProfile',
           state: { appointmentData: appointmentToApprove, action: 'approve' }
         });
       } catch (error) {
@@ -226,7 +226,7 @@ function DashboardAdmin() {
     <div className="main-panel">
       <div className="content-wrapper">
         <div className="page-header">
-          <h3 className="page-title">
+          <h3 className="page-title-nav">
             <span className="page-title-icon bg-gradient-primary text-white me-2">
             <i class="bi bi-house-fill menu-icon"></i>
             </span>{" "}

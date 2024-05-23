@@ -21,7 +21,7 @@ function PregnancyWheel() {
         {/* <Navbar/> */}
         {/* <Sidebar/> */}
         
-        <PregnancyWheelTAB/>
+        {/* <PregnancyWheelTAB/> */}
         <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
   <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
     <a className="navbar-brand brand-logo" href="index.html">
@@ -137,7 +137,22 @@ function PregnancyWheel() {
       </li>
     </ul>
   </nav>
+  <div className="main-panel">
+    <div className="content-wrapper">
+      <div className="page-header">
+        <h3 className="page-title-nav">
+          <span className="page-title-icon bg-gradient-primary text-white me-2">
+          {/* <i class="bi bi-folder menu-icon"></i> */}
+          <i class="bi bi-calendar-heart menu-icon"></i>
+          </span>{" "}
+          PregnancyWheel
+        </h3>
+
+      </div>
+    </div>
   </div>
+  </div>
+  <PregnancyWheelTAB/>
     </>
     )
 }
