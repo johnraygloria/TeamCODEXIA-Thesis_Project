@@ -20807,12 +20807,12 @@ code {
   margin-bottom: 0;
 }
 
-.page-title {
+.page-title-nav{
   color: #343a40;
   font-size: 1.125rem;
   margin-bottom: 0;
 }
-.page-title .page-title-icon {
+.page-title-nav .page-title-icon {
   display: inline-block;
   width: 36px;
   height: 36px;
@@ -20820,7 +20820,7 @@ code {
   text-align: center;
   box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
 }
-.page-title .page-title-icon i {
+.page-title-nav .page-title-icon i {
   font-size: 0.9375rem;
   line-height: 36px;
 }

@@ -553,6 +553,7 @@
    width: 100%;
    height: 100%;
    background: #1d192c;
+   background-color: rgba(0, 0, 0, 0.5);
    opacity: 0.8;
  }
  

@@ -193,48 +193,7 @@ const Type = (props) => {
         </div>
       </div>
       <div className="row align-items-center">
-        {/* <div className="col-md-6">
-          <div className="block">
-            <ul className="counter-box clearfix">
-              <li>
-                <div className="counter-item">
-                  <i className="ion-ios-chatboxes-outline" />
-                  <h4 className="count" data-count={99}>
-                    0
-                  </h4>
-                  <span>Cups Of Coffee</span>
-                </div>
-              </li>
-              <li>
-                <div className="counter-item">
-                  <i className="ion-ios-glasses-outline" />
-                  <h4 className="count" data-count={45}>
-                    0
-                  </h4>
-                  <span>Article Written</span>
-                </div>
-              </li>
-              <li>
-                <div className="counter-item">
-                  <i className="ion-ios-compose-outline" />
-                  <h4 className="count" data-count={125}>
-                    0
-                  </h4>
-                  <span>Projects Completed</span>
-                </div>
-              </li>
-              <li>
-                <div className="counter-item">
-                  <i className="ion-ios-timer-outline" />
-                  <h4 className="count" data-count={200}>
-                    0
-                  </h4>
-                  <span>Combined Projects</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div> */}
+  
         <div className="col-md-5 col-md-offset-1 mx-auto">
           <div className="testimonial-carousel text-center">
             <div className="testimonial-slider owl-carousel">
